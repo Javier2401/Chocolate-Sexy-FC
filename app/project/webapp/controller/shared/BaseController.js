@@ -3,7 +3,7 @@ sap.ui.define([
 ], (Controller) => {
     "use strict";
 
-    return Controller.extend("chocolatesexy.project.controller.Main", {
+    return Controller.extend("chocolatesexy.project.controller.shared.BaseController", {
         onInit() {
         }
     });

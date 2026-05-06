@@ -1,0 +1,9 @@
+<mvc:View controllerName="chocolatesexy.project.controller.main.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page title="{i18n>title}">
+    
+    </Page>
+
+</mvc:View>
