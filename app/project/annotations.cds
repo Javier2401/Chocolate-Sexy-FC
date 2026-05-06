@@ -1,0 +1,1 @@
+using FootballService as service from '../../srv/service';

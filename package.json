@@ -1,0 +1,33 @@
+{
+  "name": "chocolate-sexy",
+  "version": "1.0.0",
+  "description": "Welcome to your new CAP project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-project": "cds watch --open chocolatesexy.project/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/cds": "^9.9.1"
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.4.0",
+    "cds-plugin-ui5": "^0.17.0"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "database": "db.sqlite"
+        }
+      }
+    }
+  }
+}
