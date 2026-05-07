@@ -1,13 +1,11 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast"
-], function (Controller, MessageToast) {
+    "chocolatesexy/project/controller/shared/BaseController"
+], function (BaseController) {
     "use strict";
 
-    return Controller.extend("chocolatesexy.project.controller.main.Main", {
+    return BaseController.extend("chocolatesexy.project.controller.main.Main", {
 
         onInit: function () {},
-
 
     });
 });

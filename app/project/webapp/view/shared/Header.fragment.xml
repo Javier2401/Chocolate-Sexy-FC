@@ -2,7 +2,7 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
 
-        <VBox class="dokkanHeader">
+    <VBox class="dokkanHeader">
 
         <HBox alignItems="Center" class="navBar">
 
@@ -10,11 +10,10 @@
 
             <HBox justifyContent="Center" alignItems="Center" wrap="Wrap" class="navButtons">
                 <Button text="{i18n>header.nav.plantilla}"     class="navBtn" press=""/>
-                <Button text="{i18n>header.nav.calendario}"  class="navBtn" press=""/>
+                <Button text="{i18n>header.nav.calendario}"    class="navBtn" press=""/>
                 <Button text="{i18n>header.nav.clasificacion}" class="navBtn" press=""/>
-                <Button text="{i18n>header.nav.estadisticas}" class="navBtn" press=""/>
-                <Button text="{i18n>header.nav.encuestas}" class="navBtn" press=""/>
- 
+                <Button text="{i18n>header.nav.estadisticas}"  class="navBtn" press=""/>
+                <Button text="{i18n>header.nav.encuestas}"     class="navBtn" press=""/>
             </HBox>
 
             <HBox alignItems="Center" class="navIcons">
