@@ -1,9 +1,72 @@
-<mvc:View controllerName="chocolatesexy.project.controller.main.Main"
+<mvc:View
+    controllerName="chocolatesexy.project.controller.main.Main"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    displayBlock="true">
 
-    <Page title="{i18n>title}">
-    
+        <Page showHeader="false" enableScrolling="true" class="dokkanPage">
+        <content>
+            <VBox class="pageWrapper" width="100%">
+
+                <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
+
+                <VBox class="pageContent">
+
+                    <Panel class="dokkanPanel">
+                        <headerToolbar>
+                            <Toolbar class="customPanelHeader">
+                                <Title text="{i18n>panel.upcoming}" class="customPanelTitle"/>
+                            </Toolbar>
+                        </headerToolbar>
+
+                        <content>
+                            <FlexBox wrap="Wrap" justifyContent="Center" class="characterRow"
+                                     items="{chars>/upcoming}">
+                                <items>
+                                    <VBox class="characterCardWrapper" alignItems="Center">
+                                        <VBox class="characterCard">
+                                            <Image src="{chars>thumbnail}"
+                                                   class="characterImg"
+                                                   press=".onNavInfoCharacter"
+                                                   densityAware="false"/>
+                                        </VBox>
+                                        <Text text="{chars>releaseDateFmt}" class="characterDateBadge"/>
+                                    </VBox>
+                                </items>
+                            </FlexBox>
+                        </content>
+                    </Panel>
+
+                    <Panel class="dokkanPanel">
+                        <headerToolbar>
+                            <Toolbar class="customPanelHeader">
+                                <Title text="{i18n>panel.recent}" class="customPanelTitle"/>
+                            </Toolbar>
+                        </headerToolbar>
+                        <content>
+                            <FlexBox wrap="Wrap" justifyContent="Center" class="characterRow"
+                                     items="{chars>/recent}">
+                                <items>
+                                    <VBox class="characterCardWrapper" alignItems="Center">
+                                        <VBox class="characterCard">
+                                            <Image src="{chars>thumbnail}"
+                                                   class="characterImg"
+                                                   press=".onNavInfoCharacter"
+                                                   densityAware="false"/>
+                                        </VBox>
+                                    </VBox>
+                                </items>
+                            </FlexBox>
+                        </content>
+                    </Panel>
+
+                </VBox>
+
+                <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
+
+            </VBox>
+        </content>
     </Page>
 
 </mvc:View>

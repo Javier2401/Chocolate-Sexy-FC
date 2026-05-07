@@ -2,5 +2,38 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
 
+  <VBox class="dokkanFooter">
+
+        <HBox class="footerRainbow"/>
+
+        <HBox alignItems="Center" wrap="Wrap" class="footerContent">
+        
+        <Image src="images/instagram.png" class="navLogo" press=".onNavMain"/>
+        <Image src="images/email.png" class="navLogo" press=".onNavMain"/>
+
+            <HBox alignItems="Center" class="footerBrand">
+                <Image src="images/titulo.png" class="footerLogo"/>
+                <HBox class="footerBrandDivider"/>
+                <Text text="{i18n>footer.tagline}" class="footerTagline"/>
+            </HBox>
+
+            <HBox justifyContent="Center" alignItems="Center" wrap="Wrap" class="footerLinks">
+                <Button text="{i18n>footer.privacy}" class="footerLinkBtn" press=".onOpenPrivacyPolicy"/>
+                <Text text="|" class="footerSep"/>
+                <Button text="{i18n>footer.cookies}"  class="footerLinkBtn" press=".onOpenCookiePolicy"/>
+                <Text text="|" class="footerSep"/>
+                <Button text="{i18n>footer.terms}"   class="footerLinkBtn" press=".onOpenTermsOfUse"/>
+            </HBox>
+
+            <VBox alignItems="End" class="footerRight">
+                <Text text="{i18n>footer.copy}" class="footerCopy"/>
+                <Text text="{i18n>footer.disclaimer}" class="footerDisclaimer"/>
+            </VBox>
+
+            
+            <Image src="images/github.png" class="navLogo" press=".onNavMain"/>
+        </HBox>
+
+    </VBox>
 
 </core:FragmentDefinition>
