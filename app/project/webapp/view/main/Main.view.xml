@@ -5,7 +5,7 @@
     xmlns="sap.m"
     displayBlock="true">
 
-        <Page showHeader="false" enableScrolling="true" class="dokkanPage">
+    <Page showHeader="false" enableScrolling="true" class="csPage">
         <content>
             <VBox class="pageWrapper" width="100%">
 
@@ -13,13 +13,12 @@
 
                 <VBox class="pageContent">
 
-                    <Panel class="dokkanPanel">
+                    <Panel class="csPanel">
                         <headerToolbar>
                             <Toolbar class="customPanelHeader">
                                 <Title text="{i18n>panel.upcoming}" class="customPanelTitle"/>
                             </Toolbar>
                         </headerToolbar>
-
                         <content>
                             <FlexBox wrap="Wrap" justifyContent="Center" class="characterRow"
                                      items="{chars>/upcoming}">
@@ -38,7 +37,7 @@
                         </content>
                     </Panel>
 
-                    <Panel class="dokkanPanel">
+                    <Panel class="csPanel">
                         <headerToolbar>
                             <Toolbar class="customPanelHeader">
                                 <Title text="{i18n>panel.recent}" class="customPanelTitle"/>

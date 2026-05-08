@@ -7,7 +7,7 @@
     "applicationVersion": {
       "version": "0.0.1"
     },
-    "title": "{{appTitle}}",
+    "title": "Chocolate Sexy",
     "description": "{{appDescription}}",
     "resources": "resources.json",
     "sourceTemplate": {
@@ -98,14 +98,60 @@
           "target": [
             "TargetMain"
           ]
+        },
+        {
+          "name": "RouteCalendar",
+          "pattern": "calendar",
+          "target": [
+            "TargetCalendar"
+          ]
+        },
+        {
+          "name": "RouteCookiePolicy",
+          "pattern": "cookie-policy",
+          "target": [
+            "TargetCookiePolicy"
+          ]
+        },
+        {
+          "name": "RoutePrivacyPolicy",
+          "pattern": "privacy-policy",
+          "target": [
+            "TargetPrivacyPolicy"
+          ]
+        },
+        {
+          "name": "RouteTermsOfUse",
+          "pattern": "terms-of-use",
+          "target": [
+            "TargetTermsOfUse"
+          ]
         }
+
       ],
       "targets": {
         "TargetMain": {
           "id": "Main",
           "name": "main.Main"
-        }
+        },
+        "TargetCalendar": {
+          "id": "Calendar",
+          "name": "pages.Calendar"
+        },
+        "TargetCookiePolicy": {
+          "id": "CookiePolicy",
+          "name": "pages.CookiePolicy"
+        },
+        "TargetPrivacyPolicy": {
+          "id": "PrivacyPolicy",
+          "name": "pages.PrivacyPolicy"
+        },
+        "TargetTermsOfUse": {
+          "id": "TermsOfUse",
+          "name": "pages.TermsOfUse"
+        }  
       }
+      
     },
     "rootView": {
       "viewName": "chocolatesexy.project.view.App",

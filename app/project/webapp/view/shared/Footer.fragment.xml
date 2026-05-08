@@ -2,38 +2,29 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
 
-    <VBox class="dokkanFooter">
-
-        <HBox class="footerRainbow"/>
+    <VBox class="csFooter">
 
         <HBox alignItems="Center" justifyContent="SpaceBetween" class="footerContent">
 
             <HBox alignItems="Center" class="footerLeft">
-                <Image src="images/instagram.png" class="footerSocialIcon" press=".onOpenInstagram" tooltip="{i18n>footer.instagram.tooltip}"/>
                 <Image src="images/email.png"     class="footerSocialIcon" press=".onOpenEmail"     tooltip="{i18n>footer.email.tooltip}"/>
+                <Image src="images/instagram.png" class="footerSocialIcon" press=".onOpenInstagram" tooltip="{i18n>footer.instagram.tooltip}"/>
             </HBox>
-
-            <HBox class="footerBrandDivider"/>
 
             <VBox alignItems="Center" class="footerCenter">
                 <HBox justifyContent="Center" alignItems="Center" wrap="Wrap" class="footerLinks">
-                    <Button text="{i18n>footer.privacy}" class="footerLinkBtn" press=".onOpenPrivacyPolicy"/>
+                    <Button text="{i18n>footer.privacy}" class="footerLinkBtn" press=".onNavPrivacyPolicy"/>
                     <Text text="|" class="footerSep"/>
-                    <Button text="{i18n>footer.cookies}" class="footerLinkBtn" press=".onOpenCookiePolicy"/>
+                    <Button text="{i18n>footer.cookies}" class="footerLinkBtn" press=".onNavCookiePolicy"/>
                     <Text text="|" class="footerSep"/>
-                    <Button text="{i18n>footer.terms}"   class="footerLinkBtn" press=".onOpenTermsOfUse"/>
+                    <Button text="{i18n>footer.terms}"   class="footerLinkBtn" press=".onNavTermsOfUse"/>
                 </HBox>
-
                 <Text text="{i18n>footer.copy}" class="footerCopy"/>
-
             </VBox>
-
-            <HBox class="footerBrandDivider"/>
 
             <VBox alignItems="Center" class="footerRight">
                 <Image src="images/github.png" class="footerSocialIcon" press=".onOpenGitHub" tooltip="{i18n>footer.github.tooltip}"/>
                 <Text text="{i18n>footer.autor}" class="footerAutor"/>
-                
             </VBox>
 
         </HBox>

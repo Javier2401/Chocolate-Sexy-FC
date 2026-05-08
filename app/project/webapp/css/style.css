@@ -1,18 +1,18 @@
 /* ═══════════════════════════════════════════════════════════════
-   SECCIÓN 1 · GLOBAL
+   GLOBAL
    ═══════════════════════════════════════════════════════════════ */
 
-.dokkanPage {
+.csPage {
     background-color: #f0bfd0 !important;
     height: 100% !important;
 }
 
-.dokkanPage .sapMPageSection {
+.csPage .sapMPageSection {
     padding: 0 !important;
     height: 100% !important;
 }
 
-.dokkanPage .sapMScrollContScroll {
+.csPage .sapMScrollContScroll {
     background-color: #e8e8e8 !important;
     scroll-behavior: smooth;
 }
@@ -23,48 +23,6 @@
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
-}
-
-.dokkanPanel {
-    background-color: #ffffff !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-}
-
-.dokkanPanel .sapMPanelHdr {
-    background-color: transparent !important;
-    border-bottom: 1px solid #e8e8e8 !important;
-    padding: 0.8rem 1rem !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    min-height: 54px !important;
-}
-
-body .dokkanPanel .sapMPanelHdr .sapMTitle,
-body .dokkanPanel .sapMPanelHdr .sapMTitle *,
-body .dokkanPanel .sapMPanelHdr span,
-body .dokkanPanel .sapMPanelHdr bdi,
-body .dokkanPanel .sapMPanelHeaderText,
-body .dokkanPanel .sapMPanelHdr .sapMTitleStyleH1,
-body .dokkanPanel .sapMPanelHdr .sapMTitleStyleH2,
-body .dokkanPanel .sapMPanelHdr .sapMTitleStyleH3,
-body .dokkanPanel .sapMPanelHdr .sapMTitleStyleH4,
-body .dokkanPanel .sapMPanelHdr .sapMTitleStyleH5,
-body .dokkanPanel .sapMPanelHdr .sapMTitleStyleH6,
-body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
-    font-size: 1.25rem !important;
-    font-weight: 800 !important;
-    color: #1a1a1a !important;
-    text-align: center !important;
-    width: 100% !important;
-}
-
-.dokkanPanel .sapMPanelContent {
-    padding: 1rem 1rem 1.5rem 1rem !important;
-    background-color: #fafafa !important;
 }
 
 .pageContent,
@@ -80,8 +38,54 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   SECCIÓN 2 · BOTONES
+   HEADER
    ═══════════════════════════════════════════════════════════════ */
+
+.csHeader,
+.csHeader.sapMVBox {
+    background-color: #611a32 !important;
+    width: 100% !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    flex-shrink: 0 !important;
+}
+
+.navBar,
+.navBar.sapMHBox {
+    width: 100% !important;
+    padding: 0.5rem 1rem !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+.navLogo,
+.navLogo.sapMImg {
+    flex-shrink: 0 !important;
+    height: 95px !important;
+    object-fit: contain !important;
+    cursor: pointer !important;
+}
+
+.navButtons,
+.navButtons.sapMHBox {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    padding: 4px 0 !important;
+}
+
+.navIcons,
+.navIcons.sapMHBox {
+    flex-shrink: 0 !important;
+    width: 170px !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
 
 .navBtn.sapMBtn {
     background: transparent !important;
@@ -208,91 +212,6 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
     border-color: rgba(255,255,255,0.6) !important;
 }
 
-.linkSkillBtn.sapMBtn {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    min-height: auto !important;
-}
-.linkSkillBtn.sapMBtn .sapMBtnInner {
-    background-color: #eef2ff !important;
-    border: 1px solid #c7d2fe !important;
-    border-radius: 20px !important;
-    padding: 5px 14px !important;
-    height: auto !important;
-    min-height: 32px !important;
-    box-shadow: none !important;
-    display: flex !important;
-    align-items: center !important;
-    transition: background-color 0.15s ease !important;
-}
-.linkSkillBtn.sapMBtn bdi {
-    color: #3730a3 !important;
-    font-size: 0.82rem !important;
-    font-weight: 600 !important;
-}
-.linkSkillBtn.sapMBtn:hover .sapMBtnInner { background-color: #c7d2fe !important; }
-.linkSkillBtn.sapMBtn:hover bdi { color: #1e1b4b !important; }
-
-.categoryChipBtn.sapMBtn {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    min-height: auto !important;
-}
-.categoryChipBtn.sapMBtn .sapMBtnInner {
-    background-color: #f0fdf4 !important;
-    border: 1px solid #bbf7d0 !important;
-    border-radius: 20px !important;
-    padding: 5px 14px !important;
-    height: auto !important;
-    min-height: 32px !important;
-    box-shadow: none !important;
-    display: flex !important;
-    align-items: center !important;
-    transition: background-color 0.15s ease !important;
-}
-.categoryChipBtn.sapMBtn bdi {
-    color: #166534 !important;
-    font-size: 0.82rem !important;
-    font-weight: 600 !important;
-}
-.categoryChipBtn.sapMBtn:hover .sapMBtnInner { background-color: #bbf7d0 !important; cursor: pointer !important; }
-.categoryChipBtn.sapMBtn:hover bdi { color: #14532d !important; }
-
-.footerLinkBtn.sapMBtn {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    margin: 2px !important;
-    padding: 0 !important;
-    height: auto !important;
-    min-height: auto !important;
-}
-.footerLinkBtn.sapMBtn .sapMBtnInner {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid rgba(255,255,255,0.3) !important;
-    border-radius: 0 !important;
-    padding: 2px 4px !important;
-    height: auto !important;
-    box-shadow: none !important;
-    transition: border-bottom-color 0.15s ease !important;
-}
-.footerLinkBtn.sapMBtn bdi {
-    color: rgba(255,255,255,0.7) !important;
-    font-size: 0.8rem !important;
-    font-weight: 500 !important;
-}
-.footerLinkBtn.sapMBtn:hover .sapMBtnInner { border-bottom-color: #ffffff !important; }
-.footerLinkBtn.sapMBtn:hover bdi { color: #ffffff !important; }
-
 .sapMMenu, .sapMMenu .sapMMenu {
     background-color: #3a3a3a !important;
     border: 1px solid rgba(255,255,255,0.2) !important;
@@ -322,73 +241,14 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   SECCIÓN 3 · HEADER
+   FOOTER
    ═══════════════════════════════════════════════════════════════ */
 
-.dokkanHeader,
-.dokkanHeader.sapMVBox {
-    background-color: #611a32 !important;
-    width: 100% !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    flex-shrink: 0 !important;
-}
-
-.navBar,
-.navBar.sapMHBox {
-    width: 100% !important;
-    padding: 0.5rem 1rem !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
-}
-
-.navLogo,
-.navLogo.sapMImg {
-    flex-shrink: 0 !important;
-    height: 95px !important;
-    object-fit: contain !important;
-    cursor: pointer !important;
-}
-
-.navButtons,
-.navButtons.sapMHBox {
-    flex: 1 1 auto !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-    gap: 6px !important;
-    padding: 4px 0 !important;
-}
-
-.navIcons,
-.navIcons.sapMHBox {
-    flex-shrink: 0 !important;
-    width: 170px !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    align-items: center !important;
-    gap: 6px !important;
-}
-
-
-/* ═══════════════════════════════════════════════════════════════
-   SECCIÓN 4 · FOOTER
-   ═══════════════════════════════════════════════════════════════ */
-
-.dokkanFooter,
-.dokkanFooter.sapMVBox {
+.csFooter,
+.csFooter.sapMVBox {
     flex-shrink: 0 !important;
     background-color: #611a32 !important;
     width: 100% !important;
-}
-
-.footerRainbow,
-.footerRainbow.sapMHBox {
-    width: 100% !important;
-    height: 4px !important;
-    min-height: 4px !important;
-    background: linear-gradient(90deg,#f59e0b,#ef4444,#a855f7,#3b82f6,#10b981) !important;
 }
 
 .footerContent,
@@ -402,15 +262,13 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
     align-items: center !important;
 }
 
-/* IZQUIERDA */
 .footerLeft,
 .footerLeft.sapMHBox {
     align-items: center !important;
-    gap: 10px !important;
+    gap: 12px !important;
     flex-shrink: 0 !important;
 }
 
-/* ICONO SOCIAL (instagram, email, github) */
 .footerSocialIcon,
 .footerSocialIcon.sapMImg {
     width: 34px !important;
@@ -424,24 +282,12 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
     opacity: 0.75 !important;
 }
 
-/* DIVISOR VERTICAL */
-.footerBrandDivider,
-.footerBrandDivider.sapMHBox {
-    width: 2px !important;
-    min-width: 2px !important;
-    height: 50px !important;
-    min-height: 50px !important;
-    background-color: rgba(255,255,255,0.4) !important;
-    margin: 0 20px !important;
-    flex-shrink: 0 !important;
-}
-
-/* CENTRO */
 .footerCenter,
 .footerCenter.sapMVBox {
     flex: 1 1 auto !important;
     align-items: center !important;
     gap: 6px !important;
+    margin-top: 6px !important;
 }
 
 .footerLinks,
@@ -467,7 +313,6 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
     text-align: center !important;
 }
 
-/* DERECHA */
 .footerRight,
 .footerRight.sapMVBox {
     align-items: center !important;
@@ -483,10 +328,79 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
     text-align: center !important;
 }
 
+.footerLinkBtn.sapMBtn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 2px !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: auto !important;
+}
+.footerLinkBtn.sapMBtn .sapMBtnInner {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.3) !important;
+    border-radius: 0 !important;
+    padding: 2px 4px !important;
+    height: auto !important;
+    box-shadow: none !important;
+    transition: border-bottom-color 0.15s ease !important;
+}
+.footerLinkBtn.sapMBtn bdi {
+    color: rgba(255,255,255,0.7) !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+}
+.footerLinkBtn.sapMBtn:hover .sapMBtnInner { border-bottom-color: #ffffff !important; }
+.footerLinkBtn.sapMBtn:hover bdi { color: #ffffff !important; }
+
 
 /* ═══════════════════════════════════════════════════════════════
-   SECCIÓN 5 · MAIN VIEW — cuadrícula de personajes
+   MAIN — Panel y cuadrícula de jugadores
    ═══════════════════════════════════════════════════════════════ */
+
+.csPanel {
+    background-color: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.csPanel .sapMPanelHdr {
+    background-color: transparent !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+    padding: 0.8rem 1rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 54px !important;
+}
+
+body .csPanel .sapMPanelHdr .sapMTitle,
+body .csPanel .sapMPanelHdr .sapMTitle *,
+body .csPanel .sapMPanelHdr span,
+body .csPanel .sapMPanelHdr bdi,
+body .csPanel .sapMPanelHeaderText,
+body .csPanel .sapMPanelHdr .sapMTitleStyleH1,
+body .csPanel .sapMPanelHdr .sapMTitleStyleH2,
+body .csPanel .sapMPanelHdr .sapMTitleStyleH3,
+body .csPanel .sapMPanelHdr .sapMTitleStyleH4,
+body .csPanel .sapMPanelHdr .sapMTitleStyleH5,
+body .csPanel .sapMPanelHdr .sapMTitleStyleH6,
+body .csPanel .sapMPanelHdr .sapMTitleEllipsis {
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    color: #1a1a1a !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.csPanel .sapMPanelContent {
+    padding: 1rem 1rem 1.5rem 1rem !important;
+    background-color: #fafafa !important;
+}
 
 .characterRow {
     gap: 1rem;
@@ -558,27 +472,95 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
     letter-spacing: 0.3px !important;
 }
 
+/* ═══════════════════════════════════════
+   CALENDARIO / PARTIDOS
+   ═══════════════════════════════════════ */
+
+.schedulePanel {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.10) !important;
+}
+
+.scheduleContainer {
+    gap: 1rem !important;
+    padding: 1rem !important;
+}
+
+.matchCard {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    padding: 1rem 1.2rem !important;
+    border-left: 6px solid #a3295f !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+    transition: transform 0.2s ease !important;
+}
+
+.matchCard:hover {
+    transform: translateY(-2px);
+}
+
+.matchInfo {
+    gap: 0.3rem !important;
+}
+
+.matchCompetition {
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    color: #a3295f !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.matchTeams {
+    font-size: 1.1rem !important;
+    font-weight: 900 !important;
+    color: #1a1a1a !important;
+}
+
+.matchDate,
+.matchLocation {
+    font-size: 0.9rem !important;
+    color: #6b7280 !important;
+}
+
+.matchStatusBox {
+    min-width: 90px !important;
+}
+
+.matchStatus,
+.matchCountdown,
+.matchPending {
+    background: #a3295f !important;
+    color: white !important;
+    padding: 0.45rem 0.9rem !important;
+    border-radius: 999px !important;
+    font-size: 0.8rem !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+}
+
+.matchCountdown {
+    background: #65112f !important;
+}
+
+.matchPending {
+    background: #d97706 !important;
+}
+
+
+
 /* ═══════════════════════════════════════════════════════════════
-   SECCIÓN 11 · RESPONSIVE
+   RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
     .navLogo, .navLogo.sapMImg { width: 130px !important; height: 77px !important; }
     .navIcons, .navIcons.sapMHBox { width: 130px !important; }
     .footerContent { padding: 1rem 1.2rem !important; }
-    .footerBrandDivider { margin: 0 12px !important; }
     .characterCard, .characterCard.sapMVBox { width: 120px !important; min-width: 112px !important; }
     .characterImg  { width: 100px !important; height: 100px !important; }
     .characterDateBadge.sapMText { min-width: 112px !important; max-width: 125px !important; }
-    .leaderStatGrid, .leaderStatGrid.sapMHBox { width: 120px !important; }
-    .cardDetailContent { padding: 0 0.8rem 1.5rem 0.8rem; margin: 1rem auto !important; }
-    .cardLeftCol { flex: 0 0 280px !important; }
-    .cardThumbImg, .cardThumbImg.sapMImg { width: 170px !important; height: 170px !important; }
-    .cardArtImg,  .cardArtImg.sapMImg   { max-width: 236px !important; }
-    .cardTitle .sapMTitle { font-size: 1.7rem !important; }
-    .statCell, .statCell.sapMText { padding: 9px 3px !important; font-size: 0.82rem !important; }
-    .categoryHeroTitle .sapMTitle { font-size: 1.9rem !important; }
-    .searchInputCard, .searchResultsCard { padding: 1rem 1.2rem !important; }
 }
 
 @media (max-width: 600px) {
@@ -587,7 +569,6 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
     .navButtons, .navButtons.sapMHBox { width: 100% !important; flex: unset !important; order: 3 !important; }
     .navIcons,   .navIcons.sapMHBox   { width: auto !important; flex: 1 !important; justify-content: flex-end !important; order: 2 !important; }
     .footerContent { flex-wrap: wrap !important; justify-content: center !important; gap: 1rem !important; padding: 1rem 0.8rem !important; }
-    .footerBrandDivider { display: none !important; }
     .footerLeft { justify-content: center !important; }
     .footerRight { align-items: center !important; }
     .footerCopy.sapMText { text-align: center !important; }
@@ -596,29 +577,6 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
     .characterCard, .characterCard.sapMVBox { width: 96px !important; min-width: 88px !important; }
     .characterImg  { width: 78px !important; height: 78px !important; }
     .characterDateBadge.sapMText { min-width: 88px !important; max-width: 100px !important; font-size: 0.70rem !important; }
-    .leaderStatGrid, .leaderStatGrid.sapMHBox { width: 96px !important; }
-    .categoryCard .characterImg { height: 110px !important; }
-    .cardDetailContent { padding: 0 0.5rem 1rem 0.5rem; }
-    .cardTopRow { flex-direction: column !important; gap: 0.8rem !important; }
-    .cardLeftCol { flex: 0 0 auto !important; width: 100% !important; gap: 0.8rem !important; }
-    .cardThumbBox { width: 100% !important; align-items: center !important; }
-    .cardThumbImg, .cardThumbImg.sapMImg { width: 150px !important; height: 150px !important; }
-    .cardArtBox  { width: 100% !important; }
-    .cardArtImg, .cardArtImg.sapMImg { max-width: 100% !important; }
-    .cardRightCol { flex: 0 0 100% !important; }
-    .cardTitle .sapMTitle { font-size: 1.5rem !important; }
-    .statCell, .statCell.sapMText { padding: 9px 3px !important; font-size: 0.76rem !important; }
-    .statsHead, .statsHead.sapMText { font-size: 0.62rem !important; }
-    .categoryHeroTitle .sapMTitle { font-size: 1.5rem !important; }
-    .leaderStatLabel, .leaderStatLabel.sapMText { font-size: 0.52rem !important; }
-    .leaderStatVal,   .leaderStatVal.sapMText   { font-size: 0.65rem !important; }
-    .legalCard { padding: 1.2rem 1rem !important; }
-    .legalHeroTitle .sapMTitle { font-size: 1.7rem !important; }
-    .legalSectionTitle .sapMTitle { font-size: 1rem !important; }
-    .legalTableCell.sapMText { padding: 8px 10px !important; font-size: 0.8rem !important; }
-    .searchInputCard, .searchResultsCard { padding: 0.8rem !important; }
-    .searchResultName.sapMText { font-size: 0.65rem !important; }
-    .allCategoriesCard { padding: 1rem !important; }
 }
 
 @media (max-width: 400px) {
@@ -628,12 +586,4 @@ body .dokkanPanel .sapMPanelHdr .sapMTitleEllipsis {
     .characterCard, .characterCard.sapMVBox { width: 78px !important; min-width: 72px !important; }
     .characterImg  { width: 64px !important; height: 64px !important; }
     .characterDateBadge.sapMText { min-width: 72px !important; max-width: 84px !important; font-size: 0.62rem !important; }
-    .leaderStatGrid, .leaderStatGrid.sapMHBox { width: 78px !important; }
-    .categoryCard .characterImg { height: 90px !important; }
-    .cardTitle .sapMTitle { font-size: 1.2rem !important; }
-    .statCell, .statCell.sapMText { padding: 8px 2px !important; font-size: 0.68rem !important; }
-    .statLabelCol, .statLabelCol.sapMText { font-size: 0.70rem !important; }
-    .legalCard { padding: 1rem 0.8rem !important; }
-    .legalHeroTitle .sapMTitle { font-size: 1.5rem !important; }
-    .legalTable { display: none !important; }
 }

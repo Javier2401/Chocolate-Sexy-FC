@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (BaseController) {
     "use strict";
 
-    return BaseController.extend("chocolatesexy.project.controller.main.Main", {
+    return BaseController.extend("chocolatesexy.project.controller.pages.Calendar", {
 
         onInit: function () {
             
