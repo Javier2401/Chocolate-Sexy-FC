@@ -13,52 +13,155 @@
 
                 <VBox class="pageContent">
 
-                    <Panel class="csPanel">
-                        <headerToolbar>
-                            <Toolbar class="customPanelHeader">
-                                <Title text="{i18n>panel.upcoming}" class="customPanelTitle"/>
-                            </Toolbar>
-                        </headerToolbar>
-                        <content>
-                            <FlexBox wrap="Wrap" justifyContent="Center" class="characterRow"
-                                     items="{chars>/upcoming}">
-                                <items>
-                                    <VBox class="characterCardWrapper" alignItems="Center">
-                                        <VBox class="characterCard">
-                                            <Image src="{chars>thumbnail}"
-                                                   class="characterImg"
-                                                   press=".onNavInfoCharacter"
-                                                   densityAware="false"/>
-                                        </VBox>
-                                        <Text text="{chars>releaseDateFmt}" class="characterDateBadge"/>
-                                    </VBox>
-                                </items>
-                            </FlexBox>
-                        </content>
-                    </Panel>
+                    <HBox wrap="Wrap" class="mainGrid">
 
-                    <Panel class="csPanel">
-                        <headerToolbar>
-                            <Toolbar class="customPanelHeader">
-                                <Title text="{i18n>panel.recent}" class="customPanelTitle"/>
-                            </Toolbar>
-                        </headerToolbar>
-                        <content>
-                            <FlexBox wrap="Wrap" justifyContent="Center" class="characterRow"
-                                     items="{chars>/recent}">
-                                <items>
-                                    <VBox class="characterCardWrapper" alignItems="Center">
-                                        <VBox class="characterCard">
-                                            <Image src="{chars>thumbnail}"
-                                                   class="characterImg"
-                                                   press=".onNavInfoCharacter"
-                                                   densityAware="false"/>
+                        <!-- LEFT: Tarjetas de partido -->
+                        <VBox class="leftCol">
+
+                            <!-- Próximo Partido -->
+                            <VBox class="matchWidget">
+                                <HBox class="matchWidgetHeader">
+                                    <core:Icon src="sap-icon://future" class="matchWidgetIcon"/>
+                                    <Text text="Próximo Partido" class="matchWidgetTitle"/>
+                                </HBox>
+                                <VBox class="matchWidgetBody" alignItems="Center">
+                                    <HBox justifyContent="SpaceAround" alignItems="Center" width="100%" class="matchTeamsRow">
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
+                                            <Text text="Chocolate Sexy" class="matchTeamName"/>
                                         </VBox>
-                                    </VBox>
-                                </items>
-                            </FlexBox>
-                        </content>
-                    </Panel>
+                                        <VBox alignItems="Center" class="matchCenterBox">
+                                            <Text text="VS" class="matchVsText"/>
+                                        </VBox>
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
+                                                <Text text="E1" class="matchTeamLogoInitials"/>
+                                            </VBox>
+                                            <Text text="Equipo 1" class="matchTeamName"/>
+                                        </VBox>
+                                    </HBox>
+                                    <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow" wrap="Wrap">
+                                        <Text text="📍 Campo Municipal" class="matchInfoText"/>
+                                        <Text text=" · " class="matchInfoDot"/>
+                                        <Text text="⏰ 18:00" class="matchInfoText"/>
+                                        <Text text=" · " class="matchInfoDot"/>
+                                        <Text text="Jornada 23" class="matchInfoBadge"/>
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+
+                            <!-- Último Partido -->
+                            <VBox class="matchWidget">
+                                <HBox class="matchWidgetHeader">
+                                    <core:Icon src="sap-icon://history" class="matchWidgetIcon"/>
+                                    <Text text="Último Partido" class="matchWidgetTitle"/>
+                                </HBox>
+                                <VBox class="matchWidgetBody" alignItems="Center">
+                                    <HBox justifyContent="SpaceAround" alignItems="Center" width="100%" class="matchTeamsRow">
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
+                                            <Text text="Chocolate Sexy" class="matchTeamName"/>
+                                        </VBox>
+                                        <VBox alignItems="Center" class="matchCenterBox">
+                                            <HBox alignItems="Center" justifyContent="Center" class="matchScoreBox">
+                                                <Text text="1" class="matchScoreNum"/>
+                                                <Text text=" – " class="matchScoreDash"/>
+                                                <Text text="2" class="matchScoreNum"/>
+                                            </HBox>
+                                        </VBox>
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
+                                                <Text text="E2" class="matchTeamLogoInitials"/>
+                                            </VBox>
+                                            <Text text="Equipo 2" class="matchTeamName"/>
+                                        </VBox>
+                                    </HBox>
+                                    <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow" wrap="Wrap">
+                                        <Text text="📍 Estadio Central" class="matchInfoText"/>
+                                        <Text text=" · " class="matchInfoDot"/>
+                                        <Text text="📅 04/05/25" class="matchInfoText"/>
+                                        <Text text=" · " class="matchInfoDot"/>
+                                        <Text text="⏰ 20:00" class="matchInfoText"/>
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+
+                        </VBox>
+
+                        <!-- MIDDLE: Instagram (próximamente) -->
+                        <VBox class="middleCol">
+                        </VBox>
+
+                        <!-- RIGHT: Clasificación -->
+                        <VBox class="rightCol">
+                            <VBox class="standingsWidget">
+                                <HBox class="standingsWidgetHeader">
+                                    <core:Icon src="sap-icon://performance" class="standingsHeaderIcon"/>
+                                    <Text text="Clasificación" class="standingsHeaderTitle"/>
+                                </HBox>
+                                <VBox class="standingsTableWrapper">
+
+                                    <HBox class="standingsTHead">
+                                        <Text text="Pos" width="32px" class="sTH"/>
+                                        <Text text="Equipo" width="115px" class="sTH"/>
+                                        <Text text="Pts" width="38px" class="sTH sTHCenter"/>
+                                        <Text text="PJ"  width="38px" class="sTH sTHCenter"/>
+                                    </HBox>
+
+                                    <HBox class="standingsTRow">
+                                        <Text text="1º"  width="32px"  class="sTD"/>
+                                        <Text text="Equipo A"   width="115px" class="sTD sTDTeam"/>
+                                        <Text text="45"  width="38px"  class="sTD sTDCenter"/>
+                                        <Text text="15"  width="38px"  class="sTD sTDCenter"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow">
+                                        <Text text="2º"  width="32px"  class="sTD"/>
+                                        <Text text="Equipo B"   width="115px" class="sTD sTDTeam"/>
+                                        <Text text="42"  width="38px"  class="sTD sTDCenter"/>
+                                        <Text text="15"  width="38px"  class="sTD sTDCenter"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow">
+                                        <Text text="3º"  width="32px"  class="sTD"/>
+                                        <Text text="Equipo C"   width="115px" class="sTD sTDTeam"/>
+                                        <Text text="38"  width="38px"  class="sTD sTDCenter"/>
+                                        <Text text="15"  width="38px"  class="sTD sTDCenter"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow">
+                                        <Text text="4º"  width="32px"  class="sTD"/>
+                                        <Text text="Equipo D"   width="115px" class="sTD sTDTeam"/>
+                                        <Text text="35"  width="38px"  class="sTD sTDCenter"/>
+                                        <Text text="15"  width="38px"  class="sTD sTDCenter"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow">
+                                        <Text text="5º"  width="32px"  class="sTD"/>
+                                        <Text text="Yellow FC"  width="115px" class="sTD sTDTeam"/>
+                                        <Text text="33"  width="38px"  class="sTD sTDCenter"/>
+                                        <Text text="15"  width="38px"  class="sTD sTDCenter"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow standingsTRowOwn">
+                                        <Text text="6º"  width="32px"  class="sTD sTDOwn"/>
+                                        <Text text="Choc. Sexy" width="115px" class="sTD sTDTeam sTDOwn"/>
+                                        <Text text="30"  width="38px"  class="sTD sTDCenter sTDOwn"/>
+                                        <Text text="15"  width="38px"  class="sTD sTDCenter sTDOwn"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow">
+                                        <Text text="7º"  width="32px"  class="sTD"/>
+                                        <Text text="Equipo F"   width="115px" class="sTD sTDTeam"/>
+                                        <Text text="28"  width="38px"  class="sTD sTDCenter"/>
+                                        <Text text="15"  width="38px"  class="sTD sTDCenter"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow">
+                                        <Text text="8º"  width="32px"  class="sTD"/>
+                                        <Text text="VFC United" width="115px" class="sTD sTDTeam"/>
+                                        <Text text="20"  width="38px"  class="sTD sTDCenter"/>
+                                        <Text text="15"  width="38px"  class="sTD sTDCenter"/>
+                                    </HBox>
+
+                                </VBox>
+                            </VBox>
+                        </VBox>
+
+                    </HBox>
 
                 </VBox>
 

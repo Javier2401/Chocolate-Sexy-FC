@@ -11,59 +11,62 @@
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
 
-      
-            <VBox class="scheduleContainer">
+                <VBox class="scheduleContainer">
 
-                <HBox class="matchCard" justifyContent="SpaceBetween" alignItems="Center">
+            <!-- PARTIDO 1 -->
+            <HBox class="matchCard" justifyContent="SpaceBetween" alignItems="Center">
 
-                    <VBox class="matchInfo">
-                        <Text text="Liga · Jornada 12" class="matchCompetition"/>
-                        <Text text="Chocolate Sexy vs Real Valencia" class="matchTeams"/>
-                        <Text text="Domingo · 18:00" class="matchDate"/>
-                        <Text text="Campo Municipal" class="matchLocation"/>
-                    </VBox>
+                <!-- INFO -->
+                <VBox class="matchInfo">
+                    <Text text="Liga · Jornada 12" class="matchCompetition"/>
+                    <Text text="Chocolate Sexy vs Real Valencia" class="matchTeams"/>
+                    <Text text="Domingo · 18:00" class="matchDate"/>
+                    <Text text="Campo Municipal" class="matchLocation"/>
+                </VBox>
 
-                    <VBox class="matchStatusBox" alignItems="Center">
-                        <Text text="PRÓXIMO" class="matchStatus"/>
-                    </VBox>
+                <!-- RESULTADO / ESTADO -->
+                <VBox class="matchStatusBox" alignItems="Center">
+                    <Text text="PRÓXIMO" class="matchStatus"/>
+                </VBox>
 
-                </HBox>
+            </HBox>
 
-                <HBox class="matchCard" justifyContent="SpaceBetween" alignItems="Center">
+            <!-- PARTIDO 2 -->
+            <HBox class="matchCard" justifyContent="SpaceBetween" alignItems="Center">
 
-                    <VBox class="matchInfo">
-                        <Text text="Copa · Cuartos" class="matchCompetition"/>
-                        <Text text="Yellow FC vs Chocolate Sexy" class="matchTeams"/>
-                        <Text text="Sábado · 20:30" class="matchDate"/>
-                        <Text text="Estadio Central" class="matchLocation"/>
-                    </VBox>
+                <VBox class="matchInfo">
+                    <Text text="Copa · Cuartos" class="matchCompetition"/>
+                    <Text text="Yellow FC vs Chocolate Sexy" class="matchTeams"/>
+                    <Text text="Sábado · 20:30" class="matchDate"/>
+                    <Text text="Estadio Central" class="matchLocation"/>
+                </VBox>
 
-                    <VBox class="matchStatusBox" alignItems="Center">
-                        <Text text="3 DÍAS" class="matchCountdown"/>
-                    </VBox>
+                <VBox class="matchStatusBox" alignItems="Center">
+                    <Text text="3 DÍAS" class="matchCountdown"/>
+                </VBox>
 
-                </HBox>
+            </HBox>
 
-                <HBox class="matchCard" justifyContent="SpaceBetween" alignItems="Center">
+            <!-- PARTIDO 3 -->
+            <HBox class="matchCard" justifyContent="SpaceBetween" alignItems="Center">
 
-                    <VBox class="matchInfo">
-                        <Text text="Amistoso" class="matchCompetition"/>
-                        <Text text="Chocolate Sexy vs Águilas City" class="matchTeams"/>
-                        <Text text="Viernes · 21:00" class="matchDate"/>
-                        <Text text="Campo Norte" class="matchLocation"/>
-                    </VBox>
+                <VBox class="matchInfo">
+                    <Text text="Amistoso" class="matchCompetition"/>
+                    <Text text="Chocolate Sexy vs Águilas City" class="matchTeams"/>
+                    <Text text="Viernes · 21:00" class="matchDate"/>
+                    <Text text="Campo Norte" class="matchLocation"/>
+                </VBox>
 
-                    <VBox class="matchStatusBox" alignItems="Center">
-                        <Text text="PENDIENTE" class="matchPending"/>
-                    </VBox>
+                <VBox class="matchStatusBox" alignItems="Center">
+                    <Text text="PENDIENTE" class="matchPending"/>
+                </VBox>
 
-                </HBox>
+            </HBox>
 
-            </VBox>
-
+        </VBox>
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
-            
+
             </VBox>
         </content>
     </Page>

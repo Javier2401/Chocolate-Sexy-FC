@@ -357,7 +357,372 @@
 
 
 /* ═══════════════════════════════════════════════════════════════
-   MAIN — Panel y cuadrícula de jugadores
+   MAIN — Grid de 3 columnas
+   ═══════════════════════════════════════════════════════════════ */
+
+.mainGrid.sapMHBox {
+    gap: 1.5rem !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+}
+
+.leftCol.sapMVBox {
+    flex: 0 0 290px !important;
+    min-width: 260px !important;
+    gap: 1rem !important;
+}
+
+.middleCol.sapMVBox {
+    flex: 1 1 200px !important;
+    min-width: 0 !important;
+}
+
+.rightCol.sapMVBox {
+    flex: 0 0 280px !important;
+    min-width: 250px !important;
+}
+
+
+/* ─────────────────────────────────────
+   Match Widget
+   ───────────────────────────────────── */
+
+.matchWidget {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(97,26,50,0.13);
+    overflow: hidden;
+}
+
+.matchWidgetHeader.sapMHBox {
+    background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
+    padding: 0.65rem 1rem !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+}
+
+.matchWidgetIcon {
+    color: rgba(255,255,255,0.75) !important;
+    font-size: 0.85rem !important;
+}
+
+.matchWidgetTitle.sapMText {
+    color: #ffffff !important;
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+}
+
+.matchWidgetBody.sapMVBox {
+    padding: 1rem !important;
+    gap: 0.6rem !important;
+}
+
+.matchTeamsRow.sapMHBox {
+    padding: 0.4rem 0 !important;
+}
+
+.matchTeamBox.sapMVBox {
+    align-items: center !important;
+    gap: 0.3rem !important;
+    min-width: 76px !important;
+    max-width: 100px !important;
+}
+
+.matchTeamLogo.sapMImg {
+    width: 54px !important;
+    height: 54px !important;
+    border-radius: 50% !important;
+    object-fit: contain !important;
+    border: 2px solid #f3f4f6 !important;
+    background: #fafafa !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+}
+
+.matchTeamLogoPlaceholder.sapMVBox {
+    width: 54px !important;
+    height: 54px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #611a32, #a3295f) !important;
+    box-shadow: 0 2px 6px rgba(97,26,50,0.3) !important;
+    flex-shrink: 0 !important;
+}
+
+.matchTeamLogoInitials.sapMText {
+    color: #ffffff !important;
+    font-size: 1.05rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.matchTeamName.sapMText {
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
+    color: #374151 !important;
+    text-align: center !important;
+    max-width: 95px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.matchCenterBox.sapMVBox {
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 58px !important;
+    gap: 0.1rem !important;
+}
+
+.matchVsText.sapMText {
+    font-size: 1.45rem !important;
+    font-weight: 900 !important;
+    color: #611a32 !important;
+    letter-spacing: 2px !important;
+}
+
+.matchScoreBox.sapMHBox {
+    gap: 0.15rem !important;
+    align-items: center !important;
+    background: #f9fafb !important;
+    border-radius: 10px !important;
+    padding: 0.3rem 0.6rem !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+.matchScoreNum.sapMText {
+    font-size: 1.65rem !important;
+    font-weight: 900 !important;
+    color: #111827 !important;
+    line-height: 1 !important;
+}
+
+.matchScoreDash.sapMText {
+    font-size: 1.1rem !important;
+    color: #9ca3af !important;
+    font-weight: 400 !important;
+}
+
+.matchInfoRow.sapMHBox {
+    border-top: 1px solid #f3f4f6 !important;
+    padding-top: 0.6rem !important;
+    width: 100% !important;
+    gap: 0.1rem !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+}
+
+.matchInfoText.sapMText {
+    font-size: 0.71rem !important;
+    color: #6b7280 !important;
+    font-weight: 500 !important;
+}
+
+.matchInfoDot.sapMText {
+    color: #d1d5db !important;
+    font-size: 0.71rem !important;
+}
+
+.matchInfoBadge.sapMText {
+    font-size: 0.66rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    background-color: #611a32 !important;
+    padding: 0.12rem 0.5rem !important;
+    border-radius: 999px !important;
+    line-height: 1.5 !important;
+}
+
+
+/* ─────────────────────────────────────
+   Standings Widget
+   ───────────────────────────────────── */
+
+.standingsWidget {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(97,26,50,0.13);
+    overflow: hidden;
+}
+
+.standingsWidgetHeader.sapMHBox {
+    background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
+    padding: 0.65rem 1rem !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+}
+
+.standingsHeaderIcon {
+    color: rgba(255,255,255,0.75) !important;
+    font-size: 0.85rem !important;
+}
+
+.standingsHeaderTitle.sapMText {
+    color: #ffffff !important;
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+}
+
+.standingsTableWrapper.sapMVBox {
+    gap: 0 !important;
+    padding: 0 !important;
+}
+
+.standingsTHead.sapMHBox {
+    background-color: #f8f9fa !important;
+    padding: 0.4rem 0.8rem !important;
+    border-bottom: 2px solid #e9ecef !important;
+    align-items: center !important;
+}
+
+.sTH.sapMText {
+    font-size: 0.62rem !important;
+    font-weight: 800 !important;
+    color: #9ca3af !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+}
+
+.sTHCenter.sapMText {
+    text-align: center !important;
+}
+
+.standingsTRow.sapMHBox {
+    padding: 0.5rem 0.8rem !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    align-items: center !important;
+    transition: background-color 0.15s !important;
+}
+
+.standingsTRow.sapMHBox:last-child {
+    border-bottom: none !important;
+}
+
+.standingsTRow.sapMHBox:hover {
+    background-color: #fdf2f5 !important;
+}
+
+.standingsTRowOwn.sapMHBox {
+    background-color: #fff0f5 !important;
+    border-left: 3px solid #611a32 !important;
+}
+
+.standingsTRowOwn.sapMHBox:hover {
+    background-color: #ffe4ee !important;
+}
+
+.sTD.sapMText {
+    font-size: 0.8rem !important;
+    color: #374151 !important;
+    font-weight: 500 !important;
+}
+
+.sTDTeam.sapMText {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    padding: 0 0.3rem !important;
+}
+
+.sTDCenter.sapMText {
+    text-align: center !important;
+    font-weight: 700 !important;
+}
+
+.sTDOwn.sapMText {
+    font-weight: 800 !important;
+    color: #611a32 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CALENDARIO
+   ═══════════════════════════════════════════════════════════════ */
+
+.calendarPageContent,
+.calendarPageContent.sapMVBox {
+    flex: 1 1 auto !important;
+    padding: 1.5rem !important;
+    box-sizing: border-box !important;
+    gap: 0 !important;
+}
+
+.csCalendar {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 18px rgba(97,26,50,0.13) !important;
+    background: #ffffff !important;
+    width: 100% !important;
+}
+
+/* Header del calendario */
+.csCalendar .sapMSPCHead {
+    background: linear-gradient(135deg, #611a32, #a3295f) !important;
+    border-bottom: none !important;
+}
+
+.csCalendar .sapMSPCHeadTitle {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+}
+
+.csCalendar .sapMSPCHeadNav .sapMBtn .sapMBtnInner {
+    background-color: rgba(255,255,255,0.15) !important;
+    border-color: rgba(255,255,255,0.3) !important;
+    border-radius: 8px !important;
+}
+
+.csCalendar .sapMSPCHeadNav .sapMBtn .sapMBtnIcon {
+    color: #ffffff !important;
+}
+
+.csCalendar .sapMSPCHeadNav .sapMBtn:hover .sapMBtnInner {
+    background-color: rgba(255,255,255,0.28) !important;
+}
+
+/* Botones de vista Mes/Semana */
+.csCalendar .sapMSPCHeadActions .sapMSegBtn .sapMSegBtnItem {
+    color: rgba(255,255,255,0.75) !important;
+    border-color: rgba(255,255,255,0.3) !important;
+    background: transparent !important;
+}
+
+.csCalendar .sapMSPCHeadActions .sapMSegBtn .sapMSegBtnItemSel {
+    background-color: rgba(255,255,255,0.25) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* Días de la semana en cabecera de mes */
+.csCalendar .sapMSPCMonthDayName {
+    color: #611a32 !important;
+    font-weight: 700 !important;
+}
+
+/* Día actual */
+.csCalendar .sapUiCalItemSel {
+    background-color: #611a32 !important;
+    border-color: #611a32 !important;
+    color: #ffffff !important;
+}
+
+.csCalendar .sapUiCalItemNow > .sapUiCalItemText {
+    color: #611a32 !important;
+    font-weight: 800 !important;
+}
+
+/* Appointments */
+.csCalendar .sapUiCalendarApp {
+    border-radius: 6px !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   MAIN — Panel y cuadrícula de jugadores (legacy, mantener)
    ═══════════════════════════════════════════════════════════════ */
 
 .csPanel {
@@ -473,7 +838,7 @@ body .csPanel .sapMPanelHdr .sapMTitleEllipsis {
 }
 
 /* ═══════════════════════════════════════
-   CALENDARIO / PARTIDOS
+   CALENDARIO / PARTIDOS (legacy)
    ═══════════════════════════════════════ */
 
 .schedulePanel {
@@ -549,7 +914,6 @@ body .csPanel .sapMPanelHdr .sapMTitleEllipsis {
 }
 
 
-
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
@@ -558,9 +922,8 @@ body .csPanel .sapMPanelHdr .sapMTitleEllipsis {
     .navLogo, .navLogo.sapMImg { width: 130px !important; height: 77px !important; }
     .navIcons, .navIcons.sapMHBox { width: 130px !important; }
     .footerContent { padding: 1rem 1.2rem !important; }
-    .characterCard, .characterCard.sapMVBox { width: 120px !important; min-width: 112px !important; }
-    .characterImg  { width: 100px !important; height: 100px !important; }
-    .characterDateBadge.sapMText { min-width: 112px !important; max-width: 125px !important; }
+    .leftCol.sapMVBox { flex: 1 1 260px !important; }
+    .rightCol.sapMVBox { flex: 1 1 250px !important; }
 }
 
 @media (max-width: 600px) {
@@ -571,19 +934,13 @@ body .csPanel .sapMPanelHdr .sapMTitleEllipsis {
     .footerContent { flex-wrap: wrap !important; justify-content: center !important; gap: 1rem !important; padding: 1rem 0.8rem !important; }
     .footerLeft { justify-content: center !important; }
     .footerRight { align-items: center !important; }
-    .footerCopy.sapMText { text-align: center !important; }
-    .footerAutor.sapMText { text-align: center !important; }
     .pageContent { padding: 0 0.6rem; margin: 0.8rem auto !important; }
-    .characterCard, .characterCard.sapMVBox { width: 96px !important; min-width: 88px !important; }
-    .characterImg  { width: 78px !important; height: 78px !important; }
-    .characterDateBadge.sapMText { min-width: 88px !important; max-width: 100px !important; font-size: 0.70rem !important; }
+    .leftCol.sapMVBox, .rightCol.sapMVBox { flex: 1 1 100% !important; }
+    .calendarPageContent.sapMVBox { padding: 0.75rem !important; }
 }
 
 @media (max-width: 400px) {
     .navLogo, .navLogo.sapMImg { width: 80px !important; height: 47px !important; }
     .navIcons, .navIcons.sapMHBox { gap: 3px !important; }
     .footerSocialIcon, .footerSocialIcon.sapMImg { width: 28px !important; height: 28px !important; }
-    .characterCard, .characterCard.sapMVBox { width: 78px !important; min-width: 72px !important; }
-    .characterImg  { width: 64px !important; height: 64px !important; }
-    .characterDateBadge.sapMText { min-width: 72px !important; max-width: 84px !important; font-size: 0.62rem !important; }
 }
