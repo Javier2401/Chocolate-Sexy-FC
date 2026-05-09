@@ -11,59 +11,640 @@
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
 
-                <VBox class="scheduleContainer">
+                <VBox class="pageContent">
+                    <VBox class="calendarSection">
 
-            <!-- PARTIDO 1 -->
-            <HBox class="matchCard" justifyContent="SpaceBetween" alignItems="Center">
+                        <!-- ══════════════ SEPTIEMBRE 2025 ══════════════ -->
+                        <HBox class="calMonthHeader">
+                            <Text text="Septiembre 2025" class="calMonthTitle"/>
+                        </HBox>
 
-                <!-- INFO -->
-                <VBox class="matchInfo">
-                    <Text text="Liga · Jornada 12" class="matchCompetition"/>
-                    <Text text="Chocolate Sexy vs Real Valencia" class="matchTeams"/>
-                    <Text text="Domingo · 18:00" class="matchDate"/>
-                    <Text text="Campo Municipal" class="matchLocation"/>
+                        <!-- J1 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J1 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="2 - 1" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="RV" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Real Valencia" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 14 Sep 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J2 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J2 · Liga" class="calJornada"/>
+                                <Text text="EMPATE" class="calBadge calEmpate"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="1 - 1" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="DS" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Deportivo Sur" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 21 Sep 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Estadio Central" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J3 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J3 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="2 - 0" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="YF" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Yellow FC" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 28 Sep 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Norte" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- ══════════════ OCTUBRE 2025 ══════════════ -->
+                        <HBox class="calMonthHeader">
+                            <Text text="Octubre 2025" class="calMonthTitle"/>
+                        </HBox>
+
+                        <!-- J4 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J4 · Liga" class="calJornada"/>
+                                <Text text="DERROTA" class="calBadge calDerrota"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="0 - 2" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="FCN" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="FC Norte" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 05 Oct 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J5 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J5 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="3 - 1" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="LL" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Los Leones" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 12 Oct 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Polideportivo Sur" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J6 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J6 · Liga" class="calJornada"/>
+                                <Text text="EMPATE" class="calBadge calEmpate"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="0 - 0" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="VFC" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="VFC United" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 19 Oct 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J7 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J7 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="1 - 0" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="AC" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Águilas City" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 26 Oct 2025 · 18:00" class="calInfoText"/>
+                                <Text text="📍 Campo Los Pinos" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- ══════════════ NOVIEMBRE 2025 ══════════════ -->
+                        <HBox class="calMonthHeader">
+                            <Text text="Noviembre 2025" class="calMonthTitle"/>
+                        </HBox>
+
+                        <!-- J8 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J8 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="2 - 1" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="RC" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Racing Club" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 02 Nov 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J9 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J9 · Liga" class="calJornada"/>
+                                <Text text="DERROTA" class="calBadge calDerrota"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="1 - 2" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="SF" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Sporting FC" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 09 Nov 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Estadio Nuevo" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J10 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J10 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="3 - 1" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="CM" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Club Marino" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 16 Nov 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J11 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J11 · Liga" class="calJornada"/>
+                                <Text text="EMPATE" class="calBadge calEmpate"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="2 - 2" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="EF" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Estrella FC" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 23 Nov 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Rivera" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J12 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J12 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="2 - 0" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="CDE" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="CD Esperanza" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 30 Nov 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- ══════════════ DICIEMBRE 2025 ══════════════ -->
+                        <HBox class="calMonthHeader">
+                            <Text text="Diciembre 2025" class="calMonthTitle"/>
+                        </HBox>
+
+                        <!-- J13 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J13 · Liga" class="calJornada"/>
+                                <Text text="DERROTA" class="calBadge calDerrota"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="0 - 1" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="AR" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Atlético Rojo" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 07 Dic 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Estadio Central" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J14 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J14 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="3 - 1" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="UN" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Unión Norte" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 14 Dic 2025 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- ══════════════ ENERO 2026 ══════════════ -->
+                        <HBox class="calMonthHeader">
+                            <Text text="Enero 2026" class="calMonthTitle"/>
+                        </HBox>
+
+                        <!-- J15 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J15 · Liga" class="calJornada"/>
+                                <Text text="EMPATE" class="calBadge calEmpate"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="1 - 1" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="SS" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Sporting Sur" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 11 Ene 2026 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Polideportivo Sur" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J16 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J16 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="2 - 0" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="RV" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Real Valencia" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 18 Ene 2026 · 18:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J17 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J17 · Liga" class="calJornada"/>
+                                <Text text="DERROTA" class="calBadge calDerrota"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="0 - 2" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="DS" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Deportivo Sur" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 25 Ene 2026 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Los Pinos" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- ══════════════ FEBRERO 2026 ══════════════ -->
+                        <HBox class="calMonthHeader">
+                            <Text text="Febrero 2026" class="calMonthTitle"/>
+                        </HBox>
+
+                        <!-- J18 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J18 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="3 - 2" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="YF" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Yellow FC" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 01 Feb 2026 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J19 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J19 · Liga" class="calJornada"/>
+                                <Text text="EMPATE" class="calBadge calEmpate"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="0 - 0" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="FCN" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="FC Norte" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 08 Feb 2026 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Norte" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J20 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J20 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="2 - 1" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="LL" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Los Leones" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 15 Feb 2026 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- J21 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J21 · Liga" class="calJornada"/>
+                                <Text text="DERROTA" class="calBadge calDerrota"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="1 - 2" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="VFC" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="VFC United" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 22 Feb 2026 · 18:00" class="calInfoText"/>
+                                <Text text="📍 Estadio Nuevo" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- ══════════════ MARZO 2026 ══════════════ -->
+                        <HBox class="calMonthHeader">
+                            <Text text="Marzo 2026" class="calMonthTitle"/>
+                        </HBox>
+
+                        <!-- J22 -->
+                        <VBox class="calMatchCard">
+                            <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                <Text text="J22 · Liga" class="calJornada"/>
+                                <Text text="VICTORIA" class="calBadge calVictoria"/>
+                            </HBox>
+                            <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                    <Text text="Chocolate Sexy" class="calTeamName"/>
+                                </VBox>
+                                <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                    <Text text="1 - 0" class="calScoreText"/>
+                                </VBox>
+                                <VBox class="calTeamBox" alignItems="Center">
+                                    <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                        <Text text="AC" class="calTeamInitials"/>
+                                    </VBox>
+                                    <Text text="Águilas City" class="calTeamName"/>
+                                </VBox>
+                            </HBox>
+                            <VBox class="calMatchInfo" alignItems="Center">
+                                <Text text="Dom, 01 Mar 2026 · 17:00" class="calInfoText"/>
+                                <Text text="📍 Campo Municipal" class="calInfoText"/>
+                            </VBox>
+                        </VBox>
+
+                    </VBox>
                 </VBox>
-
-                <!-- RESULTADO / ESTADO -->
-                <VBox class="matchStatusBox" alignItems="Center">
-                    <Text text="PRÓXIMO" class="matchStatus"/>
-                </VBox>
-
-            </HBox>
-
-            <!-- PARTIDO 2 -->
-            <HBox class="matchCard" justifyContent="SpaceBetween" alignItems="Center">
-
-                <VBox class="matchInfo">
-                    <Text text="Copa · Cuartos" class="matchCompetition"/>
-                    <Text text="Yellow FC vs Chocolate Sexy" class="matchTeams"/>
-                    <Text text="Sábado · 20:30" class="matchDate"/>
-                    <Text text="Estadio Central" class="matchLocation"/>
-                </VBox>
-
-                <VBox class="matchStatusBox" alignItems="Center">
-                    <Text text="3 DÍAS" class="matchCountdown"/>
-                </VBox>
-
-            </HBox>
-
-            <!-- PARTIDO 3 -->
-            <HBox class="matchCard" justifyContent="SpaceBetween" alignItems="Center">
-
-                <VBox class="matchInfo">
-                    <Text text="Amistoso" class="matchCompetition"/>
-                    <Text text="Chocolate Sexy vs Águilas City" class="matchTeams"/>
-                    <Text text="Viernes · 21:00" class="matchDate"/>
-                    <Text text="Campo Norte" class="matchLocation"/>
-                </VBox>
-
-                <VBox class="matchStatusBox" alignItems="Center">
-                    <Text text="PENDIENTE" class="matchPending"/>
-                </VBox>
-
-            </HBox>
-
-        </VBox>
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
 
