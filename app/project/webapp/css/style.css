@@ -368,20 +368,20 @@
 
 /* LEFT: Clasificación */
 .leftCol.sapMVBox {
-    flex: 0 0 270px !important;
+    flex: 0 0 265px !important;
     min-width: 250px !important;
 }
 
-/* MIDDLE: Noticias (más ancho) */
+/* MIDDLE: Noticias — más ancho */
 .middleCol.sapMVBox {
-    flex: 1 1 280px !important;
+    flex: 1 1 330px !important;
     min-width: 0 !important;
 }
 
-/* RIGHT: Partidos — un poco más anchos */
+/* RIGHT: Partidos — más ancho */
 .rightCol.sapMVBox {
-    flex: 0 0 340px !important;
-    min-width: 290px !important;
+    flex: 0 0 378px !important;
+    min-width: 330px !important;
     gap: 1rem !important;
 }
 
@@ -435,7 +435,7 @@
     margin-bottom: 0.3rem !important;
 }
 
-/* ── MATCH TEAMS ROW — ALINEACIÓN CORREGIDA ── */
+/* ── MATCH TEAMS ROW ── */
 .matchTeamsRow.sapMHBox {
     align-items: flex-start !important;
     justify-content: space-evenly !important;
@@ -447,7 +447,7 @@
     align-items: center !important;
     gap: 0.3rem !important;
     flex: 1 1 0 !important;
-    max-width: 110px !important;
+    max-width: 120px !important;
 }
 
 .matchTeamLogo.sapMImg {
@@ -459,6 +459,7 @@
     background: #fafafa !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
     flex-shrink: 0 !important;
+    box-sizing: border-box !important;
 }
 
 .matchTeamLogoPlaceholder.sapMVBox {
@@ -487,20 +488,20 @@
     font-weight: 700 !important;
     color: #374151 !important;
     text-align: center !important;
-    max-width: 100px !important;
+    max-width: 110px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
 }
 
-/* Centro del widget — VS y marcador ALINEADOS con los logos */
+/* Centro del widget — VS y marcador alineados con logos */
 .matchCenterBox.sapMVBox {
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     flex: 0 0 72px !important;
-    height: 58px !important;     /* misma altura que los logos */
     min-height: 58px !important;
-    align-self: flex-start !important; /* alinea al top igual que los team boxes */
+    padding-top: 10px !important;
+    align-self: flex-start !important;
 }
 
 .matchVsText.sapMText {
@@ -509,6 +510,7 @@
     color: #611a32 !important;
     letter-spacing: 2px !important;
     line-height: 1 !important;
+    margin-top: 4px !important;
 }
 
 .matchScoreBox.sapMHBox {
@@ -519,6 +521,7 @@
     border-radius: 10px !important;
     padding: 0.3rem 0.55rem !important;
     border: 1px solid #e5e7eb !important;
+    margin-top: 4px !important;
 }
 
 .matchScoreNum.sapMText {
@@ -720,7 +723,7 @@
 
 
 /* ═══════════════════════════════════════════════════════════════
-   CALENDARIO — Selector de temporada
+   CALENDARIO — Selector de temporada (legacy, mantenido)
    ═══════════════════════════════════════════════════════════════ */
 
 .calSeasonSelector.sapMVBox {
@@ -757,10 +760,7 @@
     flex-wrap: wrap !important;
 }
 
-/* Botón temporada ACTIVO */
-.calSeasonBtnActive.sapMBtn {
-    margin: 0 !important;
-}
+.calSeasonBtnActive.sapMBtn { margin: 0 !important; }
 .calSeasonBtnActive.sapMBtn .sapMBtnInner {
     background-color: #ffffff !important;
     border: none !important;
@@ -770,16 +770,9 @@
     padding: 0 22px !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
 }
-.calSeasonBtnActive.sapMBtn bdi {
-    color: #611a32 !important;
-    font-size: 0.95rem !important;
-    font-weight: 800 !important;
-}
+.calSeasonBtnActive.sapMBtn bdi { color: #611a32 !important; font-size: 0.95rem !important; font-weight: 800 !important; }
 
-/* Botón temporada INACTIVO */
-.calSeasonBtnInactive.sapMBtn {
-    margin: 0 !important;
-}
+.calSeasonBtnInactive.sapMBtn { margin: 0 !important; }
 .calSeasonBtnInactive.sapMBtn .sapMBtnInner {
     background-color: rgba(255,255,255,0.15) !important;
     border: 1.5px solid rgba(255,255,255,0.4) !important;
@@ -790,13 +783,119 @@
     box-shadow: none !important;
     transition: background-color 0.15s ease !important;
 }
-.calSeasonBtnInactive.sapMBtn bdi {
-    color: rgba(255,255,255,0.85) !important;
-    font-size: 0.95rem !important;
-    font-weight: 700 !important;
+.calSeasonBtnInactive.sapMBtn bdi { color: rgba(255,255,255,0.85) !important; font-size: 0.95rem !important; font-weight: 700 !important; }
+.calSeasonBtnInactive.sapMBtn:hover .sapMBtnInner { background-color: rgba(255,255,255,0.28) !important; }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CALENDARIO — Bloques de temporada (Season Blocks)
+   ═══════════════════════════════════════════════════════════════ */
+
+.calSeasonBlock.sapMVBox {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 6px 28px rgba(97,26,50,0.14);
+    overflow: hidden;
+    margin-bottom: 2rem;
 }
-.calSeasonBtnInactive.sapMBtn:hover .sapMBtnInner {
+
+.calSeasonBlockHeader.sapMHBox {
+    background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
+    padding: 1rem 1.4rem !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    cursor: pointer;
+}
+
+.calSeasonBlockTitleArea.sapMHBox {
+    align-items: center !important;
+    gap: 0.65rem !important;
+    flex: 1 1 auto !important;
+}
+
+.calSeasonBlockIcon {
+    color: rgba(255,255,255,0.75) !important;
+    font-size: 1.2rem !important;
+    flex-shrink: 0 !important;
+}
+
+.calSeasonBlockTitle.sapMText {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+}
+
+/* Botón toggle de temporada */
+.calSeasonToggleBtn.sapMBtn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
+}
+.calSeasonToggleBtn.sapMBtn .sapMBtnInner {
+    background-color: rgba(255,255,255,0.15) !important;
+    border: 1.5px solid rgba(255,255,255,0.35) !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background-color 0.15s ease !important;
+}
+.calSeasonToggleBtn.sapMBtn .sapMBtnIcon {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+}
+.calSeasonToggleBtn.sapMBtn:hover .sapMBtnInner {
     background-color: rgba(255,255,255,0.28) !important;
+    border-color: rgba(255,255,255,0.55) !important;
+}
+
+/* Contenido desplegable de la temporada */
+.calSeasonContent.sapMVBox {
+    padding: 1.2rem 1rem 0.5rem !important;
+    gap: 0 !important;
+    overflow: hidden !important;
+    max-height: 6000px !important;
+    opacity: 1 !important;
+    transition: max-height 0.45s ease-in-out,
+                opacity    0.35s ease,
+                padding    0.4s  ease-in-out !important;
+}
+
+/* Estado cerrado */
+.calSeasonContent.sapMVBox.cal-collapsed {
+    max-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    opacity: 0 !important;
+}
+
+/* Month blocks dentro de season block — ajustes */
+.calSeasonContent .calMonthBlock.sapMVBox {
+    margin-bottom: 1rem !important;
+    border-radius: 14px !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08) !important;
+}
+.calSeasonContent .calMonthBlock.sapMVBox:last-child {
+    margin-bottom: 0.5rem !important;
 }
 
 
@@ -805,7 +904,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 .calendarSection.sapMVBox {
-    max-width: 700px !important;
+    max-width: 720px !important;
     margin: 0 auto !important;
     width: 100% !important;
     gap: 0 !important;
@@ -825,84 +924,72 @@
     gap: 0 !important;
 }
 
-/* Cabecera de mes dentro del bloque */
 .calMonthBlock .calMonthHeader.sapMHBox {
     margin: 0 0 10px 0 !important;
     border-radius: 0 !important;
 }
 
-/* Cards de partidos dentro del bloque */
 .calMonthBlock .calMatchCard {
     margin: 0 10px 8px !important;
     border-radius: 10px !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.07) !important;
 }
 
-/* ── COLORES DE MES ── */
+/* ── COLORES DE MES (versiones claras) ── */
 
-/* Melocotón — Septiembre */
-.calMonthBlock-peach { background-color: #FDE8D8 !important; border: 1.5px solid #E8A87C !important; }
+.calMonthBlock-peach { background-color: #FEF2EC !important; border: 1.5px solid #E8A87C !important; }
 .calMonthBlock-peach .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #C0714A 0%, #D4895E 100%) !important;
+    background: linear-gradient(135deg, #B8613A 0%, #CC7A50 100%) !important;
 }
 
-/* Azul cielo — Octubre */
-.calMonthBlock-sky { background-color: #D8EDF5 !important; border: 1.5px solid #7ABCD4 !important; }
+.calMonthBlock-sky { background-color: #EAF4FA !important; border: 1.5px solid #7ABCD4 !important; }
 .calMonthBlock-sky .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #3A7A9C 0%, #4A9AC0 100%) !important;
 }
 
-/* Verde salvia — Noviembre */
-.calMonthBlock-sage { background-color: #E8F5DA !important; border: 1.5px solid #8AC86A !important; }
+.calMonthBlock-sage { background-color: #F2FAE8 !important; border: 1.5px solid #8AC86A !important; }
 .calMonthBlock-sage .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #4A7A3A 0%, #5A9A4A 100%) !important;
 }
 
-/* Lavanda — Diciembre */
-.calMonthBlock-lavender { background-color: #F0E8F8 !important; border: 1.5px solid #B48AD4 !important; }
+.calMonthBlock-lavender { background-color: #F6F0FB !important; border: 1.5px solid #B48AD4 !important; }
 .calMonthBlock-lavender .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #6A3A8C 0%, #8A4AAC 100%) !important;
 }
 
-/* Dorado — Enero */
-.calMonthBlock-golden { background-color: #FFF4CE !important; border: 1.5px solid #F0C04A !important; }
+.calMonthBlock-golden { background-color: #FFFBE5 !important; border: 1.5px solid #F0C04A !important; }
 .calMonthBlock-golden .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #9A7010 0%, #C09830 100%) !important;
 }
 
-/* Rosa — Febrero */
-.calMonthBlock-rose { background-color: #F5D8E8 !important; border: 1.5px solid #D47AAA !important; }
+.calMonthBlock-rose { background-color: #FAE8F2 !important; border: 1.5px solid #D47AAA !important; }
 .calMonthBlock-rose .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #8C3A68 0%, #AC4A88 100%) !important;
 }
 
-/* Turquesa — Marzo */
-.calMonthBlock-teal { background-color: #D4F5EE !important; border: 1.5px solid #6AC8B8 !important; }
+.calMonthBlock-teal { background-color: #E5FAF5 !important; border: 1.5px solid #6AC8B8 !important; }
 .calMonthBlock-teal .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #2A7A6A 0%, #3A9A88 100%) !important;
 }
 
-/* Coral — Agosto (2026/27) */
-.calMonthBlock-coral { background-color: #FFE0D0 !important; border: 1.5px solid #F0947A !important; }
+.calMonthBlock-coral { background-color: #FFEEE5 !important; border: 1.5px solid #F0947A !important; }
 .calMonthBlock-coral .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #A0543A 0%, #C0745A 100%) !important;
 }
 
-/* Índigo — Septiembre (2026/27) */
-.calMonthBlock-indigo { background-color: #D0D8FF !important; border: 1.5px solid #7A8AD4 !important; }
+.calMonthBlock-indigo { background-color: #E3E8FF !important; border: 1.5px solid #7A8AD4 !important; }
 .calMonthBlock-indigo .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #2A3A8C 0%, #3A4AAC 100%) !important;
 }
 
-/* Menta — Octubre (2026/27) */
-.calMonthBlock-mint { background-color: #CCFAE8 !important; border: 1.5px solid #5AC88C !important; }
+.calMonthBlock-mint { background-color: #E2FBEF !important; border: 1.5px solid #5AC88C !important; }
 .calMonthBlock-mint .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #2A7A52 0%, #3A9A6A 100%) !important;
 }
 
 
 /* ─────────────────────────────────────
-   Cabecera de mes (sin contenedor)
+   Cabecera de mes
    ───────────────────────────────────── */
 
 .calMonthHeader.sapMHBox {
@@ -983,6 +1070,7 @@
     border: 2px solid #f3f4f6 !important;
     background: #fafafa !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+    box-sizing: border-box !important;
 }
 
 .calTeamCircle.sapMVBox {
@@ -1021,7 +1109,7 @@
     align-items: center !important;
     justify-content: center !important;
     align-self: flex-start !important;
-    height: 60px !important;  /* misma altura que los logos */
+    height: 60px !important;
 }
 
 .calScoreText.sapMText {
@@ -1051,12 +1139,24 @@
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
 
+@media (max-width: 1100px) {
+    .rightCol.sapMVBox { flex: 0 0 350px !important; min-width: 310px !important; }
+}
+
 @media (max-width: 960px) {
     .navLogo, .navLogo.sapMImg { width: 130px !important; height: 77px !important; }
     .navIcons, .navIcons.sapMHBox { width: 130px !important; }
     .footerContent { padding: 1rem 1.2rem !important; }
-    .leftCol.sapMVBox  { flex: 1 1 260px !important; }
-    .rightCol.sapMVBox { flex: 1 1 290px !important; }
+    .leftCol.sapMVBox  { flex: 0 0 265px !important; }
+    .middleCol.sapMVBox { flex: 1 1 200px !important; }
+    .rightCol.sapMVBox { flex: 1 1 340px !important; min-width: 310px !important; }
+}
+
+@media (max-width: 750px) {
+    /* Left + middle side by side, right wraps below */
+    .leftCol.sapMVBox  { flex: 0 0 265px !important; min-width: 0 !important; }
+    .middleCol.sapMVBox { flex: 1 1 160px !important; min-width: 0 !important; }
+    .rightCol.sapMVBox { flex: 1 1 100% !important; }
 }
 
 @media (max-width: 600px) {
@@ -1068,13 +1168,19 @@
     .footerLeft { justify-content: center !important; }
     .footerRight { align-items: center !important; }
     .pageContent { padding: 0 0.6rem; margin: 0.8rem auto !important; }
-    .leftCol.sapMVBox, .rightCol.sapMVBox, .middleCol.sapMVBox { flex: 1 1 100% !important; }
+    /* Left + middle stay side by side on mobile */
+    .leftCol.sapMVBox  { flex: 0 0 220px !important; min-width: 0 !important; }
+    .middleCol.sapMVBox { flex: 1 1 130px !important; min-width: 0 !important; }
+    .rightCol.sapMVBox { flex: 1 1 100% !important; }
     .calendarSection.sapMVBox { max-width: 100% !important; }
     .calSeasonTitle.sapMText { font-size: 1.25rem !important; }
+    .calSeasonBlockTitle.sapMText { font-size: 0.95rem !important; }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
     .navLogo, .navLogo.sapMImg { width: 80px !important; height: 47px !important; }
     .navIcons, .navIcons.sapMHBox { gap: 3px !important; }
     .footerSocialIcon, .footerSocialIcon.sapMImg { width: 28px !important; height: 28px !important; }
+    /* Stack everything at very small screens */
+    .leftCol.sapMVBox, .middleCol.sapMVBox, .rightCol.sapMVBox { flex: 1 1 100% !important; }
 }
