@@ -15,9 +15,15 @@ sap.ui.define([
         onOpenGitHub: function () { window.open("https://github.com/Javier2401", "_blank"); },
 
         onNavMain: function () { this.getOwnerComponent().getRouter().navTo("RouteMain"); },
+        onNavSquad: function () { this.getOwnerComponent().getRouter().navTo("RouteSquad"); },
         onNavCalendar: function () { this.getOwnerComponent().getRouter().navTo("RouteCalendar"); },
+        onNavLeaderboard: function () { this.getOwnerComponent().getRouter().navTo("RouteLeaderboard"); },
+        onNavStats: function () { this.getOwnerComponent().getRouter().navTo("RouteStats"); },
+        onNavSurveys: function () { this.getOwnerComponent().getRouter().navTo("RouteSurveys"); },
+        onNavSettings: function () { this.getOwnerComponent().getRouter().navTo("RouteSettings"); },
+        onNavProfile: function () { this.getOwnerComponent().getRouter().navTo("RouteProfile"); },
         onNavPrivacyPolicy: function () { this.getOwnerComponent().getRouter().navTo("RoutePrivacyPolicy"); },
         onNavCookiePolicy: function () { this.getOwnerComponent().getRouter().navTo("RouteCookiePolicy"); },
-        onNavTermsOfUse: function () { this.getOwnerComponent().getRouter().navTo("RouteTermsOfUse"); }
+        onNavTermsOfUse: function () { this.getOwnerComponent().getRouter().navTo("RouteTermsOfUse"); },
     });
 });

@@ -361,27 +361,27 @@
    ═══════════════════════════════════════════════════════════════ */
 
 .mainGrid.sapMHBox {
-    gap: 1.5rem !important;
+    gap: 1.25rem !important;
     align-items: flex-start !important;
     flex-wrap: wrap !important;
 }
 
 /* LEFT: Clasificación */
 .leftCol.sapMVBox {
-    flex: 0 0 295px !important;
-    min-width: 270px !important;
+    flex: 0 0 270px !important;
+    min-width: 250px !important;
 }
 
 /* MIDDLE: Noticias (más ancho) */
 .middleCol.sapMVBox {
-    flex: 1 1 300px !important;
+    flex: 1 1 280px !important;
     min-width: 0 !important;
 }
 
-/* RIGHT: Partidos */
+/* RIGHT: Partidos — un poco más anchos */
 .rightCol.sapMVBox {
-    flex: 0 0 295px !important;
-    min-width: 270px !important;
+    flex: 0 0 340px !important;
+    min-width: 290px !important;
     gap: 1rem !important;
 }
 
@@ -424,7 +424,6 @@
     gap: 0.5rem !important;
 }
 
-/* Jornada label inside widget body */
 .matchJornada.sapMText {
     font-size: 0.9rem !important;
     font-weight: 800 !important;
@@ -436,15 +435,19 @@
     margin-bottom: 0.3rem !important;
 }
 
+/* ── MATCH TEAMS ROW — ALINEACIÓN CORREGIDA ── */
 .matchTeamsRow.sapMHBox {
-    padding: 0.3rem 0 !important;
+    align-items: flex-start !important;
+    justify-content: space-evenly !important;
+    width: 100% !important;
+    padding: 0.4rem 0 !important;
 }
 
 .matchTeamBox.sapMVBox {
     align-items: center !important;
     gap: 0.3rem !important;
-    min-width: 76px !important;
-    max-width: 100px !important;
+    flex: 1 1 0 !important;
+    max-width: 110px !important;
 }
 
 .matchTeamLogo.sapMImg {
@@ -455,73 +458,82 @@
     border: 2px solid #f3f4f6 !important;
     background: #fafafa !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+    flex-shrink: 0 !important;
 }
 
 .matchTeamLogoPlaceholder.sapMVBox {
     width: 58px !important;
     height: 58px !important;
+    min-width: 58px !important;
+    min-height: 58px !important;
     border-radius: 50% !important;
     background: linear-gradient(135deg, #611a32, #a3295f) !important;
     box-shadow: 0 2px 6px rgba(97,26,50,0.3) !important;
     flex-shrink: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .matchTeamLogoInitials.sapMText {
     color: #ffffff !important;
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     font-weight: 900 !important;
     letter-spacing: 0.5px !important;
     text-align: center !important;
 }
 
 .matchTeamName.sapMText {
-    font-size: 0.8rem !important;
+    font-size: 0.78rem !important;
     font-weight: 700 !important;
     color: #374151 !important;
     text-align: center !important;
-    max-width: 95px !important;
+    max-width: 100px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
 }
 
+/* Centro del widget — VS y marcador ALINEADOS con los logos */
 .matchCenterBox.sapMVBox {
     align-items: center !important;
     justify-content: center !important;
-    min-width: 58px !important;
-    gap: 0.1rem !important;
+    flex: 0 0 72px !important;
+    height: 58px !important;     /* misma altura que los logos */
+    min-height: 58px !important;
+    align-self: flex-start !important; /* alinea al top igual que los team boxes */
 }
 
 .matchVsText.sapMText {
-    font-size: 1.6rem !important;
+    font-size: 1.5rem !important;
     font-weight: 900 !important;
     color: #611a32 !important;
     letter-spacing: 2px !important;
+    line-height: 1 !important;
 }
 
 .matchScoreBox.sapMHBox {
-    gap: 0.15rem !important;
+    gap: 0.1rem !important;
     align-items: center !important;
+    justify-content: center !important;
     background: #f9fafb !important;
     border-radius: 10px !important;
-    padding: 0.35rem 0.65rem !important;
+    padding: 0.3rem 0.55rem !important;
     border: 1px solid #e5e7eb !important;
 }
 
 .matchScoreNum.sapMText {
-    font-size: 1.8rem !important;
+    font-size: 1.65rem !important;
     font-weight: 900 !important;
     color: #111827 !important;
     line-height: 1 !important;
 }
 
 .matchScoreDash.sapMText {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
     color: #9ca3af !important;
     font-weight: 400 !important;
 }
 
-/* Info details: fecha·hora + location below */
 .matchInfoDetails.sapMVBox {
     border-top: 1px solid #f3f4f6 !important;
     padding-top: 0.65rem !important;
@@ -708,15 +720,190 @@
 
 
 /* ═══════════════════════════════════════════════════════════════
-   CALENDARIO — Cards por mes
+   CALENDARIO — Selector de temporada
+   ═══════════════════════════════════════════════════════════════ */
+
+.calSeasonSelector.sapMVBox {
+    align-items: center !important;
+    gap: 0.75rem !important;
+    margin-bottom: 1.5rem !important;
+    padding: 1.2rem 1rem !important;
+    background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 18px rgba(97,26,50,0.25) !important;
+}
+
+.calSeasonLabel.sapMText {
+    color: rgba(255,255,255,0.8) !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+}
+
+.calSeasonTitle.sapMText {
+    color: #ffffff !important;
+    font-size: 1.6rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px !important;
+    text-align: center !important;
+}
+
+.calSeasonBtnGroup.sapMHBox {
+    gap: 10px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+
+/* Botón temporada ACTIVO */
+.calSeasonBtnActive.sapMBtn {
+    margin: 0 !important;
+}
+.calSeasonBtnActive.sapMBtn .sapMBtnInner {
+    background-color: #ffffff !important;
+    border: none !important;
+    border-radius: 30px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 22px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+}
+.calSeasonBtnActive.sapMBtn bdi {
+    color: #611a32 !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+}
+
+/* Botón temporada INACTIVO */
+.calSeasonBtnInactive.sapMBtn {
+    margin: 0 !important;
+}
+.calSeasonBtnInactive.sapMBtn .sapMBtnInner {
+    background-color: rgba(255,255,255,0.15) !important;
+    border: 1.5px solid rgba(255,255,255,0.4) !important;
+    border-radius: 30px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0 22px !important;
+    box-shadow: none !important;
+    transition: background-color 0.15s ease !important;
+}
+.calSeasonBtnInactive.sapMBtn bdi {
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+}
+.calSeasonBtnInactive.sapMBtn:hover .sapMBtnInner {
+    background-color: rgba(255,255,255,0.28) !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CALENDARIO — Sección principal
    ═══════════════════════════════════════════════════════════════ */
 
 .calendarSection.sapMVBox {
     max-width: 700px !important;
     margin: 0 auto !important;
     width: 100% !important;
-    gap: 0.85rem !important;
+    gap: 0 !important;
 }
+
+
+/* ─────────────────────────────────────
+   Bloques de mes (contenedores coloreados)
+   ───────────────────────────────────── */
+
+.calMonthBlock.sapMVBox {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
+    margin-bottom: 1.6rem !important;
+    padding-bottom: 14px !important;
+    gap: 0 !important;
+}
+
+/* Cabecera de mes dentro del bloque */
+.calMonthBlock .calMonthHeader.sapMHBox {
+    margin: 0 0 10px 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Cards de partidos dentro del bloque */
+.calMonthBlock .calMatchCard {
+    margin: 0 10px 8px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07) !important;
+}
+
+/* ── COLORES DE MES ── */
+
+/* Melocotón — Septiembre */
+.calMonthBlock-peach { background-color: #FDE8D8 !important; border: 1.5px solid #E8A87C !important; }
+.calMonthBlock-peach .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #C0714A 0%, #D4895E 100%) !important;
+}
+
+/* Azul cielo — Octubre */
+.calMonthBlock-sky { background-color: #D8EDF5 !important; border: 1.5px solid #7ABCD4 !important; }
+.calMonthBlock-sky .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #3A7A9C 0%, #4A9AC0 100%) !important;
+}
+
+/* Verde salvia — Noviembre */
+.calMonthBlock-sage { background-color: #E8F5DA !important; border: 1.5px solid #8AC86A !important; }
+.calMonthBlock-sage .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #4A7A3A 0%, #5A9A4A 100%) !important;
+}
+
+/* Lavanda — Diciembre */
+.calMonthBlock-lavender { background-color: #F0E8F8 !important; border: 1.5px solid #B48AD4 !important; }
+.calMonthBlock-lavender .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #6A3A8C 0%, #8A4AAC 100%) !important;
+}
+
+/* Dorado — Enero */
+.calMonthBlock-golden { background-color: #FFF4CE !important; border: 1.5px solid #F0C04A !important; }
+.calMonthBlock-golden .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #9A7010 0%, #C09830 100%) !important;
+}
+
+/* Rosa — Febrero */
+.calMonthBlock-rose { background-color: #F5D8E8 !important; border: 1.5px solid #D47AAA !important; }
+.calMonthBlock-rose .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #8C3A68 0%, #AC4A88 100%) !important;
+}
+
+/* Turquesa — Marzo */
+.calMonthBlock-teal { background-color: #D4F5EE !important; border: 1.5px solid #6AC8B8 !important; }
+.calMonthBlock-teal .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #2A7A6A 0%, #3A9A88 100%) !important;
+}
+
+/* Coral — Agosto (2026/27) */
+.calMonthBlock-coral { background-color: #FFE0D0 !important; border: 1.5px solid #F0947A !important; }
+.calMonthBlock-coral .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #A0543A 0%, #C0745A 100%) !important;
+}
+
+/* Índigo — Septiembre (2026/27) */
+.calMonthBlock-indigo { background-color: #D0D8FF !important; border: 1.5px solid #7A8AD4 !important; }
+.calMonthBlock-indigo .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #2A3A8C 0%, #3A4AAC 100%) !important;
+}
+
+/* Menta — Octubre (2026/27) */
+.calMonthBlock-mint { background-color: #CCFAE8 !important; border: 1.5px solid #5AC88C !important; }
+.calMonthBlock-mint .calMonthHeader.sapMHBox {
+    background: linear-gradient(135deg, #2A7A52 0%, #3A9A6A 100%) !important;
+}
+
+
+/* ─────────────────────────────────────
+   Cabecera de mes (sin contenedor)
+   ───────────────────────────────────── */
 
 .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
@@ -734,7 +921,11 @@
     text-transform: uppercase !important;
 }
 
-/* Card */
+
+/* ─────────────────────────────────────
+   Cards de partidos
+   ───────────────────────────────────── */
+
 .calMatchCard {
     background: #ffffff;
     border-radius: 14px;
@@ -742,7 +933,6 @@
     overflow: hidden;
 }
 
-/* Card header: jornada + badge */
 .calMatchTop.sapMHBox {
     background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
     padding: 0.5rem 1rem !important;
@@ -757,7 +947,6 @@
     letter-spacing: 0.4px !important;
 }
 
-/* Result badges */
 .calBadge.sapMText {
     font-size: 0.78rem !important;
     font-weight: 900 !important;
@@ -767,23 +956,23 @@
     letter-spacing: 0.5px !important;
 }
 
-.calVictoria.sapMText { background-color: #16a34a !important; }
-.calEmpate.sapMText   { background-color: #ca8a04 !important; }
-.calDerrota.sapMText  { background-color: #dc2626 !important; }
+.calVictoria.sapMText  { background-color: #16a34a !important; }
+.calEmpate.sapMText    { background-color: #ca8a04 !important; }
+.calDerrota.sapMText   { background-color: #dc2626 !important; }
+.calPendiente.sapMText { background-color: #2563eb !important; }
 
-/* Teams row */
 .calTeamsRow.sapMHBox {
     padding: 0.9rem 1rem !important;
     justify-content: center !important;
-    align-items: center !important;
-    gap: 1.2rem !important;
+    align-items: flex-start !important;
+    gap: 0.8rem !important;
 }
 
 .calTeamBox.sapMVBox {
     align-items: center !important;
     gap: 0.3rem !important;
-    min-width: 85px !important;
-    max-width: 115px !important;
+    flex: 1 1 0 !important;
+    max-width: 120px !important;
 }
 
 .calTeamLogo.sapMImg {
@@ -799,15 +988,19 @@
 .calTeamCircle.sapMVBox {
     width: 60px !important;
     height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
     border-radius: 50% !important;
     background: linear-gradient(135deg, #611a32, #a3295f) !important;
     box-shadow: 0 2px 6px rgba(97,26,50,0.3) !important;
     flex-shrink: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .calTeamInitials.sapMText {
     color: #ffffff !important;
-    font-size: 1.05rem !important;
+    font-size: 1rem !important;
     font-weight: 900 !important;
     text-align: center !important;
 }
@@ -823,11 +1016,12 @@
     text-overflow: ellipsis !important;
 }
 
-/* Score */
 .calScoreBox.sapMVBox {
-    min-width: 75px !important;
+    flex: 0 0 75px !important;
     align-items: center !important;
     justify-content: center !important;
+    align-self: flex-start !important;
+    height: 60px !important;  /* misma altura que los logos */
 }
 
 .calScoreText.sapMText {
@@ -838,7 +1032,6 @@
     text-align: center !important;
 }
 
-/* Info: fecha + lugar */
 .calMatchInfo.sapMVBox {
     padding: 0.6rem 1rem 0.9rem !important;
     border-top: 1px solid #f3f4f6 !important;
@@ -863,7 +1056,7 @@
     .navIcons, .navIcons.sapMHBox { width: 130px !important; }
     .footerContent { padding: 1rem 1.2rem !important; }
     .leftCol.sapMVBox  { flex: 1 1 260px !important; }
-    .rightCol.sapMVBox { flex: 1 1 260px !important; }
+    .rightCol.sapMVBox { flex: 1 1 290px !important; }
 }
 
 @media (max-width: 600px) {
@@ -877,6 +1070,7 @@
     .pageContent { padding: 0 0.6rem; margin: 0.8rem auto !important; }
     .leftCol.sapMVBox, .rightCol.sapMVBox, .middleCol.sapMVBox { flex: 1 1 100% !important; }
     .calendarSection.sapMVBox { max-width: 100% !important; }
+    .calSeasonTitle.sapMText { font-size: 1.25rem !important; }
 }
 
 @media (max-width: 400px) {

@@ -1,0 +1,26 @@
+<mvc:View
+    controllerName="chocolatesexy.project.controller.pages.Profile"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page showHeader="false" enableScrolling="true" class="csPage">
+        <content>
+            <VBox class="pageWrapper" width="100%">
+
+                <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
+
+                <VBox class="pageContent">
+                    
+                    <Text text="VISTA PROFILE" class="surveyText"/>
+                    
+                </VBox>
+
+                <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
+            
+            </VBox>
+        </content>
+    </Page>
+
+</mvc:View>

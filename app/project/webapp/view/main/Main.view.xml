@@ -14,7 +14,6 @@
                 <VBox class="pageContent">
                     <HBox wrap="Wrap" class="mainGrid">
 
-                        <!-- LEFT: Clasificación -->
                         <VBox class="leftCol">
                             <VBox class="standingsWidget">
                                 <HBox class="standingsWidgetHeader" justifyContent="Center">
@@ -80,7 +79,6 @@
                             </VBox>
                         </VBox>
 
-                        <!-- MIDDLE: Noticias -->
                         <VBox class="middleCol">
                             <VBox class="newsWidget">
                                 <HBox class="newsWidgetHeader" justifyContent="Center">
@@ -93,10 +91,8 @@
                             </VBox>
                         </VBox>
 
-                        <!-- RIGHT: Partidos -->
                         <VBox class="rightCol">
 
-                            <!-- Próximo Partido -->
                             <VBox class="matchWidget">
                                 <HBox class="matchWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://future" class="matchWidgetIcon"/>
@@ -130,7 +126,6 @@
                                 </VBox>
                             </VBox>
 
-                            <!-- Último Partido -->
                             <VBox class="matchWidget">
                                 <HBox class="matchWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://history" class="matchWidgetIcon"/>

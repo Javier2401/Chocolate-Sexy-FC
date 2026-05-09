@@ -100,10 +100,52 @@
           ]
         },
         {
+          "name": "RouteSquad",
+          "pattern": "squad",
+          "target": [
+            "TargetSquad"
+          ]
+        },
+        {
           "name": "RouteCalendar",
           "pattern": "calendar",
           "target": [
             "TargetCalendar"
+          ]
+        },
+        {
+          "name": "RouteLeaderboard",
+          "pattern": "leaderboard",
+          "target": [
+            "TargetLeaderboard"
+          ]
+        },
+        {
+          "name": "RouteStats",
+          "pattern": "stats",
+          "target": [
+            "TargetStats"
+          ]
+        },
+        {
+          "name": "RouteSurveys",
+          "pattern": "surveys",
+          "target": [
+            "TargetSurveys"
+          ]
+        },
+        {
+          "name": "RouteSettings",
+          "pattern": "settings",
+          "target": [
+            "TargetSettings"
+          ]
+        },
+        {
+          "name": "RouteProfile",
+          "pattern": "profile",
+          "target": [
+            "TargetProfile"
           ]
         },
         {
@@ -137,6 +179,30 @@
         "TargetCalendar": {
           "id": "Calendar",
           "name": "pages.Calendar"
+        },
+        "TargetLeaderboard": {
+          "id": "Leaderboard",
+          "name": "pages.Leaderboard"
+        },
+        "TargetSquad": {
+          "id": "Squad",
+          "name": "pages.Squad"
+        },
+        "TargetStats": {  
+          "id": "Stats",
+          "name": "pages.Stats"
+        },
+        "TargetSurveys": {
+          "id": "Surveys",
+          "name": "pages.Surveys"
+        },
+        "TargetSettings": {
+          "id": "Settings",
+          "name": "pages.Settings"
+        },
+        "TargetProfile": {
+          "id": "Profile",
+          "name": "pages.Profile"
         },
         "TargetCookiePolicy": {
           "id": "CookiePolicy",
