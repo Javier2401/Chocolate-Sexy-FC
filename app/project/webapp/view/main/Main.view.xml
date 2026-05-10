@@ -14,6 +14,9 @@
                 <VBox class="pageContent">
                     <HBox wrap="Wrap" class="mainGrid">
 
+                        <!-- ══════════════════════════════
+                             IZQUIERDA: Clasificación
+                        ══════════════════════════════ -->
                         <VBox class="leftCol">
                             <VBox class="standingsWidget">
                                 <HBox class="standingsWidgetHeader" justifyContent="Center">
@@ -79,20 +82,41 @@
                             </VBox>
                         </VBox>
 
+                        <!-- ══════════════════════════════
+                             CENTRO: Noticias
+                        ══════════════════════════════ -->
                         <VBox class="middleCol">
                             <VBox class="newsWidget">
                                 <HBox class="newsWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://newspaper" class="newsWidgetIcon"/>
                                     <Text text="Noticias" class="newsWidgetTitle"/>
                                 </HBox>
-                                <VBox class="newsWidgetBody" alignItems="Center" justifyContent="Center">
-                                    <Text text="Próximamente..." class="newsEmptyText"/>
+                                <VBox class="newsWidgetBody">
+
+                                    <!-- ── POST 1 ── -->
+                                    <VBox class="csNewsPost">
+                                        <HBox class="csNewsPostHeader" justifyContent="SpaceBetween" alignItems="Center">
+                                            <Text text="Últimas novedades del club" class="csNewsPostTitle"/>
+                                            <Text text="10 May 2026" class="csNewsPostDate"/>
+                                        </HBox>
+                                        <VBox class="csNewsPostContent">
+                                            <core:HTML
+                                                id="igPost1"
+                                                sanitizeContent="false"
+                                                content="{mainModel>/igHtml1}"/>
+                                        </VBox>
+                                    </VBox>
+
                                 </VBox>
                             </VBox>
                         </VBox>
 
+                        <!-- ══════════════════════════════
+                             DERECHA: Partidos
+                        ══════════════════════════════ -->
                         <VBox class="rightCol">
 
+                            <!-- PRÓXIMO PARTIDO -->
                             <VBox class="matchWidget">
                                 <HBox class="matchWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://future" class="matchWidgetIcon"/>
@@ -100,20 +124,24 @@
                                 </HBox>
                                 <VBox class="matchWidgetBody" alignItems="Center">
                                     <Text text="Jornada 22" class="matchJornada"/>
-                                    <HBox justifyContent="SpaceAround" alignItems="Center" width="100%" class="matchTeamsRow">
+                                    <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
+
                                         <VBox alignItems="Center" class="matchTeamBox">
                                             <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
                                             <Text text="Chocolate Sexy" class="matchTeamName"/>
                                         </VBox>
+
                                         <VBox alignItems="Center" class="matchCenterBox">
                                             <Text text="VS" class="matchVsText"/>
                                         </VBox>
+
                                         <VBox alignItems="Center" class="matchTeamBox">
                                             <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
                                                 <Text text="AC" class="matchTeamLogoInitials"/>
                                             </VBox>
                                             <Text text="Águilas City" class="matchTeamName"/>
                                         </VBox>
+
                                     </HBox>
                                     <VBox alignItems="Center" class="matchInfoDetails" width="100%">
                                         <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow">
@@ -126,6 +154,7 @@
                                 </VBox>
                             </VBox>
 
+                            <!-- ÚLTIMO PARTIDO -->
                             <VBox class="matchWidget">
                                 <HBox class="matchWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://history" class="matchWidgetIcon"/>
@@ -133,11 +162,13 @@
                                 </HBox>
                                 <VBox class="matchWidgetBody" alignItems="Center">
                                     <Text text="Jornada 21" class="matchJornada"/>
-                                    <HBox justifyContent="SpaceAround" alignItems="Center" width="100%" class="matchTeamsRow">
+                                    <HBox justifyContent="SpaceAround"  width="100%" class="matchTeamsRow">
+
                                         <VBox alignItems="Center" class="matchTeamBox">
                                             <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
                                             <Text text="Chocolate Sexy" class="matchTeamName"/>
                                         </VBox>
+
                                         <VBox alignItems="Center" class="matchCenterBox">
                                             <HBox alignItems="Center" justifyContent="Center" class="matchScoreBox">
                                                 <Text text="1" class="matchScoreNum"/>
@@ -145,12 +176,14 @@
                                                 <Text text="2" class="matchScoreNum"/>
                                             </HBox>
                                         </VBox>
+
                                         <VBox alignItems="Center" class="matchTeamBox">
                                             <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
                                                 <Text text="VFC" class="matchTeamLogoInitials"/>
                                             </VBox>
                                             <Text text="VFC United" class="matchTeamName"/>
                                         </VBox>
+
                                     </HBox>
                                     <VBox alignItems="Center" class="matchInfoDetails" width="100%">
                                         <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow">
