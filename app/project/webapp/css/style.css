@@ -583,6 +583,36 @@
 
 
 /* ─────────────────────────────────────
+   Last Post Widget (izquierda)
+   ───────────────────────────────────── */
+
+.lastPostWidget {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 18px rgba(97,26,50,0.13) !important;
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+.lastPostBody.sapMVBox {
+    background: #ffffff !important;
+    padding: 0.75rem !important;        /* espacio blanco alrededor del embed */
+    overflow: visible !important;
+}
+
+/* Forzar el embed a caber en la columna */
+.lastPostBody .igPostCropContainer {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.lastPostBody .igPostCropContainer .instagram-media,
+.lastPostBody .igPostCropContainer iframe {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* ─────────────────────────────────────
    Standings Widget
    ───────────────────────────────────── */
 
@@ -592,6 +622,9 @@
     box-shadow: 0 4px 18px rgba(97,26,50,0.13);
     overflow: hidden;
     width: 100%;
+
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .standingsWidgetHeader.sapMHBox {
@@ -619,6 +652,10 @@
 .standingsTableWrapper.sapMVBox {
     gap: 0 !important;
     padding: 0 !important;
+
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .standingsTHead.sapMHBox {
@@ -641,10 +678,13 @@
 }
 
 .standingsTRow.sapMHBox {
-    padding: 0.55rem 0.9rem !important;
+    padding: 0 0.9rem !important;
     border-bottom: 1px solid #f3f4f6 !important;
     align-items: center !important;
     transition: background-color 0.15s !important;
+
+    flex: 1 1 auto !important;
+    min-height: 52px !important;
 }
 
 .standingsTRow.sapMHBox:last-child {
@@ -685,6 +725,113 @@
 .sTDOwn.sapMText {
     font-weight: 800 !important;
     color: #611a32 !important;
+}
+
+/* DG colors */
+.sTDDGPos.sapMText {
+    color: #16a34a !important;
+    font-weight: 700 !important;
+}
+.sTDDGNeg.sapMText {
+    color: #dc2626 !important;
+    font-weight: 700 !important;
+}
+
+
+/* ─────────────────────────────────────
+   News Widget — lista de tarjetas
+   ───────────────────────────────────── */
+
+.newsListBody.sapMVBox {
+    padding: 0.5rem 0 1rem !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+}
+
+/* Grupo fecha: línea + tarjeta */
+.newsDateGroup.sapMVBox {
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Cabecera de fecha: igual que el antiguo csNewsPostHeader */
+.newsDateHeader.sapMHBox {
+    width: 100% !important;
+    padding: 0.8rem 1.2rem 0.6rem !important;
+    border-bottom: 2px solid #f3f4f6 !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+.newsDateLabel.sapMText {
+    font-size: 0.78rem !important;
+    color: #9ca3af !important;
+    font-weight: 500 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Tarjeta de noticia — inset del padre, hover scale */
+.newsCard.sapMHBox {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07) !important;
+    min-height: 80px !important;
+    background: #ffffff !important;
+    border: 1px solid #f3f4f6 !important;
+    align-items: stretch !important;
+    margin: 0 1.2rem !important;       /* inset del contenedor padre */
+    cursor: pointer !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+.newsCard.sapMHBox:hover {
+    transform: scale(1.025) !important;
+    box-shadow: 0 6px 22px rgba(97,26,50,0.18) !important;
+}
+
+/* Caja del emoji — fondo de color */
+.newsCardEmojiBox.sapMVBox {
+    flex: 0 0 72px !important;
+    min-width: 72px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+.newsCardEmojiRed.sapMVBox  { background: #fef2f2 !important; }
+.newsCardEmojiBlue.sapMVBox { background: #eff6ff !important; }
+
+/* Emoji grande, altura del card */
+.newsCardEmoji.sapMText {
+    font-size: 2.2rem !important;
+    line-height: 1 !important;
+    text-align: center !important;
+}
+
+/* Contenido de texto */
+.newsCardContent.sapMVBox {
+    flex: 1 1 auto !important;
+    padding: 0.65rem 0.9rem !important;
+    gap: 0.2rem !important;
+    justify-content: center !important;
+}
+
+.newsCardTitle.sapMText {
+    font-size: 0.88rem !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+    letter-spacing: 0.3px !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.newsCardSubtitle.sapMText {
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    color: #6b7280 !important;
+    line-height: 1.35 !important;
 }
 
 
@@ -1302,21 +1449,14 @@
     background: #ffffff !important;
 }
 
-/* RECORTE REAL DEL FINAL */
+/* RECORTE REAL DEL FINAL — sin overlay, altura exacta hasta "27 Me gusta" */
 .igPostCropContainer {
-    height: 635px !important; /* corta justo debajo de 27 Me gusta */
+    height: 578px !important;
 }
 
-/* tapa blanca para esconder chocolatasexyoficial */
+/* ELIMINADO: tapa blanca de abajo (ya no necesaria con la altura ajustada) */
 .igPostCropContainer::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    background: #ffffff;
-    z-index: 9999;
+    display: none !important;
 }
 
 /* Contenedor del post */

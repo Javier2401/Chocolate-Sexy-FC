@@ -15,69 +15,21 @@
                     <HBox wrap="Wrap" class="mainGrid">
 
                         <!-- ══════════════════════════════
-                             IZQUIERDA: Clasificación
+                             IZQUIERDA: Último Post
                         ══════════════════════════════ -->
                         <VBox class="leftCol">
-                            <VBox class="standingsWidget">
-                                <HBox class="standingsWidgetHeader" justifyContent="Center">
-                                    <core:Icon src="sap-icon://performance" class="standingsHeaderIcon"/>
-                                    <Text text="Clasificación" class="standingsHeaderTitle"/>
+                            <VBox class="lastPostWidget">
+                                <HBox class="newsWidgetHeader" justifyContent="Center">
+                                    <core:Icon src="sap-icon://camera" class="newsWidgetIcon"/>
+                                    <Text text="Último Post" class="newsWidgetTitle"/>
                                 </HBox>
-                                <VBox class="standingsTableWrapper">
-                                    <HBox class="standingsTHead">
-                                        <Text text="Pos"    width="50px"  class="sTH"/>
-                                        <Text text="Equipo" width="165px" class="sTH"/>
-                                        <Text text="Pts"    width="60px"  class="sTH sTHCenter"/>
-                                        <Text text="PJ"     width="60px"  class="sTH sTHCenter"/>
-                                    </HBox>
-                                    <HBox class="standingsTRow">
-                                        <Text text="1º"        width="50px"  class="sTD"/>
-                                        <Text text="Equipo A"  width="165px" class="sTD sTDTeam"/>
-                                        <Text text="45"        width="60px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
-                                    </HBox>
-                                    <HBox class="standingsTRow">
-                                        <Text text="2º"        width="50px"  class="sTD"/>
-                                        <Text text="Equipo B"  width="165px" class="sTD sTDTeam"/>
-                                        <Text text="42"        width="60px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
-                                    </HBox>
-                                    <HBox class="standingsTRow">
-                                        <Text text="3º"        width="50px"  class="sTD"/>
-                                        <Text text="Equipo C"  width="165px" class="sTD sTDTeam"/>
-                                        <Text text="38"        width="60px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
-                                    </HBox>
-                                    <HBox class="standingsTRow">
-                                        <Text text="4º"        width="50px"  class="sTD"/>
-                                        <Text text="Equipo D"  width="165px" class="sTD sTDTeam"/>
-                                        <Text text="35"        width="60px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
-                                    </HBox>
-                                    <HBox class="standingsTRow">
-                                        <Text text="5º"        width="50px"  class="sTD"/>
-                                        <Text text="Yellow FC" width="165px" class="sTD sTDTeam"/>
-                                        <Text text="33"        width="60px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
-                                    </HBox>
-                                    <HBox class="standingsTRow standingsTRowOwn">
-                                        <Text text="6º"         width="50px"  class="sTD sTDOwn"/>
-                                        <Text text="Choc. Sexy" width="165px" class="sTD sTDTeam sTDOwn"/>
-                                        <Text text="30"         width="60px"  class="sTD sTDCenter sTDOwn"/>
-                                        <Text text="22"         width="60px"  class="sTD sTDCenter sTDOwn"/>
-                                    </HBox>
-                                    <HBox class="standingsTRow">
-                                        <Text text="7º"        width="50px"  class="sTD"/>
-                                        <Text text="Equipo F"  width="165px" class="sTD sTDTeam"/>
-                                        <Text text="28"        width="60px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
-                                    </HBox>
-                                    <HBox class="standingsTRow">
-                                        <Text text="8º"         width="50px"  class="sTD"/>
-                                        <Text text="VFC United" width="165px" class="sTD sTDTeam"/>
-                                        <Text text="20"         width="60px"  class="sTD sTDCenter"/>
-                                        <Text text="22"         width="60px"  class="sTD sTDCenter"/>
-                                    </HBox>
+                                <VBox class="lastPostBody">
+                                    <VBox class="igPostCropContainer igPostLarge">
+                                        <core:HTML
+                                            id="igPost1"
+                                            sanitizeContent="false"
+                                            content="{mainModel>/igHtml1}"/>
+                                    </VBox>
                                 </VBox>
                             </VBox>
                         </VBox>
@@ -91,21 +43,38 @@
                                     <core:Icon src="sap-icon://newspaper" class="newsWidgetIcon"/>
                                     <Text text="Noticias" class="newsWidgetTitle"/>
                                 </HBox>
-                                <VBox class="newsWidgetBody">
+                                <VBox class="newsWidgetBody newsListBody">
 
-                                    <!-- ── POST 1 ── -->
-                                    <VBox class="csNewsPost">
-                                        <HBox class="csNewsPostHeader" justifyContent="SpaceBetween" alignItems="Center">
-                                            <Text text="Últimas novedades del club" class="csNewsPostTitle"/>
-                                            <Text text="10 May 2026" class="csNewsPostDate"/>
+                                    <!-- Grupo fecha 10 May -->
+                                    <VBox class="newsDateGroup">
+                                        <HBox class="newsDateHeader" justifyContent="End" alignItems="Center">
+                                            <Text text="10 May 2026" class="newsDateLabel"/>
                                         </HBox>
-                                        <VBox class="igPostCropContainer">
-                                            <core:HTML
-                                                id="igPost1"
-                                                sanitizeContent="false"
-                                                content="{mainModel>/igHtml1}"/>
-                                        </VBox>
+                                        <HBox class="newsCard newsCardRed" alignItems="Stretch">
+                                            <VBox class="newsCardEmojiBox newsCardEmojiRed" justifyContent="Center" alignItems="Center">
+                                                <Text text="🏥" class="newsCardEmoji"/>
+                                            </VBox>
+                                            <VBox class="newsCardContent" justifyContent="Center">
+                                                <Text text="COMUNICADO LESIÓN" class="newsCardTitle" wrapping="false"/>
+                                                <Text text="Pato se perderá las próximas 3 jornadas" class="newsCardSubtitle" wrapping="true"/>
+                                            </VBox>
+                                        </HBox>
+                                    </VBox>
 
+                                    <!-- Grupo fecha 9 May -->
+                                    <VBox class="newsDateGroup">
+                                        <HBox class="newsDateHeader" justifyContent="End" alignItems="Center">
+                                            <Text text="9 May 2026" class="newsDateLabel"/>
+                                        </HBox>
+                                        <HBox class="newsCard newsCardBlue" alignItems="Stretch">
+                                            <VBox class="newsCardEmojiBox newsCardEmojiBlue" justifyContent="Center" alignItems="Center">
+                                                <Text text="👕" class="newsCardEmoji"/>
+                                            </VBox>
+                                            <VBox class="newsCardContent" justifyContent="Center">
+                                                <Text text="COMUNICADO JUGADOR" class="newsCardTitle" wrapping="false"/>
+                                                <Text text="Adiós sergi, gracias por nada" class="newsCardSubtitle" wrapping="true"/>
+                                            </VBox>
+                                        </HBox>
                                     </VBox>
 
                                 </VBox>
@@ -113,9 +82,48 @@
                         </VBox>
 
                         <!-- ══════════════════════════════
-                             DERECHA: Partidos
+                             DERECHA: Clasificación + Partidos
                         ══════════════════════════════ -->
                         <VBox class="rightCol">
+
+                            <!-- CLASIFICACIÓN -->
+                            <VBox class="standingsWidget fitStandings">
+                                <HBox class="standingsWidgetHeader" justifyContent="Center">
+                                    <core:Icon src="sap-icon://performance" class="standingsHeaderIcon"/>
+                                    <Text text="Clasificación" class="standingsHeaderTitle"/>
+                                </HBox>
+                                <VBox class="standingsTableWrapper">
+                                    <HBox class="standingsTHead">
+                                        <Text text="Pos"    width="36px"  class="sTH"/>
+                                        <Text text="Equipo" width="125px" class="sTH"/>
+                                        <Text text="Pts"    width="48px"  class="sTH sTHCenter"/>
+                                        <Text text="PJ"     width="48px"  class="sTH sTHCenter"/>
+                                        <Text text="DG"     width="54px"  class="sTH sTHCenter"/>
+                                        <Text text="ÚLTIMOS 5"     width="30px"  class="sTH sTHCenter"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow">
+                                        <Text text="5º"        width="36px"  class="sTD"/>
+                                        <Text text="Yellow FC" width="125px" class="sTD sTDTeam"/>
+                                        <Text text="33"        width="48px"  class="sTD sTDCenter"/>
+                                        <Text text="22"        width="48px"  class="sTD sTDCenter"/>
+                                        <Text text="+5"        width="54px"  class="sTD sTDCenter sTDDGPos"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow standingsTRowOwn">
+                                        <Text text="6º"         width="36px"  class="sTD sTDOwn"/>
+                                        <Text text="Choc. Sexy" width="125px" class="sTD sTDTeam sTDOwn"/>
+                                        <Text text="30"         width="48px"  class="sTD sTDCenter sTDOwn"/>
+                                        <Text text="22"         width="48px"  class="sTD sTDCenter sTDOwn"/>
+                                        <Text text="-3"         width="54px"  class="sTD sTDCenter sTDDGNeg sTDOwn"/>
+                                    </HBox>
+                                    <HBox class="standingsTRow">
+                                        <Text text="7º"        width="36px"  class="sTD"/>
+                                        <Text text="Equipo F"  width="125px" class="sTD sTDTeam"/>
+                                        <Text text="28"        width="48px"  class="sTD sTDCenter"/>
+                                        <Text text="22"        width="48px"  class="sTD sTDCenter"/>
+                                        <Text text="-11"       width="54px"  class="sTD sTDCenter sTDDGNeg"/>
+                                    </HBox>
+                                </VBox>
+                            </VBox>
 
                             <!-- ÚLTIMO PARTIDO -->
                             <VBox class="matchWidget">
@@ -125,7 +133,7 @@
                                 </HBox>
                                 <VBox class="matchWidgetBody" alignItems="Center">
                                     <Text text="Jornada 21" class="matchJornada"/>
-                                    <HBox justifyContent="SpaceAround"  width="100%" class="matchTeamsRow">
+                                    <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
 
                                         <VBox alignItems="Center" class="matchTeamBox">
                                             <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
