@@ -25,12 +25,13 @@
     width: 100% !important;
 }
 
+/* ── CAMBIO: eliminado max-width: 1200px para que los contenedores
+   vayan a los laterales del todo cuando haya espacio ── */
 .pageContent,
 .pageContent.sapMVBox {
     flex: 1 1 auto !important;
-    max-width: 1200px;
-    margin: 2rem auto !important;
-    padding: 0 1.5rem;
+    margin: 2rem 0 !important;
+    padding: 0 4rem;
     width: 100%;
     box-sizing: border-box;
     gap: 1.5rem;
@@ -360,27 +361,32 @@
    MAIN — Grid de 3 columnas
    ═══════════════════════════════════════════════════════════════ */
 
+/* ── CAMBIO: gap aumentado a 2rem para mayor separación visual
+   entre noticias y los demás contenedores ── */
 .mainGrid.sapMHBox {
-    gap: 1.25rem !important;
     align-items: flex-start !important;
     flex-wrap: wrap !important;
+    width: 100% !important;
+    justify-content: space-between !important;
 }
 
-/* LEFT: Clasificación */
+/* LEFT: Clasificación — 340px para la tabla ampliada (50+165+60+60=335px) */
 .leftCol.sapMVBox {
-    flex: 0 0 265px !important;
-    min-width: 250px !important;
+    flex: 0 0 340px !important;
+    min-width: 340px !important;
 }
 
-/* MIDDLE: Noticias — más ancho */
+/* MIDDLE: Noticias — más ancho, contenido centrado */
 .middleCol.sapMVBox {
-    flex: 1 1 330px !important;
+    flex: 0 0 760px !important;
     min-width: 0 !important;
+    align-items: center !important;
 }
 
+/* RIGHT: Partidos — más ancho */
 .rightCol.sapMVBox {
-    flex: 0 0 430px !important;
-    min-width: 360px !important;
+    flex: 0 0 440px !important;
+    min-width: 400px !important;
     gap: 1rem !important;
 }
 
@@ -409,9 +415,10 @@
     font-size: 1rem !important;
 }
 
+/* ── CAMBIO: fuente más grande ── */
 .matchWidgetTitle.sapMText {
     color: #ffffff !important;
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.8px !important;
     text-transform: uppercase !important;
@@ -423,8 +430,9 @@
     gap: 0.5rem !important;
 }
 
+/* ── CAMBIO: fuente más grande ── */
 .matchJornada.sapMText {
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     font-weight: 800 !important;
     color: #611a32 !important;
     text-align: center !important;
@@ -459,8 +467,8 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
     flex-shrink: 0 !important;
     box-sizing: border-box !important;
-    display: block !important;          /* ← AÑADIR */
-    margin-bottom: 0.35rem !important;  /* ← AÑADIR */
+    display: block !important;
+    margin-bottom: 0.35rem !important;
 }
 
 .matchTeamLogoPlaceholder.sapMVBox {
@@ -474,7 +482,7 @@
     flex-shrink: 0 !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-bottom: 0.35rem !important;  /* ← AÑADIR */
+    margin-bottom: 0.35rem !important;
 }
 
 .matchTeamLogoInitials.sapMText {
@@ -485,8 +493,9 @@
     text-align: center !important;
 }
 
+/* ── CAMBIO: fuente más grande ── */
 .matchTeamName.sapMText {
-    font-size: 0.78rem !important;
+    font-size: 0.88rem !important;
     font-weight: 700 !important;
     color: #374151 !important;
     text-align: center !important;
@@ -496,17 +505,21 @@
     text-overflow: ellipsis !important;
 }
 
+/* ── CAMBIO: padding-top reducido a 10px para alinear VS y marcador
+   con los escudos. Con VS a 2.5rem (20px de semialtura):
+   10 + 20 = 30px ≈ centro del escudo (29px). ── */
 .matchCenterBox.sapMVBox {
     align-items: center !important;
     justify-content: flex-start !important;
-    flex: 0 0 72px !important;
+    flex: 0 0 80px !important;
     min-height: 58px !important;
-    padding-top: 18px !important;
+    padding-top: 10px !important;
     align-self: flex-start !important;
 }
 
+/* ── CAMBIO: VS más grande (2.5rem) ── */
 .matchVsText.sapMText {
-    font-size: 1.5rem !important;
+    font-size: 2.5rem !important;
     font-weight: 900 !important;
     color: #611a32 !important;
     letter-spacing: 2px !important;
@@ -514,6 +527,7 @@
     margin-top: 0 !important;
 }
 
+/* ── CAMBIO: eliminado margin-top: 14px que bajaba el marcador ── */
 .matchScoreBox.sapMHBox {
     gap: 0.1rem !important;
     align-items: center !important;
@@ -522,18 +536,19 @@
     border-radius: 10px !important;
     padding: 0.3rem 0.55rem !important;
     border: 1px solid #e5e7eb !important;
-    margin-top: 14px !important;
+    margin-top: 0 !important;
 }
 
+/* ── CAMBIO: fuente más grande ── */
 .matchScoreNum.sapMText {
-    font-size: 1.65rem !important;
+    font-size: 1.8rem !important;
     font-weight: 900 !important;
     color: #111827 !important;
     line-height: 1 !important;
 }
 
 .matchScoreDash.sapMText {
-    font-size: 1.1rem !important;
+    font-size: 1.2rem !important;
     color: #9ca3af !important;
     font-weight: 400 !important;
 }
@@ -553,8 +568,9 @@
     gap: 0.1rem !important;
 }
 
+/* ── CAMBIO: fuente más grande ── */
 .matchInfoText.sapMText {
-    font-size: 0.82rem !important;
+    font-size: 0.92rem !important;
     color: #6b7280 !important;
     font-weight: 500 !important;
     text-align: center !important;
@@ -562,7 +578,7 @@
 
 .matchInfoDot.sapMText {
     color: #d1d5db !important;
-    font-size: 0.82rem !important;
+    font-size: 0.92rem !important;
 }
 
 
@@ -575,6 +591,7 @@
     border-radius: 16px;
     box-shadow: 0 4px 18px rgba(97,26,50,0.13);
     overflow: hidden;
+    width: 100%;
 }
 
 .standingsWidgetHeader.sapMHBox {
@@ -612,7 +629,7 @@
 }
 
 .sTH.sapMText {
-    font-size: 0.72rem !important;
+    font-size: 0.85rem !important;
     font-weight: 800 !important;
     color: #9ca3af !important;
     text-transform: uppercase !important;
@@ -648,7 +665,7 @@
 }
 
 .sTD.sapMText {
-    font-size: 0.9rem !important;
+    font-size: 1.05rem !important;
     color: #374151 !important;
     font-weight: 500 !important;
 }
@@ -683,6 +700,7 @@
     display: flex;
     flex-direction: column;
     min-height: 320px;
+    width: 100%;
 }
 
 .newsWidgetHeader.sapMHBox {
@@ -1146,6 +1164,7 @@
     padding: 1rem 1rem 0.75rem !important;
     gap: 0.75rem !important;
     border-bottom: 1px solid #f3f4f6 !important;
+    align-items: center !important;
 }
 
 .csNewsPost.sapMVBox:last-child {
@@ -1180,19 +1199,21 @@
 .csNewsPostContent.sapMVBox {
     width: 100% !important;
     gap: 1rem !important;
-    align-items: stretch !important;
+    align-items: center !important;
 }
 
 .csInstagramWrapper {
     width: 100% !important;
-    display: block !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
 }
 
 .csInstagramWrapper .instagram-media {
     margin: 0 auto !important;
     min-width: 0 !important;
-    max-width: 100% !important;
-    width: calc(100% - 2px) !important;
+    max-width: 540px !important;
+    width: 100% !important;
 }
 
 .csNewsEmptyText.sapMText {
@@ -1203,6 +1224,133 @@
     padding: 2rem 0 !important;
     width: 100% !important;
 }
+
+/* ═══════════════════════════════════════
+   NEWS POST HORIZONTAL
+═══════════════════════════════════════ */
+
+.csNewsPost {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.4rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 1rem;
+}
+
+.csNewsPostContent {
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* Instagram izquierda */
+.csNewsInstagramBox {
+    flex: 0 0 340px;
+    max-width: 340px;
+}
+
+/* reduce tamaño embed */
+.csNewsInstagramBox blockquote {
+    min-width: unset !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* info derecha */
+.csNewsInfoBox {
+    flex: 1;
+    justify-content: center;
+    gap: 1rem;
+    min-width: 250px;
+}
+
+.csNewsInfoTitle {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #111827;
+}
+
+.csNewsInfoText {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #6b7280;
+}
+
+.csNewsMetaRow {
+    align-items: center;
+    gap: 0.5rem;
+    color: #9ca3af;
+}
+
+/* CONTENEDOR DEL EMBED */
+.igPostCropContainer {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    overflow: hidden !important;
+    border-radius: 18px !important;
+    background: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* iframe / embed */
+.igPostCropContainer iframe,
+.igPostCropContainer .instagram-media {
+    display: block !important;
+    border: none !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+}
+
+/* RECORTE REAL DEL FINAL */
+.igPostCropContainer {
+    height: 635px !important; /* corta justo debajo de 27 Me gusta */
+}
+
+/* tapa blanca para esconder chocolatasexyoficial */
+.igPostCropContainer::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+    z-index: 9999;
+}
+
+/* Contenedor del post */
+.csNewsPostContent{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Quitar esquinas raras del embed */
+.csNewsPostContent .instagram-media{
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 620px !important;
+    overflow: hidden !important;
+    background: white !important;
+}
+
+/* Quitar espacio sobrante abajo */
+.csNewsPostContent iframe{
+    border-radius: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Recortar todo lo que sobresale */
+.csNewsPost{
+    overflow: hidden;
+}
+
+
+
 
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
@@ -1236,7 +1384,7 @@
     .footerContent { flex-wrap: wrap !important; justify-content: center !important; gap: 1rem !important; padding: 1rem 0.8rem !important; }
     .footerLeft { justify-content: center !important; }
     .footerRight { align-items: center !important; }
-    .pageContent { padding: 0 0.6rem; margin: 0.8rem auto !important; }
+    .pageContent { padding: 0 0.6rem; margin: 0.8rem 0 !important; }
     /* Left + middle stay side by side on mobile */
     .leftCol.sapMVBox  { flex: 0 0 220px !important; min-width: 0 !important; }
     .middleCol.sapMVBox { flex: 1 1 130px !important; min-width: 0 !important; }

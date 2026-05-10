@@ -25,58 +25,58 @@
                                 </HBox>
                                 <VBox class="standingsTableWrapper">
                                     <HBox class="standingsTHead">
-                                        <Text text="Pos"    width="36px"  class="sTH"/>
-                                        <Text text="Equipo" width="118px" class="sTH"/>
-                                        <Text text="Pts"    width="44px"  class="sTH sTHCenter"/>
-                                        <Text text="PJ"     width="44px"  class="sTH sTHCenter"/>
+                                        <Text text="Pos"    width="50px"  class="sTH"/>
+                                        <Text text="Equipo" width="165px" class="sTH"/>
+                                        <Text text="Pts"    width="60px"  class="sTH sTHCenter"/>
+                                        <Text text="PJ"     width="60px"  class="sTH sTHCenter"/>
                                     </HBox>
                                     <HBox class="standingsTRow">
-                                        <Text text="1º"        width="36px"  class="sTD"/>
-                                        <Text text="Equipo A"  width="118px" class="sTD sTDTeam"/>
-                                        <Text text="45"        width="44px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="44px"  class="sTD sTDCenter"/>
+                                        <Text text="1º"        width="50px"  class="sTD"/>
+                                        <Text text="Equipo A"  width="165px" class="sTD sTDTeam"/>
+                                        <Text text="45"        width="60px"  class="sTD sTDCenter"/>
+                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
                                     </HBox>
                                     <HBox class="standingsTRow">
-                                        <Text text="2º"        width="36px"  class="sTD"/>
-                                        <Text text="Equipo B"  width="118px" class="sTD sTDTeam"/>
-                                        <Text text="42"        width="44px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="44px"  class="sTD sTDCenter"/>
+                                        <Text text="2º"        width="50px"  class="sTD"/>
+                                        <Text text="Equipo B"  width="165px" class="sTD sTDTeam"/>
+                                        <Text text="42"        width="60px"  class="sTD sTDCenter"/>
+                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
                                     </HBox>
                                     <HBox class="standingsTRow">
-                                        <Text text="3º"        width="36px"  class="sTD"/>
-                                        <Text text="Equipo C"  width="118px" class="sTD sTDTeam"/>
-                                        <Text text="38"        width="44px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="44px"  class="sTD sTDCenter"/>
+                                        <Text text="3º"        width="50px"  class="sTD"/>
+                                        <Text text="Equipo C"  width="165px" class="sTD sTDTeam"/>
+                                        <Text text="38"        width="60px"  class="sTD sTDCenter"/>
+                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
                                     </HBox>
                                     <HBox class="standingsTRow">
-                                        <Text text="4º"        width="36px"  class="sTD"/>
-                                        <Text text="Equipo D"  width="118px" class="sTD sTDTeam"/>
-                                        <Text text="35"        width="44px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="44px"  class="sTD sTDCenter"/>
+                                        <Text text="4º"        width="50px"  class="sTD"/>
+                                        <Text text="Equipo D"  width="165px" class="sTD sTDTeam"/>
+                                        <Text text="35"        width="60px"  class="sTD sTDCenter"/>
+                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
                                     </HBox>
                                     <HBox class="standingsTRow">
-                                        <Text text="5º"        width="36px"  class="sTD"/>
-                                        <Text text="Yellow FC" width="118px" class="sTD sTDTeam"/>
-                                        <Text text="33"        width="44px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="44px"  class="sTD sTDCenter"/>
+                                        <Text text="5º"        width="50px"  class="sTD"/>
+                                        <Text text="Yellow FC" width="165px" class="sTD sTDTeam"/>
+                                        <Text text="33"        width="60px"  class="sTD sTDCenter"/>
+                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
                                     </HBox>
                                     <HBox class="standingsTRow standingsTRowOwn">
-                                        <Text text="6º"         width="36px"  class="sTD sTDOwn"/>
-                                        <Text text="Choc. Sexy" width="118px" class="sTD sTDTeam sTDOwn"/>
-                                        <Text text="30"         width="44px"  class="sTD sTDCenter sTDOwn"/>
-                                        <Text text="22"         width="44px"  class="sTD sTDCenter sTDOwn"/>
+                                        <Text text="6º"         width="50px"  class="sTD sTDOwn"/>
+                                        <Text text="Choc. Sexy" width="165px" class="sTD sTDTeam sTDOwn"/>
+                                        <Text text="30"         width="60px"  class="sTD sTDCenter sTDOwn"/>
+                                        <Text text="22"         width="60px"  class="sTD sTDCenter sTDOwn"/>
                                     </HBox>
                                     <HBox class="standingsTRow">
-                                        <Text text="7º"        width="36px"  class="sTD"/>
-                                        <Text text="Equipo F"  width="118px" class="sTD sTDTeam"/>
-                                        <Text text="28"        width="44px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="44px"  class="sTD sTDCenter"/>
+                                        <Text text="7º"        width="50px"  class="sTD"/>
+                                        <Text text="Equipo F"  width="165px" class="sTD sTDTeam"/>
+                                        <Text text="28"        width="60px"  class="sTD sTDCenter"/>
+                                        <Text text="22"        width="60px"  class="sTD sTDCenter"/>
                                     </HBox>
                                     <HBox class="standingsTRow">
-                                        <Text text="8º"         width="36px"  class="sTD"/>
-                                        <Text text="VFC United" width="118px" class="sTD sTDTeam"/>
-                                        <Text text="20"         width="44px"  class="sTD sTDCenter"/>
-                                        <Text text="22"         width="44px"  class="sTD sTDCenter"/>
+                                        <Text text="8º"         width="50px"  class="sTD"/>
+                                        <Text text="VFC United" width="165px" class="sTD sTDTeam"/>
+                                        <Text text="20"         width="60px"  class="sTD sTDCenter"/>
+                                        <Text text="22"         width="60px"  class="sTD sTDCenter"/>
                                     </HBox>
                                 </VBox>
                             </VBox>
@@ -99,12 +99,13 @@
                                             <Text text="Últimas novedades del club" class="csNewsPostTitle"/>
                                             <Text text="10 May 2026" class="csNewsPostDate"/>
                                         </HBox>
-                                        <VBox class="csNewsPostContent">
+                                        <VBox class="igPostCropContainer">
                                             <core:HTML
                                                 id="igPost1"
                                                 sanitizeContent="false"
                                                 content="{mainModel>/igHtml1}"/>
                                         </VBox>
+
                                     </VBox>
 
                                 </VBox>
@@ -115,44 +116,6 @@
                              DERECHA: Partidos
                         ══════════════════════════════ -->
                         <VBox class="rightCol">
-
-                            <!-- PRÓXIMO PARTIDO -->
-                            <VBox class="matchWidget">
-                                <HBox class="matchWidgetHeader" justifyContent="Center">
-                                    <core:Icon src="sap-icon://future" class="matchWidgetIcon"/>
-                                    <Text text="Próximo Partido" class="matchWidgetTitle"/>
-                                </HBox>
-                                <VBox class="matchWidgetBody" alignItems="Center">
-                                    <Text text="Jornada 22" class="matchJornada"/>
-                                    <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
-
-                                        <VBox alignItems="Center" class="matchTeamBox">
-                                            <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
-                                            <Text text="Chocolate Sexy" class="matchTeamName"/>
-                                        </VBox>
-
-                                        <VBox alignItems="Center" class="matchCenterBox">
-                                            <Text text="VS" class="matchVsText"/>
-                                        </VBox>
-
-                                        <VBox alignItems="Center" class="matchTeamBox">
-                                            <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
-                                                <Text text="AC" class="matchTeamLogoInitials"/>
-                                            </VBox>
-                                            <Text text="Águilas City" class="matchTeamName"/>
-                                        </VBox>
-
-                                    </HBox>
-                                    <VBox alignItems="Center" class="matchInfoDetails" width="100%">
-                                        <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow">
-                                            <Text text="📅 Dom, 01 Mar" class="matchInfoText"/>
-                                            <Text text=" · " class="matchInfoDot"/>
-                                            <Text text="⏰ 17:00" class="matchInfoText"/>
-                                        </HBox>
-                                        <Text text="📍 Campo Municipal" class="matchInfoText"/>
-                                    </VBox>
-                                </VBox>
-                            </VBox>
 
                             <!-- ÚLTIMO PARTIDO -->
                             <VBox class="matchWidget">
@@ -192,6 +155,44 @@
                                             <Text text="⏰ 18:00" class="matchInfoText"/>
                                         </HBox>
                                         <Text text="📍 Estadio Nuevo" class="matchInfoText"/>
+                                    </VBox>
+                                </VBox>
+                            </VBox>
+
+                            <!-- PRÓXIMO PARTIDO -->
+                            <VBox class="matchWidget">
+                                <HBox class="matchWidgetHeader" justifyContent="Center">
+                                    <core:Icon src="sap-icon://future" class="matchWidgetIcon"/>
+                                    <Text text="Próximo Partido" class="matchWidgetTitle"/>
+                                </HBox>
+                                <VBox class="matchWidgetBody" alignItems="Center">
+                                    <Text text="Jornada 22" class="matchJornada"/>
+                                    <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
+
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
+                                            <Text text="Chocolate Sexy" class="matchTeamName"/>
+                                        </VBox>
+
+                                        <VBox alignItems="Center" class="matchCenterBox">
+                                            <Text text="VS" class="matchVsText"/>
+                                        </VBox>
+
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
+                                                <Text text="AC" class="matchTeamLogoInitials"/>
+                                            </VBox>
+                                            <Text text="Águilas City" class="matchTeamName"/>
+                                        </VBox>
+
+                                    </HBox>
+                                    <VBox alignItems="Center" class="matchInfoDetails" width="100%">
+                                        <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow">
+                                            <Text text="📅 Dom, 01 Mar" class="matchInfoText"/>
+                                            <Text text=" · " class="matchInfoDot"/>
+                                            <Text text="⏰ 17:00" class="matchInfoText"/>
+                                        </HBox>
+                                        <Text text="📍 Campo Municipal" class="matchInfoText"/>
                                     </VBox>
                                 </VBox>
                             </VBox>
