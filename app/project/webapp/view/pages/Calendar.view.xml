@@ -14,9 +14,55 @@
                 <VBox class="pageContent">
                     <VBox class="calendarSection">
 
-                        <!-- ══════════════════════════════════════════════════
-                             TEMPORADA 2025/26
-                        ══════════════════════════════════════════════════ -->
+                    <VBox class="calSeasonBlock">
+                            <HBox class="calSeasonBlockHeader">
+                                <HBox class="calSeasonBlockTitleArea">
+                                    <core:Icon src="sap-icon://calendar" class="calSeasonBlockIcon"/>
+                                    <Text text="Temporada 2026/27" class="calSeasonBlockTitle"/>
+                                </HBox>
+                                <Button icon="sap-icon://navigation-up-arrow" class="calSeasonToggleBtn" press="onToggleSeasonBlock"/>
+                            </HBox>
+
+                            <VBox class="calSeasonContent" id="seasonContent2627">
+
+                                <VBox class="calMonthBlock calMonthBlock-coral">
+                                    <HBox class="calMonthHeader">
+                                        <Text text="Septiembre 2026" class="calMonthTitle"/>
+                                    </HBox>
+
+                                    <VBox class="calMatchCard">
+                                        <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                            <Text text="J1 · Liga" class="calJornada"/>
+                                            <Text text="PENDIENTE" class="calBadge calPendiente"/>
+                                        </HBox>
+                                        <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
+                                            <VBox class="calTeamBox" alignItems="Center">
+                                                <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
+                                                <Text text="Chocolate Sexy" class="calTeamName"/>
+                                            </VBox>
+                                            <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                                <Text text="- : -" class="calScoreText"/>
+                                            </VBox>
+                                            <VBox class="calTeamBox" alignItems="Center">
+                                                <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                                    <Text text="RV" class="calTeamInitials"/>
+                                                </VBox>
+                                                <Text text="Real Valencia" class="calTeamName"/>
+                                            </VBox>
+                                        </HBox>
+                                        <VBox class="calMatchInfo" alignItems="Center">
+                                            <Text text="Dom, 13 Sep 2026 · 17:00" class="calInfoText"/>
+                                            <Text text="📍 Campo Municipal" class="calInfoText"/>
+                                        </VBox>
+                                    </VBox>
+
+                                </VBox>
+
+                            </VBox>
+
+                        </VBox>
+
+
                         <VBox class="calSeasonBlock">
                             <HBox class="calSeasonBlockHeader">
                                 <HBox class="calSeasonBlockTitleArea">
@@ -28,13 +74,11 @@
 
                             <VBox class="calSeasonContent" id="seasonContent2526">
 
-                                <!-- ─────── SEPTIEMBRE 2025 ─────── -->
                                 <VBox class="calMonthBlock calMonthBlock-peach">
                                     <HBox class="calMonthHeader">
                                         <Text text="Septiembre 2025" class="calMonthTitle"/>
                                     </HBox>
 
-                                    <!-- J1 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="Jornada 1 · Liga" class="calJornada"/>
@@ -61,7 +105,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J2 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J2 · Liga" class="calJornada"/>
@@ -88,7 +131,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J3 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J3 · Liga" class="calJornada"/>
@@ -116,10 +158,8 @@
                                     </VBox>
 
                                 </VBox>
-                                <!-- /SEPTIEMBRE 2025 -->
 
 
-                                <!-- ─────── OCTUBRE 2025 ─────── -->
                                 <VBox class="calMonthBlock calMonthBlock-sky">
                                     <HBox class="calMonthHeader">
                                         <Text text="Octubre 2025" class="calMonthTitle"/>
@@ -152,7 +192,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J5 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J5 · Liga" class="calJornada"/>
@@ -179,7 +218,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J6 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J6 · Liga" class="calJornada"/>
@@ -206,7 +244,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J7 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J7 · Liga" class="calJornada"/>
@@ -234,16 +271,13 @@
                                     </VBox>
 
                                 </VBox>
-                                <!-- /OCTUBRE 2025 -->
 
 
-                                <!-- ─────── NOVIEMBRE 2025 ─────── -->
                                 <VBox class="calMonthBlock calMonthBlock-sage">
                                     <HBox class="calMonthHeader">
                                         <Text text="Noviembre 2025" class="calMonthTitle"/>
                                     </HBox>
 
-                                    <!-- J8 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J8 · Liga" class="calJornada"/>
@@ -270,7 +304,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J9 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J9 · Liga" class="calJornada"/>
@@ -297,7 +330,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J10 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J10 · Liga" class="calJornada"/>
@@ -324,7 +356,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J11 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J11 · Liga" class="calJornada"/>
@@ -351,7 +382,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J12 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J12 · Liga" class="calJornada"/>
@@ -379,16 +409,13 @@
                                     </VBox>
 
                                 </VBox>
-                                <!-- /NOVIEMBRE 2025 -->
 
 
-                                <!-- ─────── DICIEMBRE 2025 ─────── -->
                                 <VBox class="calMonthBlock calMonthBlock-lavender">
                                     <HBox class="calMonthHeader">
                                         <Text text="Diciembre 2025" class="calMonthTitle"/>
                                     </HBox>
 
-                                    <!-- J13 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J13 · Liga" class="calJornada"/>
@@ -415,7 +442,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J14 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J14 · Liga" class="calJornada"/>
@@ -443,16 +469,13 @@
                                     </VBox>
 
                                 </VBox>
-                                <!-- /DICIEMBRE 2025 -->
 
 
-                                <!-- ─────── ENERO 2026 ─────── -->
                                 <VBox class="calMonthBlock calMonthBlock-golden">
                                     <HBox class="calMonthHeader">
                                         <Text text="Enero 2026" class="calMonthTitle"/>
                                     </HBox>
 
-                                    <!-- J15 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J15 · Liga" class="calJornada"/>
@@ -479,7 +502,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J16 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J16 · Liga" class="calJornada"/>
@@ -506,7 +528,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J17 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J17 · Liga" class="calJornada"/>
@@ -534,16 +555,13 @@
                                     </VBox>
 
                                 </VBox>
-                                <!-- /ENERO 2026 -->
 
 
-                                <!-- ─────── FEBRERO 2026 ─────── -->
                                 <VBox class="calMonthBlock calMonthBlock-rose">
                                     <HBox class="calMonthHeader">
                                         <Text text="Febrero 2026" class="calMonthTitle"/>
                                     </HBox>
 
-                                    <!-- J18 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J18 · Liga" class="calJornada"/>
@@ -570,7 +588,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J19 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J19 · Liga" class="calJornada"/>
@@ -597,7 +614,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J20 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J20 · Liga" class="calJornada"/>
@@ -624,7 +640,6 @@
                                         </VBox>
                                     </VBox>
 
-                                    <!-- J21 -->
                                     <VBox class="calMatchCard">
                                         <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
                                             <Text text="J21 · Liga" class="calJornada"/>
@@ -652,10 +667,8 @@
                                     </VBox>
 
                                 </VBox>
-                                <!-- /FEBRERO 2026 -->
 
 
-                                <!-- ─────── MARZO 2026 ─────── -->
                                 <VBox class="calMonthBlock calMonthBlock-teal">
                                     <HBox class="calMonthHeader">
                                         <Text text="Marzo 2026" class="calMonthTitle"/>
@@ -689,71 +702,10 @@
                                     </VBox>
 
                                 </VBox>
-                                <!-- /MARZO 2026 -->
 
                             </VBox>
-                            <!-- /seasonContent2526 -->
 
                         </VBox>
-                        <!-- /TEMPORADA 2025/26 -->
-
-
-                        <!-- ══════════════════════════════════════════════════
-                             TEMPORADA 2026/27
-                        ══════════════════════════════════════════════════ -->
-                        <VBox class="calSeasonBlock">
-                            <HBox class="calSeasonBlockHeader">
-                                <HBox class="calSeasonBlockTitleArea">
-                                    <core:Icon src="sap-icon://calendar" class="calSeasonBlockIcon"/>
-                                    <Text text="Temporada 2026/27" class="calSeasonBlockTitle"/>
-                                </HBox>
-                                <Button icon="sap-icon://navigation-up-arrow" class="calSeasonToggleBtn" press="onToggleSeasonBlock"/>
-                            </HBox>
-
-                            <VBox class="calSeasonContent" id="seasonContent2627">
-
-                                <!-- ─────── SEPTIEMBRE 2026 ─────── -->
-                                <VBox class="calMonthBlock calMonthBlock-coral">
-                                    <HBox class="calMonthHeader">
-                                        <Text text="Septiembre 2026" class="calMonthTitle"/>
-                                    </HBox>
-
-                                    <!-- J1 -->
-                                    <VBox class="calMatchCard">
-                                        <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
-                                            <Text text="J1 · Liga" class="calJornada"/>
-                                            <Text text="PENDIENTE" class="calBadge calPendiente"/>
-                                        </HBox>
-                                        <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
-                                            <VBox class="calTeamBox" alignItems="Center">
-                                                <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
-                                                <Text text="Chocolate Sexy" class="calTeamName"/>
-                                            </VBox>
-                                            <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
-                                                <Text text="- : -" class="calScoreText"/>
-                                            </VBox>
-                                            <VBox class="calTeamBox" alignItems="Center">
-                                                <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
-                                                    <Text text="RV" class="calTeamInitials"/>
-                                                </VBox>
-                                                <Text text="Real Valencia" class="calTeamName"/>
-                                            </VBox>
-                                        </HBox>
-                                        <VBox class="calMatchInfo" alignItems="Center">
-                                            <Text text="Dom, 13 Sep 2026 · 17:00" class="calInfoText"/>
-                                            <Text text="📍 Campo Municipal" class="calInfoText"/>
-                                        </VBox>
-                                    </VBox>
-
-                                </VBox>
-                                <!-- /SEPTIEMBRE 2026 -->
-
-                            </VBox>
-                            <!-- /seasonContent2627 -->
-
-                        </VBox>
-                        <!-- /TEMPORADA 2026/27 -->
-
                     </VBox>
                 </VBox>
 

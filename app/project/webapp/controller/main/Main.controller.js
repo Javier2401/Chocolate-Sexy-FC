@@ -8,7 +8,7 @@ sap.ui.define([
 
         onInit: function () {
       
-            var sIgPost1 = 
+            var igPost = 
                 '<blockquote class="instagram-media" ' +
                 'data-instgrm-captioned ' +
                 'data-instgrm-permalink="https://www.instagram.com/p/DXmsUdYjZFS/?utm_source=ig_embed&amp;utm_campaign=loading" ' +
@@ -55,7 +55,7 @@ sap.ui.define([
                 'padding:8px 0 '
 
             var oModel = new JSONModel({
-                igHtml1: sIgPost1
+                igPostHtml: igPost
             });
 
             this.getView().setModel(oModel, "mainModel");

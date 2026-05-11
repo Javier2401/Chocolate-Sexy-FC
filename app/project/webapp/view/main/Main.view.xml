@@ -7,6 +7,7 @@
 
     <Page showHeader="false" enableScrolling="true" class="csPage">
         <content>
+
             <VBox class="pageWrapper" width="100%">
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
@@ -14,9 +15,6 @@
                 <VBox class="pageContent">
                     <HBox wrap="Wrap" class="mainGrid">
 
-                        <!-- ══════════════════════════════
-                             IZQUIERDA: Último Post
-                        ══════════════════════════════ -->
                         <VBox class="leftCol">
                             <VBox class="lastPostWidget">
                                 <HBox class="newsWidgetHeader" justifyContent="Center">
@@ -28,15 +26,12 @@
                                         <core:HTML
                                             id="igPost1"
                                             sanitizeContent="false"
-                                            content="{mainModel>/igHtml1}"/>
+                                            content="{mainModel>/igPostHtml}"/>
                                     </VBox>
                                 </VBox>
                             </VBox>
                         </VBox>
 
-                        <!-- ══════════════════════════════
-                             CENTRO: Noticias
-                        ══════════════════════════════ -->
                         <VBox class="middleCol">
                             <VBox class="newsWidget">
                                 <HBox class="newsWidgetHeader" justifyContent="Center">
@@ -45,7 +40,6 @@
                                 </HBox>
                                 <VBox class="newsWidgetBody newsListBody">
 
-                                    <!-- Grupo fecha 10 May -->
                                     <VBox class="newsDateGroup">
                                         <HBox class="newsDateHeader" justifyContent="End" alignItems="Center">
                                             <Text text="10 May 2026" class="newsDateLabel"/>
@@ -61,7 +55,6 @@
                                         </HBox>
                                     </VBox>
 
-                                    <!-- Grupo fecha 9 May -->
                                     <VBox class="newsDateGroup">
                                         <HBox class="newsDateHeader" justifyContent="End" alignItems="Center">
                                             <Text text="9 May 2026" class="newsDateLabel"/>
@@ -81,51 +74,66 @@
                             </VBox>
                         </VBox>
 
-                        <!-- ══════════════════════════════
-                             DERECHA: Clasificación + Partidos
-                        ══════════════════════════════ -->
                         <VBox class="rightCol">
 
-                            <!-- CLASIFICACIÓN -->
                             <VBox class="standingsWidget fitStandings">
                                 <HBox class="standingsWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://performance" class="standingsHeaderIcon"/>
                                     <Text text="Clasificación" class="standingsHeaderTitle"/>
                                 </HBox>
                                 <VBox class="standingsTableWrapper">
+
                                     <HBox class="standingsTHead">
-                                        <Text text="Pos"    width="36px"  class="sTH"/>
-                                        <Text text="Equipo" width="125px" class="sTH"/>
-                                        <Text text="Pts"    width="48px"  class="sTH sTHCenter"/>
-                                        <Text text="PJ"     width="48px"  class="sTH sTHCenter"/>
-                                        <Text text="DG"     width="54px"  class="sTH sTHCenter"/>
-                                        <Text text="ÚLTIMOS 5"     width="30px"  class="sTH sTHCenter"/>
+                                        <Text text="Pos"      width="36px"  class="sTH"/>
+                                        <Text text="Equipo"   width="125px" class="sTH"/>
+                                        <Text text="Pts"      width="48px"  class="sTH sTHCenter"/>
+                                        <Text text="PJ"       width="48px"  class="sTH sTHCenter"/>
+                                        <Text text="DG"       width="54px"  class="sTH sTHCenter"/>
+                                        <Text text="ÚLTIMOS 3"              class="sTH sTHCenter sTHFill"/>
                                     </HBox>
+
                                     <HBox class="standingsTRow">
                                         <Text text="5º"        width="36px"  class="sTD"/>
                                         <Text text="Yellow FC" width="125px" class="sTD sTDTeam"/>
                                         <Text text="33"        width="48px"  class="sTD sTDCenter"/>
                                         <Text text="22"        width="48px"  class="sTD sTDCenter"/>
                                         <Text text="+5"        width="54px"  class="sTD sTDCenter sTDDGPos"/>
+                                        <HBox class="standingsLastCol" alignItems="Center" justifyContent="Center">
+                                            <Image src="images/Victoria.png" class="sTDResultImg" densityAware="false"/>
+                                            <Image src="images/Victoria.png" class="sTDResultImg" densityAware="false"/>
+                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
+                                        </HBox>
                                     </HBox>
+
                                     <HBox class="standingsTRow standingsTRowOwn">
                                         <Text text="6º"         width="36px"  class="sTD sTDOwn"/>
                                         <Text text="Choc. Sexy" width="125px" class="sTD sTDTeam sTDOwn"/>
                                         <Text text="30"         width="48px"  class="sTD sTDCenter sTDOwn"/>
                                         <Text text="22"         width="48px"  class="sTD sTDCenter sTDOwn"/>
                                         <Text text="-3"         width="54px"  class="sTD sTDCenter sTDDGNeg sTDOwn"/>
+                                        <HBox class="standingsLastCol" alignItems="Center" justifyContent="Center">
+                                            <Image src="images/Victoria.png" class="sTDResultImg" densityAware="false"/>
+                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
+                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
+                                        </HBox>
                                     </HBox>
+
                                     <HBox class="standingsTRow">
                                         <Text text="7º"        width="36px"  class="sTD"/>
                                         <Text text="Equipo F"  width="125px" class="sTD sTDTeam"/>
                                         <Text text="28"        width="48px"  class="sTD sTDCenter"/>
                                         <Text text="22"        width="48px"  class="sTD sTDCenter"/>
                                         <Text text="-11"       width="54px"  class="sTD sTDCenter sTDDGNeg"/>
+                                        <HBox class="standingsLastCol" alignItems="Center" justifyContent="Center">
+                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
+                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
+                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
+                                        </HBox>
                                     </HBox>
+
                                 </VBox>
                             </VBox>
 
-                            <!-- ÚLTIMO PARTIDO -->
                             <VBox class="matchWidget">
                                 <HBox class="matchWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://history" class="matchWidgetIcon"/>
@@ -167,7 +175,6 @@
                                 </VBox>
                             </VBox>
 
-                            <!-- PRÓXIMO PARTIDO -->
                             <VBox class="matchWidget">
                                 <HBox class="matchWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://future" class="matchWidgetIcon"/>
@@ -213,6 +220,7 @@
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
 
             </VBox>
+
         </content>
     </Page>
 

@@ -25,13 +25,13 @@
     width: 100% !important;
 }
 
-/* ── CAMBIO: eliminado max-width: 1200px para que los contenedores
-   vayan a los laterales del todo cuando haya espacio ── */
+/* Contenido principal: padding lateral aumentado para que los
+   laterales queden más separados de los bordes */
 .pageContent,
 .pageContent.sapMVBox {
     flex: 1 1 auto !important;
     margin: 2rem 0 !important;
-    padding: 0 4rem;
+    padding: 0 5.5rem;
     width: 100%;
     box-sizing: border-box;
     gap: 1.5rem;
@@ -50,6 +50,7 @@
     flex-shrink: 0 !important;
 }
 
+/* ── NavBar ── */
 .navBar,
 .navBar.sapMHBox {
     width: 100% !important;
@@ -88,6 +89,7 @@
     gap: 6px !important;
 }
 
+/* ── Botones de navegación ── */
 .navBtn.sapMBtn {
     background: transparent !important;
     border: none !important;
@@ -130,6 +132,7 @@
     border-color: rgba(255,255,255,0.5) !important;
 }
 
+/* ── MenuButton de navegación ── */
 .navBtn.sapMMenuBtn {
     background-color: rgba(255,255,255,0.12) !important;
     border-radius: 20px !important;
@@ -178,6 +181,7 @@
 .navBtn.sapMMenuBtn .sapMBtnContent { font-size: 13px !important; margin: 0 7.5px !important; }
 .navBtn.sapMMenuBtn:hover { background-color: rgba(255,255,255,0.22) !important; }
 
+/* ── Iconos de navegación ── */
 .navIconBtn.sapMBtn {
     background: transparent !important;
     border: none !important;
@@ -213,19 +217,24 @@
     border-color: rgba(255,255,255,0.6) !important;
 }
 
-.sapMMenu, .sapMMenu .sapMMenu {
+/* ── Menú desplegable ── */
+.sapMMenu,
+.sapMMenu .sapMMenu {
     background-color: #3a3a3a !important;
     border: 1px solid rgba(255,255,255,0.2) !important;
     border-radius: 8px !important;
     box-shadow: 0 6px 20px rgba(0,0,0,0.6) !important;
     padding: 4px 0 !important;
 }
-.sapMMenu > ul, .sapMMenu .sapMMenuList {
+.sapMMenu > ul,
+.sapMMenu .sapMMenuList {
     background-color: #3a3a3a !important;
     border-radius: 8px !important;
-    padding: 0 !important; margin: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
-.sapMMenu li, .sapMMenu .sapMMenuItem {
+.sapMMenu li,
+.sapMMenu .sapMMenuItem {
     background-color: #3a3a3a !important;
     border: none !important;
     padding: 6px 14px !important;
@@ -235,7 +244,8 @@
     font-size: 0.9rem !important;
     font-weight: 500 !important;
 }
-.sapMMenu li:hover, .sapMMenu .sapMMenuItem:hover {
+.sapMMenu li:hover,
+.sapMMenu .sapMMenuItem:hover {
     background-color: #555555 !important;
     cursor: pointer;
 }
@@ -354,36 +364,36 @@
     font-weight: 500 !important;
 }
 .footerLinkBtn.sapMBtn:hover .sapMBtnInner { border-bottom-color: #ffffff !important; }
-.footerLinkBtn.sapMBtn:hover bdi { color: #ffffff !important; }
+.footerLinkBtn.sapMBtn:hover bdi            { color: #ffffff !important; }
 
 
 /* ═══════════════════════════════════════════════════════════════
    MAIN — Grid de 3 columnas
    ═══════════════════════════════════════════════════════════════ */
 
-/* ── CAMBIO: gap aumentado a 2rem para mayor separación visual
-   entre noticias y los demás contenedores ── */
 .mainGrid.sapMHBox {
     align-items: flex-start !important;
     flex-wrap: wrap !important;
     width: 100% !important;
-    justify-content: space-between !important;
+
+    gap: 15rem !important; /* antes 1.5rem */
+    justify-content: center !important; /* antes space-between */
 }
 
-/* LEFT: Clasificación — 340px para la tabla ampliada (50+165+60+60=335px) */
+/* IZQUIERDA: Último Post — ampliado para que el Instagram tenga espacio */
 .leftCol.sapMVBox {
-    flex: 0 0 340px !important;
-    min-width: 340px !important;
+    flex: 0 0 420px !important;
+    min-width: 420px !important;
 }
 
-/* MIDDLE: Noticias — más ancho, contenido centrado */
+/* CENTRO: Noticias */
 .middleCol.sapMVBox {
     flex: 0 0 760px !important;
     min-width: 0 !important;
     align-items: center !important;
 }
 
-/* RIGHT: Partidos — más ancho */
+/* DERECHA: Clasificación + Partidos */
 .rightCol.sapMVBox {
     flex: 0 0 440px !important;
     min-width: 400px !important;
@@ -415,7 +425,6 @@
     font-size: 1rem !important;
 }
 
-/* ── CAMBIO: fuente más grande ── */
 .matchWidgetTitle.sapMText {
     color: #ffffff !important;
     font-size: 1rem !important;
@@ -430,7 +439,6 @@
     gap: 0.5rem !important;
 }
 
-/* ── CAMBIO: fuente más grande ── */
 .matchJornada.sapMText {
     font-size: 1rem !important;
     font-weight: 800 !important;
@@ -442,7 +450,6 @@
     margin-bottom: 0.3rem !important;
 }
 
-/* ── MATCH TEAMS ROW ── */
 .matchTeamsRow.sapMHBox {
     align-items: flex-start !important;
     justify-content: space-evenly !important;
@@ -493,7 +500,6 @@
     text-align: center !important;
 }
 
-/* ── CAMBIO: fuente más grande ── */
 .matchTeamName.sapMText {
     font-size: 0.88rem !important;
     font-weight: 700 !important;
@@ -505,9 +511,6 @@
     text-overflow: ellipsis !important;
 }
 
-/* ── CAMBIO: padding-top reducido a 10px para alinear VS y marcador
-   con los escudos. Con VS a 2.5rem (20px de semialtura):
-   10 + 20 = 30px ≈ centro del escudo (29px). ── */
 .matchCenterBox.sapMVBox {
     align-items: center !important;
     justify-content: flex-start !important;
@@ -517,7 +520,6 @@
     align-self: flex-start !important;
 }
 
-/* ── CAMBIO: VS más grande (2.5rem) ── */
 .matchVsText.sapMText {
     font-size: 2.5rem !important;
     font-weight: 900 !important;
@@ -527,7 +529,6 @@
     margin-top: 0 !important;
 }
 
-/* ── CAMBIO: eliminado margin-top: 14px que bajaba el marcador ── */
 .matchScoreBox.sapMHBox {
     gap: 0.1rem !important;
     align-items: center !important;
@@ -539,7 +540,6 @@
     margin-top: 0 !important;
 }
 
-/* ── CAMBIO: fuente más grande ── */
 .matchScoreNum.sapMText {
     font-size: 1.8rem !important;
     font-weight: 900 !important;
@@ -568,7 +568,6 @@
     gap: 0.1rem !important;
 }
 
-/* ── CAMBIO: fuente más grande ── */
 .matchInfoText.sapMText {
     font-size: 0.92rem !important;
     color: #6b7280 !important;
@@ -596,11 +595,10 @@
 
 .lastPostBody.sapMVBox {
     background: #ffffff !important;
-    padding: 0.75rem !important;        /* espacio blanco alrededor del embed */
+    padding: 0.75rem !important;
     overflow: visible !important;
 }
 
-/* Forzar el embed a caber en la columna */
 .lastPostBody .igPostCropContainer {
     width: 100% !important;
     max-width: 100% !important;
@@ -612,8 +610,9 @@
     max-width: 100% !important;
 }
 
+
 /* ─────────────────────────────────────
-   Standings Widget
+   Standings Widget (Clasificación)
    ───────────────────────────────────── */
 
 .standingsWidget {
@@ -622,7 +621,6 @@
     box-shadow: 0 4px 18px rgba(97,26,50,0.13);
     overflow: hidden;
     width: 100%;
-
     display: flex !important;
     flex-direction: column !important;
 }
@@ -652,12 +650,12 @@
 .standingsTableWrapper.sapMVBox {
     gap: 0 !important;
     padding: 0 !important;
-
     flex: 1 1 auto !important;
     display: flex !important;
     flex-direction: column !important;
 }
 
+/* ── Cabecera de tabla ── */
 .standingsTHead.sapMHBox {
     background-color: #f8f9fa !important;
     padding: 0.45rem 0.9rem !important;
@@ -677,12 +675,18 @@
     text-align: center !important;
 }
 
+/* Columna ÚLTIMOS 3: ocupa todo el espacio restante */
+.sTHFill.sapMText {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+/* ── Filas de tabla ── */
 .standingsTRow.sapMHBox {
     padding: 0 0.9rem !important;
     border-bottom: 1px solid #f3f4f6 !important;
     align-items: center !important;
     transition: background-color 0.15s !important;
-
     flex: 1 1 auto !important;
     min-height: 52px !important;
 }
@@ -704,6 +708,7 @@
     background-color: #ffe4ee !important;
 }
 
+/* ── Celdas de tabla ── */
 .sTD.sapMText {
     font-size: 1.05rem !important;
     color: #374151 !important;
@@ -727,7 +732,6 @@
     color: #611a32 !important;
 }
 
-/* DG colors */
 .sTDDGPos.sapMText {
     color: #16a34a !important;
     font-weight: 700 !important;
@@ -737,106 +741,29 @@
     font-weight: 700 !important;
 }
 
+/* ── Columna ÚLTIMOS 3: HBox con imágenes de resultado ── */
+.standingsLastCol.sapMHBox {
+    flex: 1 !important;
+    min-width: 0 !important;
+    gap: 3px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 4px !important;
+}
+
+/* Imagen individual Victoria/Derrota */
+.sTDResultImg.sapMImg {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 4px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+}
+
 
 /* ─────────────────────────────────────
    News Widget — lista de tarjetas
-   ───────────────────────────────────── */
-
-.newsListBody.sapMVBox {
-    padding: 0.5rem 0 1rem !important;
-    gap: 0 !important;
-    align-items: stretch !important;
-}
-
-/* Grupo fecha: línea + tarjeta */
-.newsDateGroup.sapMVBox {
-    gap: 0.5rem !important;
-    margin-bottom: 1rem !important;
-}
-
-/* Cabecera de fecha: igual que el antiguo csNewsPostHeader */
-.newsDateHeader.sapMHBox {
-    width: 100% !important;
-    padding: 0.8rem 1.2rem 0.6rem !important;
-    border-bottom: 2px solid #f3f4f6 !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-}
-
-.newsDateLabel.sapMText {
-    font-size: 0.78rem !important;
-    color: #9ca3af !important;
-    font-weight: 500 !important;
-    flex-shrink: 0 !important;
-}
-
-/* Tarjeta de noticia — inset del padre, hover scale */
-.newsCard.sapMHBox {
-    border-radius: 14px !important;
-    overflow: hidden !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.07) !important;
-    min-height: 80px !important;
-    background: #ffffff !important;
-    border: 1px solid #f3f4f6 !important;
-    align-items: stretch !important;
-    margin: 0 1.2rem !important;       /* inset del contenedor padre */
-    cursor: pointer !important;
-    transition: transform 0.18s ease, box-shadow 0.18s ease !important;
-}
-
-.newsCard.sapMHBox:hover {
-    transform: scale(1.025) !important;
-    box-shadow: 0 6px 22px rgba(97,26,50,0.18) !important;
-}
-
-/* Caja del emoji — fondo de color */
-.newsCardEmojiBox.sapMVBox {
-    flex: 0 0 72px !important;
-    min-width: 72px !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important;
-}
-
-.newsCardEmojiRed.sapMVBox  { background: #fef2f2 !important; }
-.newsCardEmojiBlue.sapMVBox { background: #eff6ff !important; }
-
-/* Emoji grande, altura del card */
-.newsCardEmoji.sapMText {
-    font-size: 2.2rem !important;
-    line-height: 1 !important;
-    text-align: center !important;
-}
-
-/* Contenido de texto */
-.newsCardContent.sapMVBox {
-    flex: 1 1 auto !important;
-    padding: 0.65rem 0.9rem !important;
-    gap: 0.2rem !important;
-    justify-content: center !important;
-}
-
-.newsCardTitle.sapMText {
-    font-size: 0.88rem !important;
-    font-weight: 800 !important;
-    color: #111827 !important;
-    letter-spacing: 0.3px !important;
-    text-transform: uppercase !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-}
-
-.newsCardSubtitle.sapMText {
-    font-size: 0.82rem !important;
-    font-weight: 500 !important;
-    color: #6b7280 !important;
-    line-height: 1.35 !important;
-}
-
-
-/* ─────────────────────────────────────
-   News Widget
    ───────────────────────────────────── */
 
 .newsWidget {
@@ -889,9 +816,265 @@
     font-style: italic !important;
 }
 
+/* ── Lista de noticias ── */
+.newsListBody.sapMVBox {
+    padding: 0.5rem 0 1rem !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+}
+
+.newsDateGroup.sapMVBox {
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.newsDateHeader.sapMHBox {
+    width: 100% !important;
+    padding: 0.8rem 1.2rem 0.6rem !important;
+    border-bottom: 2px solid #f3f4f6 !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+.newsDateLabel.sapMText {
+    font-size: 0.78rem !important;
+    color: #9ca3af !important;
+    font-weight: 500 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Tarjeta de noticia */
+.newsCard.sapMHBox {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07) !important;
+    min-height: 80px !important;
+    background: #ffffff !important;
+    border: 1px solid #f3f4f6 !important;
+    align-items: stretch !important;
+    margin: 0 1.2rem !important;
+    cursor: pointer !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+.newsCard.sapMHBox:hover {
+    transform: scale(1.025) !important;
+    box-shadow: 0 6px 22px rgba(97,26,50,0.18) !important;
+}
+
+.newsCardEmojiBox.sapMVBox {
+    flex: 0 0 72px !important;
+    min-width: 72px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+.newsCardEmojiRed.sapMVBox  { background: #fef2f2 !important; }
+.newsCardEmojiBlue.sapMVBox { background: #eff6ff !important; }
+
+.newsCardEmoji.sapMText {
+    font-size: 2.2rem !important;
+    line-height: 1 !important;
+    text-align: center !important;
+}
+
+.newsCardContent.sapMVBox {
+    flex: 1 1 auto !important;
+    padding: 0.65rem 0.9rem !important;
+    gap: 0.2rem !important;
+    justify-content: center !important;
+}
+
+.newsCardTitle.sapMText {
+    font-size: 0.88rem !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+    letter-spacing: 0.3px !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.newsCardSubtitle.sapMText {
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    color: #6b7280 !important;
+    line-height: 1.35 !important;
+}
+
+
+/* ─────────────────────────────────────
+   News Posts — Contenedor con Instagram
+   ───────────────────────────────────── */
+
+.csNewsPost {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.4rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.csNewsPost.sapMVBox {
+    width: 100% !important;
+    padding: 1rem 1rem 0.75rem !important;
+    gap: 0.75rem !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    align-items: center !important;
+}
+
+.csNewsPost.sapMVBox:last-child {
+    border-bottom: none !important;
+}
+
+.csNewsPostHeader.sapMHBox {
+    width: 100% !important;
+    align-items: center !important;
+    padding-bottom: 0.6rem !important;
+    border-bottom: 2px solid #f3f4f6 !important;
+}
+
+.csNewsPostTitle.sapMText {
+    font-size: 0.97rem !important;
+    font-weight: 800 !important;
+    color: #374151 !important;
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.csNewsPostDate.sapMText {
+    font-size: 0.78rem !important;
+    color: #9ca3af !important;
+    font-weight: 500 !important;
+    flex-shrink: 0 !important;
+    margin-left: 0.5rem !important;
+}
+
+/* Contenido del post — layout horizontal */
+.csNewsPostContent {
+    gap: 1.5rem;
+    align-items: stretch;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.csNewsPostContent.sapMVBox {
+    width: 100% !important;
+    gap: 1rem !important;
+    align-items: center !important;
+}
+
+/* Instagram a la izquierda */
+.csNewsInstagramBox {
+    flex: 0 0 340px;
+    max-width: 340px;
+}
+
+.csNewsInstagramBox blockquote {
+    min-width: unset !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Texto informativo a la derecha */
+.csNewsInfoBox {
+    flex: 1;
+    justify-content: center;
+    gap: 1rem;
+    min-width: 250px;
+}
+
+.csNewsInfoTitle {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #111827;
+}
+
+.csNewsInfoText {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #6b7280;
+}
+
+.csNewsMetaRow {
+    align-items: center;
+    gap: 0.5rem;
+    color: #9ca3af;
+}
+
+/* ── Embed de Instagram ── */
+.csInstagramWrapper {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+}
+
+.csInstagramWrapper .instagram-media {
+    margin: 0 auto !important;
+    min-width: 0 !important;
+    max-width: 540px !important;
+    width: 100% !important;
+}
+
+.igPostCropContainer {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    overflow: hidden !important;
+    border-radius: 18px !important;
+    background: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    height: 660px !important;
+}
+
+.igPostCropContainer iframe,
+.igPostCropContainer .instagram-media {
+    display: block !important;
+    border: none !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+}
+
+.igPostCropContainer::after {
+    display: none !important;
+}
+
+.csNewsPostContent .instagram-media {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 620px !important;
+    overflow: hidden !important;
+    background: white !important;
+}
+
+.csNewsPostContent iframe {
+    border-radius: 0 !important;
+    overflow: hidden !important;
+}
+
+.csNewsEmptyText.sapMText {
+    font-size: 1.05rem !important;
+    color: #9ca3af !important;
+    text-align: center !important;
+    font-style: italic !important;
+    padding: 2rem 0 !important;
+    width: 100% !important;
+}
+
 
 /* ═══════════════════════════════════════════════════════════════
-   CALENDARIO — Selector de temporada (legacy, mantenido)
+   CALENDARIO — Selector de temporada
    ═══════════════════════════════════════════════════════════════ */
 
 .calSeasonSelector.sapMVBox {
@@ -938,7 +1121,11 @@
     padding: 0 22px !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
 }
-.calSeasonBtnActive.sapMBtn bdi { color: #611a32 !important; font-size: 0.95rem !important; font-weight: 800 !important; }
+.calSeasonBtnActive.sapMBtn bdi {
+    color: #611a32 !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+}
 
 .calSeasonBtnInactive.sapMBtn { margin: 0 !important; }
 .calSeasonBtnInactive.sapMBtn .sapMBtnInner {
@@ -951,12 +1138,18 @@
     box-shadow: none !important;
     transition: background-color 0.15s ease !important;
 }
-.calSeasonBtnInactive.sapMBtn bdi { color: rgba(255,255,255,0.85) !important; font-size: 0.95rem !important; font-weight: 700 !important; }
-.calSeasonBtnInactive.sapMBtn:hover .sapMBtnInner { background-color: rgba(255,255,255,0.28) !important; }
+.calSeasonBtnInactive.sapMBtn bdi {
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+}
+.calSeasonBtnInactive.sapMBtn:hover .sapMBtnInner {
+    background-color: rgba(255,255,255,0.28) !important;
+}
 
 
 /* ═══════════════════════════════════════════════════════════════
-   CALENDARIO — Bloques de temporada (Season Blocks)
+   CALENDARIO — Season Blocks (bloques de temporada)
    ═══════════════════════════════════════════════════════════════ */
 
 .calSeasonBlock.sapMVBox {
@@ -995,7 +1188,6 @@
     text-transform: uppercase !important;
 }
 
-/* Botón toggle de temporada */
 .calSeasonToggleBtn.sapMBtn {
     background: transparent !important;
     border: none !important;
@@ -1036,7 +1228,6 @@
     border-color: rgba(255,255,255,0.55) !important;
 }
 
-/* Contenido desplegable de la temporada */
 .calSeasonContent.sapMVBox {
     padding: 1.2rem 1rem 0.5rem !important;
     gap: 0 !important;
@@ -1048,7 +1239,6 @@
                 padding    0.4s  ease-in-out !important;
 }
 
-/* Estado cerrado */
 .calSeasonContent.sapMVBox.cal-collapsed {
     max-height: 0 !important;
     padding-top: 0 !important;
@@ -1056,7 +1246,6 @@
     opacity: 0 !important;
 }
 
-/* Month blocks dentro de season block — ajustes */
 .calSeasonContent .calMonthBlock.sapMVBox {
     margin-bottom: 1rem !important;
     border-radius: 14px !important;
@@ -1068,7 +1257,7 @@
 
 
 /* ═══════════════════════════════════════════════════════════════
-   CALENDARIO — Sección principal
+   CALENDARIO — Sección principal y bloques de mes
    ═══════════════════════════════════════════════════════════════ */
 
 .calendarSection.sapMVBox {
@@ -1077,11 +1266,6 @@
     width: 100% !important;
     gap: 0 !important;
 }
-
-
-/* ─────────────────────────────────────
-   Bloques de mes (contenedores coloreados)
-   ───────────────────────────────────── */
 
 .calMonthBlock.sapMVBox {
     border-radius: 16px !important;
@@ -1103,63 +1287,39 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.07) !important;
 }
 
-/* ── COLORES DE MES (versiones claras) ── */
-
+/* ── Colores de mes ── */
 .calMonthBlock-peach { background-color: #FEF2EC !important; border: 1.5px solid #E8A87C !important; }
-.calMonthBlock-peach .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #B8613A 0%, #CC7A50 100%) !important;
-}
+.calMonthBlock-peach .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #B8613A 0%, #CC7A50 100%) !important; }
 
 .calMonthBlock-sky { background-color: #EAF4FA !important; border: 1.5px solid #7ABCD4 !important; }
-.calMonthBlock-sky .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #3A7A9C 0%, #4A9AC0 100%) !important;
-}
+.calMonthBlock-sky .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #3A7A9C 0%, #4A9AC0 100%) !important; }
 
 .calMonthBlock-sage { background-color: #F2FAE8 !important; border: 1.5px solid #8AC86A !important; }
-.calMonthBlock-sage .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #4A7A3A 0%, #5A9A4A 100%) !important;
-}
+.calMonthBlock-sage .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #4A7A3A 0%, #5A9A4A 100%) !important; }
 
 .calMonthBlock-lavender { background-color: #F6F0FB !important; border: 1.5px solid #B48AD4 !important; }
-.calMonthBlock-lavender .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #6A3A8C 0%, #8A4AAC 100%) !important;
-}
+.calMonthBlock-lavender .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #6A3A8C 0%, #8A4AAC 100%) !important; }
 
 .calMonthBlock-golden { background-color: #FFFBE5 !important; border: 1.5px solid #F0C04A !important; }
-.calMonthBlock-golden .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #9A7010 0%, #C09830 100%) !important;
-}
+.calMonthBlock-golden .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #9A7010 0%, #C09830 100%) !important; }
 
 .calMonthBlock-rose { background-color: #FAE8F2 !important; border: 1.5px solid #D47AAA !important; }
-.calMonthBlock-rose .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #8C3A68 0%, #AC4A88 100%) !important;
-}
+.calMonthBlock-rose .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #8C3A68 0%, #AC4A88 100%) !important; }
 
 .calMonthBlock-teal { background-color: #E5FAF5 !important; border: 1.5px solid #6AC8B8 !important; }
-.calMonthBlock-teal .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #2A7A6A 0%, #3A9A88 100%) !important;
-}
+.calMonthBlock-teal .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #2A7A6A 0%, #3A9A88 100%) !important; }
 
 .calMonthBlock-coral { background-color: #FFEEE5 !important; border: 1.5px solid #F0947A !important; }
-.calMonthBlock-coral .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #A0543A 0%, #C0745A 100%) !important;
-}
+.calMonthBlock-coral .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #A0543A 0%, #C0745A 100%) !important; }
 
 .calMonthBlock-indigo { background-color: #E3E8FF !important; border: 1.5px solid #7A8AD4 !important; }
-.calMonthBlock-indigo .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #2A3A8C 0%, #3A4AAC 100%) !important;
-}
+.calMonthBlock-indigo .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #2A3A8C 0%, #3A4AAC 100%) !important; }
 
 .calMonthBlock-mint { background-color: #E2FBEF !important; border: 1.5px solid #5AC88C !important; }
-.calMonthBlock-mint .calMonthHeader.sapMHBox {
-    background: linear-gradient(135deg, #2A7A52 0%, #3A9A6A 100%) !important;
-}
+.calMonthBlock-mint .calMonthHeader.sapMHBox { background: linear-gradient(135deg, #2A7A52 0%, #3A9A6A 100%) !important; }
 
 
-/* ─────────────────────────────────────
-   Cabecera de mes
-   ───────────────────────────────────── */
-
+/* ── Cabecera de mes ── */
 .calMonthHeader.sapMHBox {
     background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
     padding: 0.75rem 1.3rem !important;
@@ -1177,10 +1337,7 @@
 }
 
 
-/* ─────────────────────────────────────
-   Cards de partidos
-   ───────────────────────────────────── */
-
+/* ── Cards de partidos ── */
 .calMatchCard {
     background: #ffffff;
     border-radius: 14px;
@@ -1303,192 +1460,306 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   NEWS POSTS — Contenedor de noticias con Instagram
+   LEADERBOARD PAGE — añadir al final de style.css
    ═══════════════════════════════════════════════════════════════ */
 
-.csNewsPost.sapMVBox {
+
+/* ── pageContent override para la página leaderboard ── */
+.lbPageContent,
+.lbPageContent.sapMVBox {
+    align-items: center !important;   /* centra la card en el eje horizontal */
+    gap: 0 !important;
+    padding: 0 2rem !important;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   CARD — contenedor principal (ancho máximo reducido)
+───────────────────────────────────────────────────────────── */
+
+.lbCard,
+.lbCard.sapMVBox {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 6px 30px rgba(97, 26, 50, 0.15);
+    overflow: hidden;
+    /* ▼ Aquí controlas el ancho máximo del contenedor ▼ */
+    max-width: 900px !important;
     width: 100% !important;
-    padding: 1rem 1rem 0.75rem !important;
-    gap: 0.75rem !important;
-    border-bottom: 1px solid #f3f4f6 !important;
+}
+
+
+/* ── Cabecera de la card ── */
+.lbCardHeader,
+.lbCardHeader.sapMHBox {
+    background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
+    padding: 1rem 1.4rem !important;
     align-items: center !important;
-}
-
-.csNewsPost.sapMVBox:last-child {
-    border-bottom: none !important;
-}
-
-.csNewsPostHeader.sapMHBox {
+    gap: 0.85rem !important;
     width: 100% !important;
-    align-items: center !important;
-    padding-bottom: 0.6rem !important;
-    border-bottom: 2px solid #f3f4f6 !important;
+    box-sizing: border-box !important;
 }
 
-.csNewsPostTitle.sapMText {
-    font-size: 0.97rem !important;
-    font-weight: 800 !important;
-    color: #374151 !important;
+.lbHeaderIcon {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 1.25rem !important;
+    flex-shrink: 0 !important;
+}
+
+.lbTitle,
+.lbTitle.sapMText {
     flex: 1 1 auto !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+}
+
+.lbSeasonBadge,
+.lbSeasonBadge.sapMText {
+    background: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    padding: 0.28rem 0.9rem !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    flex-shrink: 0 !important;
+    letter-spacing: 0.3px !important;
     white-space: nowrap !important;
 }
 
-.csNewsPostDate.sapMText {
-    font-size: 0.78rem !important;
-    color: #9ca3af !important;
-    font-weight: 500 !important;
-    flex-shrink: 0 !important;
-    margin-left: 0.5rem !important;
-}
 
-.csNewsPostContent.sapMVBox {
-    width: 100% !important;
-    gap: 1rem !important;
+/* ─────────────────────────────────────────────────────────────
+   Cabecera de tabla
+───────────────────────────────────────────────────────────── */
+
+.lbTHead,
+.lbTHead.sapMHBox {
+    background: #f8f9fa !important;
+    padding: 0.5rem 1rem !important;
+    border-bottom: 2px solid #e9ecef !important;
     align-items: center !important;
-}
-
-.csInstagramWrapper {
     width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
+    box-sizing: border-box !important;
 }
 
-.csInstagramWrapper .instagram-media {
-    margin: 0 auto !important;
+.lbTH,
+.lbTH.sapMText {
+    font-size: 0.7rem !important;
+    font-weight: 800 !important;
+    color: #9ca3af !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+}
+
+/* ── Anchos de cabecera — deben coincidir pixel a pixel con las celdas ── */
+.lbTHPos  { width: 36px !important; }
+
+/* EQUIPO: toma todo el espacio restante */
+.lbTHTeam {
+    flex: 1 1 auto !important;
     min-width: 0 !important;
-    max-width: 540px !important;
-    width: 100% !important;
+    text-align: left !important;
+    padding-left: 0.4rem !important;
 }
 
-.csNewsEmptyText.sapMText {
-    font-size: 1.05rem !important;
+.lbTHPts  { width: 46px !important; }
+.lbTHNum  { width: 34px !important; }
+.lbTHDG   { width: 48px !important; }
+
+/* Últimos 3: ocupa exactamente 3 imágenes de 24px + gaps de 4px */
+.lbTHLast { width: 84px !important; }
+
+
+/* ─────────────────────────────────────────────────────────────
+   Filas de la tabla
+───────────────────────────────────────────────────────────── */
+
+.lbTRow,
+.lbTRow.sapMHBox {
+    padding: 0 1rem !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    align-items: center !important;
+    min-height: 54px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: background-color 0.15s ease !important;
+}
+
+.lbTRow.sapMHBox:hover {
+    background-color: #fdf2f5 !important;
+}
+
+.lbTRowLast,
+.lbTRowLast.sapMHBox {
+    border-bottom: none !important;
+}
+
+/* Fila nuestro equipo */
+.lbTRowOwn,
+.lbTRowOwn.sapMHBox {
+    background: linear-gradient(90deg, #fff0f5 0%, #ffffff 100%) !important;
+    border-left: 4px solid #611a32 !important;
+}
+
+.lbTRowOwn.sapMHBox:hover {
+    background: linear-gradient(90deg, #ffe4ee 0%, #fff8fb 100%) !important;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Celdas
+───────────────────────────────────────────────────────────── */
+
+/* Posición */
+.lbTDPos,
+.lbTDPos.sapMText {
+    width: 36px !important;
+    flex-shrink: 0 !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
     color: #9ca3af !important;
     text-align: center !important;
-    font-style: italic !important;
-    padding: 2rem 0 !important;
-    width: 100% !important;
 }
 
-/* ═══════════════════════════════════════
-   NEWS POST HORIZONTAL
-═══════════════════════════════════════ */
-
-.csNewsPost {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 1.4rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    margin-bottom: 1rem;
+.lbTDPosOwn,
+.lbTDPosOwn.sapMText {
+    color: #611a32 !important;
 }
 
-.csNewsPostContent {
-    gap: 1.5rem;
-    align-items: stretch;
-}
-
-/* Instagram izquierda */
-.csNewsInstagramBox {
-    flex: 0 0 340px;
-    max-width: 340px;
-}
-
-/* reduce tamaño embed */
-.csNewsInstagramBox blockquote {
-    min-width: unset !important;
-    max-width: 100% !important;
-    width: 100% !important;
-}
-
-/* info derecha */
-.csNewsInfoBox {
-    flex: 1;
-    justify-content: center;
-    gap: 1rem;
-    min-width: 250px;
-}
-
-.csNewsInfoTitle {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #111827;
-}
-
-.csNewsInfoText {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #6b7280;
-}
-
-.csNewsMetaRow {
-    align-items: center;
-    gap: 0.5rem;
-    color: #9ca3af;
-}
-
-/* CONTENEDOR DEL EMBED */
-.igPostCropContainer {
-    position: relative;
-    width: fit-content;
-    margin: 0 auto;
+/* Nombre equipo — flex para llenar el espacio libre */
+.lbTDTeam,
+.lbTDTeam.sapMText {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    font-size: 0.93rem !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
     overflow: hidden !important;
-    border-radius: 18px !important;
-    background: #ffffff !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    padding: 0 0.4rem !important;
 }
 
-/* iframe / embed */
-.igPostCropContainer iframe,
-.igPostCropContainer .instagram-media {
+.lbTDTeamOwn,
+.lbTDTeamOwn.sapMText {
+    color: #611a32 !important;
+    font-weight: 900 !important;
+}
+
+/* Puntos */
+.lbTDPts,
+.lbTDPts.sapMText {
+    width: 46px !important;
+    flex-shrink: 0 !important;
+    font-size: 1.05rem !important;
+    font-weight: 900 !important;
+    color: #111827 !important;
+    text-align: center !important;
+}
+
+.lbTDPtsOwn,
+.lbTDPtsOwn.sapMText {
+    color: #611a32 !important;
+}
+
+/* Números genéricos (J, G, E, P, GF, GC) */
+.lbTDNum,
+.lbTDNum.sapMText {
+    width: 34px !important;
+    flex-shrink: 0 !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    text-align: center !important;
+}
+
+/* Victorias: verde */
+.lbTDG,
+.lbTDG.sapMText {
+    color: #15803d !important;
+    font-weight: 800 !important;
+}
+
+/* Derrotas: rojo */
+.lbTDP,
+.lbTDP.sapMText {
+    color: #b91c1c !important;
+}
+
+/* DG positivo */
+.lbTDDGPos,
+.lbTDDGPos.sapMText {
+    width: 48px !important;
+    flex-shrink: 0 !important;
+    font-size: 0.88rem !important;
+    font-weight: 800 !important;
+    color: #16a34a !important;
+    text-align: center !important;
+}
+
+/* DG negativo */
+.lbTDDGNeg,
+.lbTDDGNeg.sapMText {
+    width: 48px !important;
+    flex-shrink: 0 !important;
+    font-size: 0.88rem !important;
+    font-weight: 800 !important;
+    color: #dc2626 !important;
+    text-align: center !important;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Columna Últimos 3
+───────────────────────────────────────────────────────────── */
+
+.lbLastCol,
+.lbLastCol.sapMHBox {
+    width: 84px !important;
+    flex-shrink: 0 !important;
+    gap: 4px !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.lbResultImg,
+.lbResultImg.sapMImg {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 5px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
     display: block !important;
-    border: none !important;
-    border-radius: 18px !important;
-    overflow: hidden !important;
-    background: #ffffff !important;
 }
 
-/* RECORTE REAL DEL FINAL — sin overlay, altura exacta hasta "27 Me gusta" */
-.igPostCropContainer {
-    height: 578px !important;
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+    .lbPageContent,
+    .lbPageContent.sapMVBox {
+        padding: 0 1rem !important;
+    }
 }
 
-/* ELIMINADO: tapa blanca de abajo (ya no necesaria con la altura ajustada) */
-.igPostCropContainer::after {
-    display: none !important;
+@media (max-width: 680px) {
+    .lbPageContent,
+    .lbPageContent.sapMVBox {
+        padding: 0 0.5rem !important;
+    }
+    /* En móvil ocultamos GF y GC para que no se desborde */
+    .lbHideSmall { display: none !important; }
+    .lbTDNum.sapMText { width: 28px !important; font-size: 0.8rem !important; }
+    .lbTHNum          { width: 28px !important; }
+    .lbTDTeam.sapMText { font-size: 0.82rem !important; }
 }
-
-/* Contenedor del post */
-.csNewsPostContent{
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* Quitar esquinas raras del embed */
-.csNewsPostContent .instagram-media{
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    margin: 0 auto !important;
-    width: 100% !important;
-    max-width: 620px !important;
-    overflow: hidden !important;
-    background: white !important;
-}
-
-/* Quitar espacio sobrante abajo */
-.csNewsPostContent iframe{
-    border-radius: 0 !important;
-    overflow: hidden !important;
-}
-
-/* Recortar todo lo que sobresale */
-.csNewsPost{
-    overflow: hidden;
-}
-
 
 
 
@@ -1496,48 +1767,106 @@
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
 
-@media (max-width: 1100px) {
-    .rightCol.sapMVBox { flex: 0 0 350px !important; min-width: 310px !important; }
+/* 1400px: ajustar columnas para evitar overflow */
+@media (max-width: 1400px) {
+    .pageContent,
+    .pageContent.sapMVBox {
+        padding: 0 3rem;
+    }
+    .leftCol.sapMVBox   { flex: 0 0 380px !important; min-width: 360px !important; }
+    .middleCol.sapMVBox { flex: 1 1 400px !important; }
+    .rightCol.sapMVBox  { flex: 0 0 420px !important; min-width: 380px !important; }
 }
 
-@media (max-width: 960px) {
+/* 1200px: columnas más compactas */
+@media (max-width: 1200px) {
+    .pageContent,
+    .pageContent.sapMVBox {
+        padding: 0 2rem;
+    }
+    .leftCol.sapMVBox   { flex: 0 0 340px !important; min-width: 320px !important; }
+    .middleCol.sapMVBox { flex: 1 1 320px !important; }
+    .rightCol.sapMVBox  { flex: 0 0 380px !important; min-width: 340px !important; }
+}
+
+/* 1000px: comprimir más */
+@media (max-width: 1000px) {
+    .pageContent,
+    .pageContent.sapMVBox {
+        padding: 0 1.5rem;
+    }
     .navLogo, .navLogo.sapMImg { width: 130px !important; height: 77px !important; }
     .navIcons, .navIcons.sapMHBox { width: 130px !important; }
     .footerContent { padding: 1rem 1.2rem !important; }
-    .leftCol.sapMVBox  { flex: 0 0 265px !important; }
-    .middleCol.sapMVBox { flex: 1 1 200px !important; }
-    .rightCol.sapMVBox { flex: 1 1 340px !important; min-width: 310px !important; }
+    .leftCol.sapMVBox   { flex: 0 0 280px !important; min-width: 260px !important; }
+    .middleCol.sapMVBox { flex: 1 1 260px !important; }
+    .rightCol.sapMVBox  { flex: 1 1 340px !important; min-width: 310px !important; }
 }
 
-@media (max-width: 750px) {
-    /* Left + middle side by side, right wraps below */
-    .leftCol.sapMVBox  { flex: 0 0 265px !important; min-width: 0 !important; }
+/* 780px: rightCol baja debajo */
+@media (max-width: 780px) {
+    .pageContent,
+    .pageContent.sapMVBox {
+        padding: 0 1rem;
+    }
+    .leftCol.sapMVBox   { flex: 0 0 260px !important; min-width: 0 !important; }
     .middleCol.sapMVBox { flex: 1 1 160px !important; min-width: 0 !important; }
-    .rightCol.sapMVBox { flex: 1 1 100% !important; }
+    .rightCol.sapMVBox  { flex: 1 1 100% !important; min-width: 0 !important; }
 }
 
+/* 600px: diseño móvil */
 @media (max-width: 600px) {
-    .navBar, .navBar.sapMHBox { flex-wrap: wrap !important; padding: 0.4rem 0.5rem !important; }
+    .navBar, .navBar.sapMHBox {
+        flex-wrap: wrap !important;
+        padding: 0.4rem 0.5rem !important;
+    }
     .navLogo, .navLogo.sapMImg { width: 100px !important; height: 59px !important; }
-    .navButtons, .navButtons.sapMHBox { width: 100% !important; flex: unset !important; order: 3 !important; }
-    .navIcons,   .navIcons.sapMHBox   { width: auto !important; flex: 1 !important; justify-content: flex-end !important; order: 2 !important; }
-    .footerContent { flex-wrap: wrap !important; justify-content: center !important; gap: 1rem !important; padding: 1rem 0.8rem !important; }
-    .footerLeft { justify-content: center !important; }
+    .navButtons, .navButtons.sapMHBox {
+        width: 100% !important;
+        flex: unset !important;
+        order: 3 !important;
+    }
+    .navIcons, .navIcons.sapMHBox {
+        width: auto !important;
+        flex: 1 !important;
+        justify-content: flex-end !important;
+        order: 2 !important;
+    }
+    .footerContent {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+        padding: 1rem 0.8rem !important;
+    }
+    .footerLeft  { justify-content: center !important; }
     .footerRight { align-items: center !important; }
-    .pageContent { padding: 0 0.6rem; margin: 0.8rem 0 !important; }
-    /* Left + middle stay side by side on mobile */
-    .leftCol.sapMVBox  { flex: 0 0 220px !important; min-width: 0 !important; }
+    .pageContent,
+    .pageContent.sapMVBox {
+        padding: 0 0.6rem;
+        margin: 0.8rem 0 !important;
+    }
+    .leftCol.sapMVBox   { flex: 0 0 210px !important; min-width: 0 !important; }
     .middleCol.sapMVBox { flex: 1 1 130px !important; min-width: 0 !important; }
-    .rightCol.sapMVBox { flex: 1 1 100% !important; }
+    .rightCol.sapMVBox  { flex: 1 1 100% !important; min-width: 0 !important; }
     .calendarSection.sapMVBox { max-width: 100% !important; }
-    .calSeasonTitle.sapMText { font-size: 1.25rem !important; }
+    .calSeasonTitle.sapMText  { font-size: 1.25rem !important; }
     .calSeasonBlockTitle.sapMText { font-size: 0.95rem !important; }
+    .sTDResultImg.sapMImg { width: 20px !important; height: 20px !important; }
 }
 
+/* 420px: apilado total */
 @media (max-width: 420px) {
     .navLogo, .navLogo.sapMImg { width: 80px !important; height: 47px !important; }
     .navIcons, .navIcons.sapMHBox { gap: 3px !important; }
-    .footerSocialIcon, .footerSocialIcon.sapMImg { width: 28px !important; height: 28px !important; }
-    /* Stack everything at very small screens */
-    .leftCol.sapMVBox, .middleCol.sapMVBox, .rightCol.sapMVBox { flex: 1 1 100% !important; }
+    .footerSocialIcon, .footerSocialIcon.sapMImg {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    .leftCol.sapMVBox,
+    .middleCol.sapMVBox,
+    .rightCol.sapMVBox {
+        flex: 1 1 100% !important;
+        min-width: 0 !important;
+    }
+    .sTDResultImg.sapMImg { width: 18px !important; height: 18px !important; }
 }

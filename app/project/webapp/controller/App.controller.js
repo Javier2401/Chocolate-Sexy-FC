@@ -4,7 +4,10 @@ sap.ui.define([
   "use strict";
 
   return BaseController.extend("chocolatesexy.project.controller.App", {
+
       onInit() {
+        
       }
+
   });
 });

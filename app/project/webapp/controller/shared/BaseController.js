@@ -9,11 +9,12 @@ sap.ui.define([
 
         },
 
-
+        // Enlaces externos
         onOpenEmail: function () { window.open("mailto:chocolatesexyoficial@gmail.com", "_self"); },
         onOpenInstagram: function () { window.open("https://www.instagram.com/chocolatesexyoficial/", "_blank"); },
         onOpenGitHub: function () { window.open("https://github.com/Javier2401", "_blank"); },
 
+        // Navegaciones globales
         onNavMain: function () { this.getOwnerComponent().getRouter().navTo("RouteMain"); },
         onNavSquad: function () { this.getOwnerComponent().getRouter().navTo("RouteSquad"); },
         onNavCalendar: function () { this.getOwnerComponent().getRouter().navTo("RouteCalendar"); },

@@ -11,14 +11,252 @@
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
 
-                <VBox class="pageContent">
-                    
-                    <Text text="VISTA LEADERBOARD" class="surveyText"/>
-                    
+                <VBox class="pageContent lbPageContent">
+
+                    <VBox class="lbCard" width="100%">
+
+                        <HBox class="lbCardHeader" width="100%">
+                            <core:Icon src="sap-icon://soccer" class="lbHeaderIcon"/>
+                            <Text text="CLASIFICACIÓN" class="lbTitle"/>
+                            <Text text="TEMPORADA 2025/26" class="lbSeasonBadge"/>
+                        </HBox>
+
+                        <HBox class="lbTHead" width="100%">
+                            <Text text="#"       class="lbTH lbTHPos"/>
+                            <Text text="EQUIPO"  class="lbTH lbTHTeam"/>
+                            <Text text="PTS"     class="lbTH lbTHPts"/>
+                            <Text text="J"       class="lbTH lbTHNum"/>
+                            <Text text="G"       class="lbTH lbTHNum"/>
+                            <Text text="E"       class="lbTH lbTHNum"/>
+                            <Text text="P"       class="lbTH lbTHNum"/>
+                            <Text text="GF"      class="lbTH lbTHNum"/>
+                            <Text text="GC"      class="lbTH lbTHNum"/>
+                            <Text text="DG"      class="lbTH lbTHDG"/>
+                            <Text text="ÚLT. 3"  class="lbTH lbTHLast"/>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="1º"   class="lbTDPos"/>
+                            <Text text="La Competencia" class="lbTDTeam"/>
+                            <Text text="56"   class="lbTDPts"/>
+                            <Text text="22"   class="lbTDNum"/>
+                            <Text text="18"   class="lbTDNum lbTDG"/>
+                            <Text text="2"    class="lbTDNum"/>
+                            <Text text="2"    class="lbTDNum lbTDP"/>
+                            <Text text="135"  class="lbTDNum"/>
+                            <Text text="28"   class="lbTDNum"/>
+                            <Text text="+107" class="lbTDDGPos"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="2º"  class="lbTDPos"/>
+                            <Text text="ALUCHELAS" class="lbTDTeam"/>
+                            <Text text="49"  class="lbTDPts"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="15"  class="lbTDNum lbTDG"/>
+                            <Text text="4"   class="lbTDNum"/>
+                            <Text text="3"   class="lbTDNum lbTDP"/>
+                            <Text text="84"  class="lbTDNum"/>
+                            <Text text="49"  class="lbTDNum"/>
+                            <Text text="+35" class="lbTDDGPos"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="3º"  class="lbTDPos"/>
+                            <Text text="Panza y Gloria FC" class="lbTDTeam"/>
+                            <Text text="47"  class="lbTDPts"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="15"  class="lbTDNum lbTDG"/>
+                            <Text text="2"   class="lbTDNum"/>
+                            <Text text="5"   class="lbTDNum lbTDP"/>
+                            <Text text="80"  class="lbTDNum"/>
+                            <Text text="61"  class="lbTDNum"/>
+                            <Text text="+19" class="lbTDDGPos"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="4º"  class="lbTDPos"/>
+                            <Text text="Real Valencia Balompie" class="lbTDTeam"/>
+                            <Text text="37"  class="lbTDPts"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="11"  class="lbTDNum lbTDG"/>
+                            <Text text="4"   class="lbTDNum"/>
+                            <Text text="7"   class="lbTDNum lbTDP"/>
+                            <Text text="77"  class="lbTDNum"/>
+                            <Text text="55"  class="lbTDNum"/>
+                            <Text text="+22" class="lbTDDGPos"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="5º"  class="lbTDPos"/>
+                            <Text text="EL CLAN DE LOS BALCANES" class="lbTDTeam"/>
+                            <Text text="35"  class="lbTDPts"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="11"  class="lbTDNum lbTDG"/>
+                            <Text text="2"   class="lbTDNum"/>
+                            <Text text="9"   class="lbTDNum lbTDP"/>
+                            <Text text="93"  class="lbTDNum"/>
+                            <Text text="64"  class="lbTDNum"/>
+                            <Text text="+29" class="lbTDDGPos"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="6º"  class="lbTDPos"/>
+                            <Text text="Las tigresas encerradas" class="lbTDTeam"/>
+                            <Text text="33"  class="lbTDPts"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="11"  class="lbTDNum lbTDG"/>
+                            <Text text="0"   class="lbTDNum"/>
+                            <Text text="11"  class="lbTDNum lbTDP"/>
+                            <Text text="59"  class="lbTDNum"/>
+                            <Text text="56"  class="lbTDNum"/>
+                            <Text text="+3"  class="lbTDDGPos"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="7º"  class="lbTDPos"/>
+                            <Text text="YELLOW C.F." class="lbTDTeam"/>
+                            <Text text="32"  class="lbTDPts"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="10"  class="lbTDNum lbTDG"/>
+                            <Text text="2"   class="lbTDNum"/>
+                            <Text text="10"  class="lbTDNum lbTDP"/>
+                            <Text text="83"  class="lbTDNum"/>
+                            <Text text="70"  class="lbTDNum"/>
+                            <Text text="+13" class="lbTDDGPos"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="8º"  class="lbTDPos"/>
+                            <Text text="Águilas City" class="lbTDTeam"/>
+                            <Text text="29"  class="lbTDPts"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="9"   class="lbTDNum lbTDG"/>
+                            <Text text="2"   class="lbTDNum"/>
+                            <Text text="11"  class="lbTDNum lbTDP"/>
+                            <Text text="89"  class="lbTDNum"/>
+                            <Text text="98"  class="lbTDNum"/>
+                            <Text text="-9"  class="lbTDDGNeg"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="9º"  class="lbTDPos"/>
+                            <Text text="galacticos team" class="lbTDTeam"/>
+                            <Text text="26"  class="lbTDPts"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="8"   class="lbTDNum lbTDG"/>
+                            <Text text="2"   class="lbTDNum"/>
+                            <Text text="12"  class="lbTDNum lbTDP"/>
+                            <Text text="62"  class="lbTDNum"/>
+                            <Text text="76"  class="lbTDNum"/>
+                            <Text text="-14" class="lbTDDGNeg"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow lbTRowOwn" width="100%">
+                            <Text text="10º" class="lbTDPos lbTDPosOwn"/>
+                            <Text text="Chocolate Sexy ★" class="lbTDTeam lbTDTeamOwn"/>
+                            <Text text="23"  class="lbTDPts lbTDPtsOwn"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="6"   class="lbTDNum lbTDG"/>
+                            <Text text="5"   class="lbTDNum"/>
+                            <Text text="11"  class="lbTDNum lbTDP"/>
+                            <Text text="48"  class="lbTDNum"/>
+                            <Text text="73"  class="lbTDNum"/>
+                            <Text text="-25" class="lbTDDGNeg"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                                <Image src="images/derrota.png"  class="lbResultImg" alt="P"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow" width="100%">
+                            <Text text="11º" class="lbTDPos"/>
+                            <Text text="Peña Bética Madrid en Verdiblanco" class="lbTDTeam"/>
+                            <Text text="11"  class="lbTDPts"/>
+                            <Text text="22"  class="lbTDNum"/>
+                            <Text text="3"   class="lbTDNum lbTDG"/>
+                            <Text text="2"   class="lbTDNum"/>
+                            <Text text="16"  class="lbTDNum lbTDP"/>
+                            <Text text="41"  class="lbTDNum"/>
+                            <Text text="111" class="lbTDNum"/>
+                            <Text text="-70" class="lbTDDGNeg"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/derrota.png" class="lbResultImg" alt="P"/>
+                                <Image src="images/derrota.png" class="lbResultImg" alt="P"/>
+                                <Image src="images/derrota.png" class="lbResultImg" alt="P"/>
+                            </HBox>
+                        </HBox>
+
+                        <HBox class="lbTRow lbTRowLast" width="100%">
+                            <Text text="12º" class="lbTDPos"/>
+                            <Text text="FXMAC FC" class="lbTDTeam"/>
+                            <Text text="4"    class="lbTDPts"/>
+                            <Text text="22"   class="lbTDNum"/>
+                            <Text text="1"    class="lbTDNum lbTDG"/>
+                            <Text text="1"    class="lbTDNum"/>
+                            <Text text="20"   class="lbTDNum lbTDP"/>
+                            <Text text="36"   class="lbTDNum"/>
+                            <Text text="146"  class="lbTDNum"/>
+                            <Text text="-110" class="lbTDDGNeg"/>
+                            <HBox class="lbLastCol">
+                                <Image src="images/derrota.png" class="lbResultImg" alt="P"/>
+                                <Image src="images/derrota.png" class="lbResultImg" alt="P"/>
+                                <Image src="images/victoria.png" class="lbResultImg" alt="V"/>
+                            </HBox>
+                        </HBox>
+
+                    </VBox>
+
                 </VBox>
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
-            
+
             </VBox>
         </content>
     </Page>

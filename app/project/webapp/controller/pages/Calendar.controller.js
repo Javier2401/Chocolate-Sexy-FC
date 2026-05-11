@@ -9,23 +9,23 @@ sap.ui.define([
 
         },
 
-onToggleSeasonBlock: function(oEvent) {
-    var oButton      = oEvent.getSource();
-    var oSeasonBlock = oButton.getParent().getParent();
-    var oContent     = oSeasonBlock.getItems()[1];
-    var oDomRef      = oContent.getDomRef();
+        onToggleSeasonBlock: function(oEvent) {
+            var oButton      = oEvent.getSource();
+            var oSeasonBlock = oButton.getParent().getParent();
+            var oContent     = oSeasonBlock.getItems()[1];
+            var oDomRef      = oContent.getDomRef();
 
-    if (!oDomRef) return;
+            if (!oDomRef) return;
 
-    var bCollapsed = oDomRef.classList.contains("cal-collapsed");
-    oDomRef.classList.toggle("cal-collapsed");
+            var bCollapsed = oDomRef.classList.contains("cal-collapsed");
+            oDomRef.classList.toggle("cal-collapsed");
 
-    oButton.setIcon(
-        bCollapsed
-            ? "sap-icon://navigation-up-arrow"
-            : "sap-icon://navigation-down-arrow"
-    );
-}
+            oButton.setIcon(
+                bCollapsed
+                    ? "sap-icon://navigation-up-arrow"
+                    : "sap-icon://navigation-down-arrow"
+            );
+        }
 
     });
 });

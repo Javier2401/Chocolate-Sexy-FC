@@ -59,7 +59,12 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "chocolatesexy.project.i18n.i18n"
+          "bundleName": "chocolatesexy.project.i18n.i18n",
+          "supportedLocales": [
+            "",
+            "en"
+          ],
+          "fallbackLocale": ""
         }
       },
       "": {

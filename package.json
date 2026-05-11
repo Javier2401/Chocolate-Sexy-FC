@@ -8,7 +8,7 @@
     "watch-project": "cds watch --open chocolatesexy.project/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "keywords": [],
-  "author": "",
+  "author": "Javier Alexander Paltan Lombeida",
   "license": "ISC",
   "dependencies": {
     "@sap/cds": "^9.9.1"
