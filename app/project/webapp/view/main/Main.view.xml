@@ -19,7 +19,7 @@
                             <VBox class="lastPostWidget">
                                 <HBox class="newsWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://camera" class="newsWidgetIcon"/>
-                                    <Text text="Último Post" class="newsWidgetTitle"/>
+                                    <Text text="{i18n>main.lastPost}" class="newsWidgetTitle"/>
                                 </HBox>
                                 <VBox class="lastPostBody">
                                     <VBox class="igPostCropContainer igPostLarge">
@@ -36,7 +36,7 @@
                             <VBox class="newsWidget">
                                 <HBox class="newsWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://newspaper" class="newsWidgetIcon"/>
-                                    <Text text="Noticias" class="newsWidgetTitle"/>
+                                    <Text text="{i18n>main.news}" class="newsWidgetTitle"/>
                                 </HBox>
                                 <VBox class="newsWidgetBody newsListBody">
 
@@ -79,7 +79,7 @@
                             <VBox class="standingsWidget fitStandings">
                                 <HBox class="standingsWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://performance" class="standingsHeaderIcon"/>
-                                    <Text text="Clasificación" class="standingsHeaderTitle"/>
+                                    <Text text="{i18n>main.leaderboard}" class="standingsHeaderTitle"/>
                                 </HBox>
                                 <VBox class="standingsTableWrapper">
 
@@ -137,7 +137,7 @@
                             <VBox class="matchWidget">
                                 <HBox class="matchWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://history" class="matchWidgetIcon"/>
-                                    <Text text="Último Partido" class="matchWidgetTitle"/>
+                                    <Text text="{i18n>main.lastMatch}" class="matchWidgetTitle"/>
                                 </HBox>
                                 <VBox class="matchWidgetBody" alignItems="Center">
                                     <Text text="Jornada 21" class="matchJornada"/>
@@ -178,7 +178,7 @@
                             <VBox class="matchWidget">
                                 <HBox class="matchWidgetHeader" justifyContent="Center">
                                     <core:Icon src="sap-icon://future" class="matchWidgetIcon"/>
-                                    <Text text="Próximo Partido" class="matchWidgetTitle"/>
+                                    <Text text="{i18n>main.nextMatch}" class="matchWidgetTitle"/>
                                 </HBox>
                                 <VBox class="matchWidgetBody" alignItems="Center">
                                     <Text text="Jornada 22" class="matchJornada"/>

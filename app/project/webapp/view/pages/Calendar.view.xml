@@ -18,16 +18,16 @@
                             <HBox class="calSeasonBlockHeader">
                                 <HBox class="calSeasonBlockTitleArea">
                                     <core:Icon src="sap-icon://calendar" class="calSeasonBlockIcon"/>
-                                    <Text text="Temporada 2026/27" class="calSeasonBlockTitle"/>
+                                    <Text text="{i18n>calendar.season.2026-27}" class="calSeasonBlockTitle"/>
                                 </HBox>
                                 <Button icon="sap-icon://navigation-up-arrow" class="calSeasonToggleBtn" press="onToggleSeasonBlock"/>
                             </HBox>
 
                             <VBox class="calSeasonContent" id="seasonContent2627">
 
-                                <VBox class="calMonthBlock calMonthBlock-coral">
-                                    <HBox class="calMonthHeader">
-                                        <Text text="Septiembre 2026" class="calMonthTitle"/>
+                                <VBox class="calMonthGroup">
+                                    <HBox class="calMonthSeparator">
+                                        <Text text="Septiembre 2026" class="calMonthSepLabel"/>
                                     </HBox>
 
                                     <VBox class="calMatchCard">
@@ -67,16 +67,16 @@
                             <HBox class="calSeasonBlockHeader">
                                 <HBox class="calSeasonBlockTitleArea">
                                     <core:Icon src="sap-icon://calendar" class="calSeasonBlockIcon"/>
-                                    <Text text="Temporada 2025/26" class="calSeasonBlockTitle"/>
+                                    <Text text="{i18n>calendar.season.2025-26}" class="calSeasonBlockTitle"/>
                                 </HBox>
                                 <Button icon="sap-icon://navigation-up-arrow" class="calSeasonToggleBtn" press="onToggleSeasonBlock"/>
                             </HBox>
 
                             <VBox class="calSeasonContent" id="seasonContent2526">
 
-                                <VBox class="calMonthBlock calMonthBlock-peach">
-                                    <HBox class="calMonthHeader">
-                                        <Text text="Septiembre 2025" class="calMonthTitle"/>
+                                <VBox class="calMonthGroup">
+                                    <HBox class="calMonthSeparator">
+                                        <Text text="Septiembre 2025" class="calMonthSepLabel"/>
                                     </HBox>
 
                                     <VBox class="calMatchCard">
@@ -160,9 +160,9 @@
                                 </VBox>
 
 
-                                <VBox class="calMonthBlock calMonthBlock-sky">
-                                    <HBox class="calMonthHeader">
-                                        <Text text="Octubre 2025" class="calMonthTitle"/>
+                                <VBox class="calMonthGroup">
+                                    <HBox class="calMonthSeparator">
+                                        <Text text="Octubre 2025" class="calMonthSepLabel"/>
                                     </HBox>
 
                                     <!-- J4 -->
@@ -273,9 +273,9 @@
                                 </VBox>
 
 
-                                <VBox class="calMonthBlock calMonthBlock-sage">
-                                    <HBox class="calMonthHeader">
-                                        <Text text="Noviembre 2025" class="calMonthTitle"/>
+                                <VBox class="calMonthGroup">
+                                    <HBox class="calMonthSeparator">
+                                        <Text text="Noviembre 2025" class="calMonthSepLabel"/>
                                     </HBox>
 
                                     <VBox class="calMatchCard">
@@ -411,9 +411,9 @@
                                 </VBox>
 
 
-                                <VBox class="calMonthBlock calMonthBlock-lavender">
-                                    <HBox class="calMonthHeader">
-                                        <Text text="Diciembre 2025" class="calMonthTitle"/>
+                                <VBox class="calMonthGroup">
+                                    <HBox class="calMonthSeparator">
+                                        <Text text="Diciembre 2025" class="calMonthSepLabel"/>
                                     </HBox>
 
                                     <VBox class="calMatchCard">
@@ -471,9 +471,9 @@
                                 </VBox>
 
 
-                                <VBox class="calMonthBlock calMonthBlock-golden">
-                                    <HBox class="calMonthHeader">
-                                        <Text text="Enero 2026" class="calMonthTitle"/>
+                                <VBox class="calMonthGroup">
+                                    <HBox class="calMonthSeparator">
+                                        <Text text="Enero 2026" class="calMonthSepLabel"/>
                                     </HBox>
 
                                     <VBox class="calMatchCard">
@@ -557,9 +557,9 @@
                                 </VBox>
 
 
-                                <VBox class="calMonthBlock calMonthBlock-rose">
-                                    <HBox class="calMonthHeader">
-                                        <Text text="Febrero 2026" class="calMonthTitle"/>
+                                <VBox class="calMonthGroup">
+                                    <HBox class="calMonthSeparator">
+                                        <Text text="Febrero 2026" class="calMonthSepLabel"/>
                                     </HBox>
 
                                     <VBox class="calMatchCard">
@@ -669,9 +669,9 @@
                                 </VBox>
 
 
-                                <VBox class="calMonthBlock calMonthBlock-teal">
-                                    <HBox class="calMonthHeader">
-                                        <Text text="Marzo 2026" class="calMonthTitle"/>
+                                <VBox class="calMonthGroup">
+                                    <HBox class="calMonthSeparator">
+                                        <Text text="Marzo 2026" class="calMonthSepLabel"/>
                                     </HBox>
 
                                     <!-- J22 -->
