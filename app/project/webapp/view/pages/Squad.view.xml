@@ -12,13 +12,288 @@
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
 
                 <VBox class="pageContent">
-                    
-                    <Text text="VISTA SQUAD" class="surveyText"/>
-                    
+
+                    <VBox class="sqWidget">
+
+                        <HBox class="sqWidgetHeader">
+                            <core:Icon src="sap-icon://people-connected" class="sqWidgetIcon"/>
+                            <Text text="{i18n>squad.title}" class="sqWidgetTitle"/>
+                        </HBox>
+
+                        <VBox class="sqWidgetBody">
+
+                            <VBox class="sqPositionGroup">
+                                <HBox class="sqPositionLabelRow">
+                                    <Text text="Entrenador" class="sqPositionLabel"/>
+                                </HBox>
+                                <HBox class="sqPlayerGrid">
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="99" class="sqPlayerDorsal"/>
+                                            <Text text="Javier.M" class="sqPlayerName"/>
+                                            <Text text="Entrenador" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                </HBox>
+                            </VBox>
+
+                            <VBox class="sqPositionGroup">
+                                <HBox class="sqPositionLabelRow">
+                                    <Text text="Portero" class="sqPositionLabel"/>
+                                </HBox>
+                                <HBox class="sqPlayerGrid">
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="1" class="sqPlayerDorsal"/>
+                                            <Text text="Asi" class="sqPlayerName"/>
+                                            <Text text="Portero" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                </HBox>
+                            </VBox>
+
+                            <VBox class="sqPositionGroup">
+                                <HBox class="sqPositionLabelRow">
+                                    <Text text="Defensas" class="sqPositionLabel"/>
+                                </HBox>
+                                <HBox class="sqPlayerGrid">
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="2" class="sqPlayerDorsal"/>
+                                            <Text text="Álex" class="sqPlayerName"/>
+                                            <Text text="Defensa" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="3" class="sqPlayerDorsal"/>
+                                            <Text text="Cordesinho" class="sqPlayerName"/>
+                                            <Text text="Defensa" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="4" class="sqPlayerDorsal"/>
+                                            <Text text="David" class="sqPlayerName"/>
+                                            <Text text="Defensa" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="5" class="sqPlayerDorsal"/>
+                                            <Text text="Diego" class="sqPlayerName"/>
+                                            <Text text="Defensa" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="6" class="sqPlayerDorsal"/>
+                                            <Text text="Dragos" class="sqPlayerName"/>
+                                            <Text text="Defensa" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="19" class="sqPlayerDorsal"/>
+                                            <Text text="Sánchez-Beato" class="sqPlayerName"/>
+                                            <Text text="Defensa" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                </HBox>
+                            </VBox>
+
+                            <VBox class="sqPositionGroup">
+                                <HBox class="sqPositionLabelRow">
+                                    <Text text="Centrocampistas" class="sqPositionLabel"/>
+                                </HBox>
+                                <HBox class="sqPlayerGrid">
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sergio.png" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="7" class="sqPlayerDorsal"/>
+                                            <Text text="Gabi" class="sqPlayerName"/>
+                                            <Text text="Centrocampista" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="8" class="sqPlayerDorsal"/>
+                                            <Text text="Joseda" class="sqPlayerName"/>
+                                            <Text text="Centrocampista" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="9" class="sqPlayerDorsal"/>
+                                            <Text text="Lucotaz" class="sqPlayerName"/>
+                                            <Text text="Centrocampista" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="10" class="sqPlayerDorsal"/>
+                                            <Text text="Macoco" class="sqPlayerName"/>
+                                            <Text text="Centrocampista" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="12" class="sqPlayerDorsal"/>
+                                            <Text text="Padi" class="sqPlayerName"/>
+                                            <Text text="Centrocampista" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="13" class="sqPlayerDorsal"/>
+                                            <Text text="Pancho" class="sqPlayerName"/>
+                                            <Text text="Centrocampista" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                </HBox>
+                            </VBox>
+
+                            <VBox class="sqPositionGroup">
+                                <HBox class="sqPositionLabelRow">
+                                    <Text text="Delanteros" class="sqPositionLabel"/>
+                                </HBox>
+                                <HBox class="sqPlayerGrid">
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="11" class="sqPlayerDorsal"/>
+                                            <Text text="Marco" class="sqPlayerName"/>
+                                            <Text text="Delantero" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="14" class="sqPlayerDorsal"/>
+                                            <Text text="Pato" class="sqPlayerName"/>
+                                            <Text text="Delantero" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="15" class="sqPlayerDorsal"/>
+                                            <Text text="Pingu" class="sqPlayerName"/>
+                                            <Text text="Delantero" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="16" class="sqPlayerDorsal"/>
+                                            <Text text="Raúl" class="sqPlayerName"/>
+                                            <Text text="Delantero" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/sample" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="17" class="sqPlayerDorsal"/>
+                                            <Text text="Sergi" class="sqPlayerName"/>
+                                            <Text text="Delantero" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                    <VBox class="sqPlayerCard">
+                                        <VBox class="sqPlayerImgBox">
+                                            <Image src="images/Sergio.png" class="sqPlayerImg"/>
+                                        </VBox>
+                                        <VBox class="sqPlayerInfo">
+                                            <Text text="17" class="sqPlayerDorsal"/>
+                                            <Text text="Sergio" class="sqPlayerName"/>
+                                            <Text text="Delantero" class="sqPlayerPos"/>
+                                        </VBox>
+                                    </VBox>
+
+                                </HBox>
+                            </VBox>
+
+                        </VBox>
+                    </VBox>
+
                 </VBox>
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
-            
+
             </VBox>
         </content>
     </Page>

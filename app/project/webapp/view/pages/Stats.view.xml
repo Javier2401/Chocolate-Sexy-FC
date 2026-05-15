@@ -11,14 +11,90 @@
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
 
-                <VBox class="pageContent">
-                    
-                    <Text text="VISTA STATS" class="surveyText"/>
-                    
+                <VBox class="lbPageContent pageContent" id="statsPageWrapper">
+
+                    <!-- ══════════════════════════════════════════
+                         ESTADÍSTICAS — TEMPORADA 2026/27
+                    ══════════════════════════════════════════ -->
+                    <VBox class="stCard" id="statsCard2627">
+
+                        <HBox class="stCardHeader" justifyContent="SpaceBetween" alignItems="Center">
+                            <VBox class="stHeaderBalancer"/>
+                            <HBox class="stHeaderCenter" alignItems="Center" renderType="Bare">
+                                <core:Icon src="sap-icon://activity-2" class="stHeaderIcon"/>
+                                <Text text="{i18n>stats.season.2026-27}" class="stTitle"/>
+                            </HBox>
+                            <Button id="statsToggle2627"
+                                    icon="sap-icon://slim-arrow-up"
+                                    class="navIconBtn stCollapseBtn"
+                                    press="onToggleStats2627"/>
+                        </HBox>
+
+                        <VBox class="stSeasonContent" id="statsContent2627">
+
+                            <!-- ── Selector de jornada ── -->
+                            <HBox class="stJornadaRow" alignItems="Center">
+                                <Button id="statsJornadaBtn2627"
+                                        text="JORNADA"
+                                        icon="sap-icon://slim-arrow-down"
+                                        iconFirst="false"
+                                        class="stJornadaDropBtn"
+                                        press="onJornadaMenuOpen2627"/>
+                                <VBox class="stJornadaSeparator"/>
+                                <Text id="statsJornadaSelected2627"
+                                      text="Todas las jornadas"
+                                      class="stJornadaSelectedLabel"/>
+                            </HBox>
+
+                            <!-- Tabla completa (cabecera + filas) generada por el controller -->
+                            <VBox id="statsRows2627"/>
+
+                        </VBox>
+                    </VBox>
+
+                    <!-- ══════════════════════════════════════════
+                         ESTADÍSTICAS — TEMPORADA 2025/26
+                    ══════════════════════════════════════════ -->
+                    <VBox class="stCard" id="statsCard2526">
+
+                        <HBox class="stCardHeader" justifyContent="SpaceBetween" alignItems="Center">
+                            <VBox class="stHeaderBalancer"/>
+                            <HBox class="stHeaderCenter" alignItems="Center" renderType="Bare">
+                                <core:Icon src="sap-icon://activity-2" class="stHeaderIcon"/>
+                                <Text text="{i18n>stats.season.2025-26}" class="stTitle"/>
+                            </HBox>
+                            <Button id="statsToggle2526"
+                                    icon="sap-icon://slim-arrow-up"
+                                    class="navIconBtn stCollapseBtn"
+                                    press="onToggleStats2526"/>
+                        </HBox>
+
+                        <VBox class="stSeasonContent" id="statsContent2526">
+
+                            <!-- ── Selector de jornada ── -->
+                            <HBox class="stJornadaRow" alignItems="Center">
+                                <Button id="statsJornadaBtn2526"
+                                        text="JORNADA"
+                                        icon="sap-icon://slim-arrow-down"
+                                        iconFirst="false"
+                                        class="stJornadaDropBtn"
+                                        press="onJornadaMenuOpen2526"/>
+                                <VBox class="stJornadaSeparator"/>
+                                <Text id="statsJornadaSelected2526"
+                                      text="Todas las jornadas"
+                                      class="stJornadaSelectedLabel"/>
+                            </HBox>
+
+                            <!-- Tabla completa (cabecera + filas) generada por el controller -->
+                            <VBox id="statsRows2526"/>
+
+                        </VBox>
+                    </VBox>
+
                 </VBox>
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
-            
+
             </VBox>
         </content>
     </Page>

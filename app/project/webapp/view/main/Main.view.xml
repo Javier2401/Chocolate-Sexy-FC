@@ -34,9 +34,9 @@
 
                         <VBox class="middleCol">
                             <VBox class="newsWidget">
-                                <HBox class="newsWidgetHeader" justifyContent="Center">
+                                <HBox class="newsWidgetHeader2" justifyContent="Center">
                                     <core:Icon src="sap-icon://newspaper" class="newsWidgetIcon"/>
-                                    <Text text="{i18n>main.news}" class="newsWidgetTitle"/>
+                                    <Text text="{i18n>main.news}" class="newsWidgetTitle2"/>
                                 </HBox>
                                 <VBox class="newsWidgetBody newsListBody">
 
@@ -169,8 +169,10 @@
                                             <Text text="📅 Dom, 22 Feb" class="matchInfoText"/>
                                             <Text text=" · " class="matchInfoDot"/>
                                             <Text text="⏰ 18:00" class="matchInfoText"/>
+                                            <Text text=" · " class="matchInfoDot"/>
+                                            <Text text="📍Estadio Nuevo" class="matchInfoText"/>
                                         </HBox>
-                                        <Text text="📍 Estadio Nuevo" class="matchInfoText"/>
+                                        
                                     </VBox>
                                 </VBox>
                             </VBox>
@@ -206,8 +208,9 @@
                                             <Text text="📅 Dom, 01 Mar" class="matchInfoText"/>
                                             <Text text=" · " class="matchInfoDot"/>
                                             <Text text="⏰ 17:00" class="matchInfoText"/>
+                                            <Text text=" · " class="matchInfoDot"/>
+                                            <Text text="📍 Campo Municipal" class="matchInfoText"/>
                                         </HBox>
-                                        <Text text="📍 Campo Municipal" class="matchInfoText"/>
                                     </VBox>
                                 </VBox>
                             </VBox>
