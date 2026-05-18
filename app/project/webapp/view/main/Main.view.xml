@@ -144,7 +144,7 @@
                                     <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
 
                                         <VBox alignItems="Center" class="matchTeamBox">
-                                            <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
+                                            <Image src="images/escudo.png" class="matchTeamLogo" densityAware="false"/>
                                             <Text text="Chocolate Sexy" class="matchTeamName"/>
                                         </VBox>
 
@@ -187,7 +187,7 @@
                                     <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
 
                                         <VBox alignItems="Center" class="matchTeamBox">
-                                            <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
+                                            <Image src="images/escudo.png" class="matchTeamLogo" densityAware="false"/>
                                             <Text text="Chocolate Sexy" class="matchTeamName"/>
                                         </VBox>
 

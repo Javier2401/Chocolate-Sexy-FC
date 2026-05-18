@@ -1,29 +1,56 @@
 namespace my.chocolatesexy;
 
+entity Temporadas {
+    key id          : Integer;
+    temporada       : String(10);       
+}
+
+entity Campos {
+    key id          : Integer;
+    nombreCampo     : String(200);
+    enlaceCampo     : String(1000);
+}
+
+entity Equipos {
+    key id          : Integer;
+    temporadaId     : Integer;
+    temporada       : Association to Temporadas on temporada.id = temporadaId;
+    nombre          : String(100);
+    iniciales       : String(5);
+}
+
 entity Jugadores {
-    key ID              : Integer;
-    nombre              : String(100);
-    apellido            : String(100);
+    key id              : Integer;
+    nombreCamiseta      : String(100);
     dorsal              : Integer;
-    posicion            : String(50);
+    nombre              : String(100);
+    apellidos           : String(100);
     fechaNacimiento     : Date;
-    actuaciones         : Association to many Actuaciones on actuaciones.jugador_ID = ID;
+    piernaHabil         : String(20);
+    posicion            : String(50);
+    foto                : String(500);
 }
 
 entity Jornadas {
-    key ID        : Integer;
-    numero        : Integer;
-    temporada     : String(20);
-    actuaciones   : Association to many Actuaciones on actuaciones.jornada_ID = ID;
-}
-
-entity Actuaciones {
-    key ID          : Integer;
-    jugador_ID      : Integer;
-    jornada_ID      : Integer;
-    convocado       : Boolean;
-    titular         : Boolean;
-    goles           : Integer;
-    asistencias     : Integer;
-    tarjeta         : String(10);
+    key id              : Integer;
+    temporadaId         : Integer;
+    temporada           : Association to Temporadas on temporada.id = temporadaId;
+    jornada             : Integer;
+    equipoId            : Integer;
+    equipo              : Association to Equipos on equipo.id = equipoId;
+    esLocal             : Boolean;
+    fecha               : DateTime;
+    campoId             : Integer;
+    campo               : Association to Campos on campo.id = campoId;
+    golesNuestros       : Integer;
+    golesRival          : Integer;
+    resultado           : String(20);  
+    posesion            : Integer;
+    tiros               : Integer;
+    corners             : Integer;
+    amarillas           : Integer;
+    rojas               : Integer;
+    mvpNombre           : String(100);
+    mvpPosicion         : String(50);
+    mvpRating           : Decimal(3,1);
 }

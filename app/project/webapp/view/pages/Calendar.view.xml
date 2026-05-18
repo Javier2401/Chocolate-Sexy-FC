@@ -21,68 +21,62 @@
                                     <core:Icon src="sap-icon://history" class="matchWidgetIcon"/>
                                     <Text text="{i18n>main.lastMatch}" class="matchWidgetTitle"/>
                                 </HBox>
-                                <VBox class="matchWidgetBody" alignItems="Center">
-                                    <Text text="Jornada 21" class="matchJornada"/>
-                                    <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
-                                        <VBox alignItems="Center" class="matchTeamBox">
-                                            <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
+                                <VBox class="matchWidgetBody" alignItems="Center" visible="{cal>/hayUltimo}">
+                                    <Text text="Jornada {cal>/ultimoPartido/jornada}" class="matchJornada"/>
+                                    <HBox class="matchTeamsRow" justifyContent="SpaceAround" width="100%">
+                                        <VBox class="matchTeamBox" alignItems="Center">
+                                            <Image src="images/escudo.png" class="matchTeamLogo"/>
                                             <Text text="Chocolate Sexy" class="matchTeamName"/>
                                         </VBox>
-                                        <VBox alignItems="Center" class="matchCenterBox">
-                                            <HBox alignItems="Center" justifyContent="Center" class="matchScoreBox">
-                                                <Text text="1" class="matchScoreNum"/>
+                                        <VBox class="matchCenterBox" alignItems="Center" justifyContent="Center">
+                                            <HBox class="matchScoreBox" alignItems="Center" justifyContent="Center">
+                                                <Text text="{cal>/ultimoPartido/golesNuestros}" class="matchScoreNum"/>
                                                 <Text text=" – " class="matchScoreDash"/>
-                                                <Text text="2" class="matchScoreNum"/>
+                                                <Text text="{cal>/ultimoPartido/golesRival}" class="matchScoreNum"/>
                                             </HBox>
                                         </VBox>
-                                        <VBox alignItems="Center" class="matchTeamBox">
+                                        <VBox class="matchTeamBox" alignItems="Center">
                                             <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
-                                                <Text text="VFC" class="matchTeamLogoInitials"/>
+                                                <Text text="{cal>/ultimoPartido/rivalIniciales}" class="matchTeamLogoInitials"/>
                                             </VBox>
-                                            <Text text="VFC United" class="matchTeamName"/>
+                                            <Text text="{cal>/ultimoPartido/rivalNombre}" class="matchTeamName"/>
                                         </VBox>
                                     </HBox>
-
-                                    <VBox alignItems="Center" class="matchInfoDetails" width="100%">
-                                        <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow">
-                                            <Text text="📅 Dom, 22 Feb" class="matchInfoText"/>
-                                            <Text text=" · " class="matchInfoDot"/>
-                                            <Text text="⏰ 18:00" class="matchInfoText"/>
-                                            <Text text=" · " class="matchInfoDot"/>
-                                            <Text text="📍 Estadio Nuevo" class="matchInfoText"/>
-                                        </HBox>
+                                    <VBox class="matchInfoDetails" alignItems="Center" width="100%">
+                                        <Text text="{cal>/ultimoPartido/fechaTexto}" class="matchInfoText"/>
+                                        <Text text="📍 {cal>/ultimoPartido/ubicTxt}" class="matchInfoText"/>
                                     </VBox>
-
-                                    <HBox class="mvpBox" alignItems="Center" width="100%">
+                                    <HBox class="mvpBox" alignItems="Center" width="100%" visible="{cal>/ultimoPartido/hayMvp}">
                                         <Text text="🏆" class="mvpEmoji"/>
                                         <VBox class="mvpInfo">
                                             <Text text="Chocolate MVP" class="mvpLabel"/>
-                                            <Text text="Cristhian · Defensa" class="mvpName"/>
+                                            <Text text="{cal>/ultimoPartido/mvpNombre} · {cal>/ultimoPartido/mvpPosicion}" class="mvpName"/>
                                         </VBox>
                                         <VBox class="mvpRatingBadge" alignItems="Center" justifyContent="Center">
-                                            <Text text="8.2" class="mvpRatingText"/>
+                                            <Text text="{cal>/ultimoPartido/mvpRating}" class="mvpRatingText"/>
                                         </VBox>
                                     </HBox>
-
-                                    <HBox class="matchStatsRow" width="100%">
+                                    <HBox class="matchStatsRow" width="100%" visible="{cal>/ultimoPartido/hayStats}">
                                         <VBox class="matchStatItem" alignItems="Center">
-                                            <Text text="48%" class="matchStatVal"/>
+                                            <Text text="{cal>/ultimoPartido/posesionTexto}" class="matchStatVal"/>
                                             <Text text="Posesión" class="matchStatLbl"/>
                                         </VBox>
                                         <VBox class="matchStatItem" alignItems="Center">
-                                            <Text text="7" class="matchStatVal"/>
+                                            <Text text="{cal>/ultimoPartido/tiros}" class="matchStatVal"/>
                                             <Text text="Tiros" class="matchStatLbl"/>
                                         </VBox>
                                         <VBox class="matchStatItem" alignItems="Center">
-                                            <Text text="3" class="matchStatVal"/>
+                                            <Text text="{cal>/ultimoPartido/corners}" class="matchStatVal"/>
                                             <Text text="Corners" class="matchStatLbl"/>
                                         </VBox>
                                         <VBox class="matchStatItem" alignItems="Center">
-                                            <Text text="2" class="matchStatVal"/>
+                                            <Text text="{cal>/ultimoPartido/amarillas}" class="matchStatVal"/>
                                             <Text text="Amarillas" class="matchStatLbl"/>
                                         </VBox>
                                     </HBox>
                                 </VBox>
+                                <Text text="No hay partidos jugados aún." class="calNoData"
+                                      visible="{= !${cal>/hayUltimo} }"/>
                             </VBox>
 
                             <VBox class="matchWidget">
@@ -90,71 +84,43 @@
                                     <core:Icon src="sap-icon://future" class="matchWidgetIcon"/>
                                     <Text text="{i18n>main.nextMatch}" class="matchWidgetTitle"/>
                                 </HBox>
-                                <VBox class="matchWidgetBody" alignItems="Center">
-                                    <Text text="Jornada 22" class="matchJornada"/>
-                                    <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
-                                        <VBox alignItems="Center" class="matchTeamBox">
-                                            <Image src="images/logo.png" class="matchTeamLogo" densityAware="false"/>
+                                <VBox class="matchWidgetBody" alignItems="Center" visible="{cal>/hayProximo}">
+                                    <Text text="Jornada {cal>/proximoPartido/jornada}" class="matchJornada"/>
+                                    <HBox class="matchTeamsRow" justifyContent="SpaceAround" width="100%">
+                                        <VBox class="matchTeamBox" alignItems="Center">
+                                            <Image src="images/escudo.png" class="matchTeamLogo"/>
                                             <Text text="Chocolate Sexy" class="matchTeamName"/>
                                         </VBox>
-                                        <VBox alignItems="Center" class="matchCenterBox">
+                                        <VBox class="matchCenterBox" alignItems="Center" justifyContent="Center">
                                             <Text text="VS" class="matchVsText"/>
                                         </VBox>
-                                        <VBox alignItems="Center" class="matchTeamBox">
+                                        <VBox class="matchTeamBox" alignItems="Center">
                                             <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
-                                                <Text text="AC" class="matchTeamLogoInitials"/>
+                                                <Text text="{cal>/proximoPartido/rivalIniciales}" class="matchTeamLogoInitials"/>
                                             </VBox>
-                                            <Text text="Águilas City" class="matchTeamName"/>
+                                            <Text text="{cal>/proximoPartido/rivalNombre}" class="matchTeamName"/>
                                         </VBox>
                                     </HBox>
-
-                                    <VBox alignItems="Center" class="matchInfoDetails" width="100%">
-                                        <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow">
-                                            <Text text="📅 Dom, 01 Mar" class="matchInfoText"/>
+                                    <VBox class="matchInfoDetails" alignItems="Center" width="100%">
+                                        <HBox class="matchInfoRow" justifyContent="Center" wrap="Wrap">
+                                            <Text text="📅 {cal>/proximoPartido/fechaCorta}" class="matchInfoText"/>
                                             <Text text=" · " class="matchInfoDot"/>
-                                            <Text text="⏰ 17:00" class="matchInfoText"/>
+                                            <Text text="⏰ {cal>/proximoPartido/hora}" class="matchInfoText"/>
                                             <Text text=" · " class="matchInfoDot"/>
-                                            <Text text="📍 Campo Municipal" class="matchInfoText"/>
-                                        </HBox>
-                                    </VBox>
-
-                                    <VBox class="rivalInfoBox" width="100%">
-                                        <HBox class="rivalInfoRow" alignItems="Center">
-                                            <Text text="📊" class="rivalInfoEmoji"/>
-                                            <Text text="Pos. tabla:" class="rivalInfoLabel"/>
-                                            <Text text="3º · 42 pts" class="rivalInfoVal"/>
-                                        </HBox>
-                                        <HBox class="rivalInfoRow" alignItems="Center">
-                                            <Text text="📈" class="rivalInfoEmoji"/>
-                                            <Text text="Últimos 3:" class="rivalInfoLabel"/>
-                                            <HBox class="formBadgesRow" alignItems="Center">
-                                                <VBox class="formBadge formL" alignItems="Center" justifyContent="Center">
-                                                    <Text text="D" class="formBadgeText"/>
-                                                </VBox>
-                                                <VBox class="formBadge formD" alignItems="Center" justifyContent="Center">
-                                                    <Text text="E" class="formBadgeText"/>
-                                                </VBox>
-                                                <VBox class="formBadge formW" alignItems="Center" justifyContent="Center">
-                                                    <Text text="V" class="formBadgeText"/>
-                                                </VBox>
-                                            </HBox>
-                                        </HBox>
-                                        <HBox class="rivalInfoRow" alignItems="Center">
-                                            <Text text="🆚" class="rivalInfoEmoji"/>
-                                            <Text text="Historial:" class="rivalInfoLabel"/>
-                                            <Text text="3V · 1E · 2D" class="rivalInfoVal"/>
-                                        </HBox>
-                                        <HBox class="rivalInfoRow" alignItems="Center">
-                                            <Text text="⚡" class="rivalInfoEmoji"/>
-                                            <Text text="Su racha:" class="rivalInfoLabel"/>
-                                            <Text text="Sin ganar 3 partidos" class="rivalInfoVal"/>
+                                            <Text text="📍 {cal>/proximoPartido/ubicTxt}" class="matchInfoText"/>
                                         </HBox>
                                     </VBox>
                                 </VBox>
+                                <VBox class="calNoDataBox" alignItems="Center" justifyContent="Center"
+                                      visible="{= !${cal>/hayProximo} }">
+                                    <Text text="No hay próximos partidos" class="calNoDataMsg"/>
+                                </VBox>
                             </VBox>
+
                         </VBox>
 
                         <VBox class="calSeasonArea">
+
                             <HBox class="calSeasonRow">
                                 <VBox class="calMidCol">
                                     <VBox class="calSeasonBlock">
@@ -165,68 +131,66 @@
                                             </HBox>
                                             <Button icon="sap-icon://navigation-up-arrow" class="calSeasonToggleBtn" press="onToggleSeasonBlock"/>
                                         </HBox>
+                                        <VBox class="calSeasonContent">
+                                            <List items="{cal>/partidos2627}" showSeparators="None" showNoData="false">
+                                                <CustomListItem>
 
-                                        <VBox class="calSeasonContent" id="seasonContent2627">
-                                            <VBox class="calMonthGroup">
-                                                <HBox class="calMonthSeparator">
-                                                    <Text text="Septiembre 2026" class="calMonthSepLabel"/>
-                                                </HBox>
-                                                <VBox class="calMatchCard">
-                                                    <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
-                                                        <Text text="J1 · Liga" class="calJornada"/>
-                                                        <Text text="PENDIENTE" class="calBadge calPendiente"/>
+                                                    <HBox class="calMonthSeparator" visible="{cal>isHeader}">
+                                                        <VBox class="calMonthSepLine"/>
+                                                        <Text text="{cal>mesLabel}" class="calMonthSepLabel"/>
                                                     </HBox>
-                                                    <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
-                                                        <VBox class="calTeamBox" alignItems="Center">
-                                                            <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
-                                                            <Text text="Chocolate Sexy" class="calTeamName"/>
-                                                        </VBox>
-                                                        <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
-                                                            <Text text="- : -" class="calScoreText"/>
-                                                        </VBox>
-                                                        <VBox class="calTeamBox" alignItems="Center">
-                                                            <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
-                                                                <Text text="RV" class="calTeamInitials"/>
-                                                            </VBox>
-                                                            <Text text="Real Valencia" class="calTeamName"/>
-                                                        </VBox>
-                                                    </HBox>
-                                                    <VBox class="calMatchInfo" alignItems="Center">
-                                                        <Text text="Dom, 13 Sep 2026 · 17:00" class="calInfoText"/>
-                                                        <Text text="📍 Campo Municipal" class="calInfoText"/>
-                                                    </VBox>
-                                                </VBox>
-                                            </VBox>
 
-                                            <VBox class="calMonthGroup">
-                                                <HBox class="calMonthSeparator">
-                                                    <Text text="Octubre 2026" class="calMonthSepLabel"/>
-                                                </HBox>
-                                                <VBox class="calMatchCard">
-                                                    <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
-                                                        <Text text="J2 · Liga" class="calJornada"/>
-                                                        <Text text="PENDIENTE" class="calBadge calPendiente"/>
-                                                    </HBox>
-                                                    <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
-                                                        <VBox class="calTeamBox" alignItems="Center">
-                                                            <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
-                                                            <Text text="Chocolate Sexy" class="calTeamName"/>
-                                                        </VBox>
-                                                        <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
-                                                            <Text text="- : -" class="calScoreText"/>
-                                                        </VBox>
-                                                        <VBox class="calTeamBox" alignItems="Center">
-                                                            <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
-                                                                <Text text="DS" class="calTeamInitials"/>
+                                                    <VBox class="calMatchCard" visible="{= !${cal>isHeader} }">
+                                                        <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                                            <Text text="Jornada {cal>jornada} · Liga" class="calJornada"/>
+                                                            <Text text="VICTORIA"  class="calBadge calVictoria"  visible="{cal>esVictoria}"/>
+                                                            <Text text="EMPATE"    class="calBadge calEmpate"    visible="{cal>esEmpate}"/>
+                                                            <Text text="DERROTA"   class="calBadge calDerrota"   visible="{cal>esDerrota}"/>
+                                                            <Text text="PENDIENTE" class="calBadge calPendiente" visible="{cal>esPendiente}"/>
+                                                        </HBox>
+                                                        <!-- VISITANTE: Chocolate Sexy izquierda, Rival derecha -->
+                                                        <HBox class="calTeamsRow" justifyContent="SpaceBetween" alignItems="Start" visible="{= !${cal>esLocal} }">
+                                                            <VBox class="calTeamBox" alignItems="Center">
+                                                                <Image src="images/escudo.png" class="calTeamLogo"/>
+                                                                <Text text="Chocolate Sexy" class="calTeamName"/>
                                                             </VBox>
-                                                            <Text text="Deportivo Sur" class="calTeamName"/>
+                                                            <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                                                <Text text="{cal>marcador}" class="calScoreText"/>
+                                                            </VBox>
+                                                            <VBox class="calTeamBox" alignItems="Center">
+                                                                <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                                                    <Text text="{cal>rivalIniciales}" class="calTeamInitials"/>
+                                                                </VBox>
+                                                                <Text text="{cal>rivalNombre}" class="calTeamName" wrapping="true"/>
+                                                            </VBox>
+                                                        </HBox>
+                                                        <!-- LOCAL: Rival izquierda, Chocolate Sexy derecha -->
+                                                        <HBox class="calTeamsRow" justifyContent="SpaceBetween" alignItems="Start" visible="{cal>esLocal}">
+                                                            <VBox class="calTeamBox" alignItems="Center">
+                                                                <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                                                    <Text text="{cal>rivalIniciales}" class="calTeamInitials"/>
+                                                                </VBox>
+                                                                <Text text="{cal>rivalNombre}" class="calTeamName" wrapping="true"/>
+                                                            </VBox>
+                                                            <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                                                <Text text="{cal>marcador}" class="calScoreText"/>
+                                                            </VBox>
+                                                            <VBox class="calTeamBox" alignItems="Center">
+                                                                <Image src="images/escudo.png" class="calTeamLogo"/>
+                                                                <Text text="Chocolate Sexy" class="calTeamName"/>
+                                                            </VBox>
+                                                        </HBox>
+                                                        <VBox class="calMatchInfo" alignItems="Center">
+                                                            <Text text="{cal>fechaTexto}" class="calInfoText"/>
+                                                            <Text text="📍 {cal>ubicTxt}" class="calInfoText"/>
                                                         </VBox>
-                                                    </HBox>
-                                                    <VBox class="calMatchInfo" alignItems="Center">
-                                                        <Text text="Dom, 11 Oct 2026 · 17:00" class="calInfoText"/>
-                                                        <Text text="📍 Estadio Central" class="calInfoText"/>
                                                     </VBox>
-                                                </VBox>
+
+                                                </CustomListItem>
+                                            </List>
+                                            <VBox class="calNoDataBox" alignItems="Center" justifyContent="Center"
+                                                  visible="{= !${cal>/hayPartidos2627} }">
+                                                <Text text="No hay información disponible" class="calNoDataMsg"/>
                                             </VBox>
                                         </VBox>
                                     </VBox>
@@ -236,6 +200,7 @@
                                 </VBox>
                             </HBox>
 
+                            <!-- TEMPORADA 2025-26 -->
                             <HBox class="calSeasonRow">
                                 <VBox class="calMidCol">
                                     <VBox class="calSeasonBlock">
@@ -246,38 +211,66 @@
                                             </HBox>
                                             <Button icon="sap-icon://navigation-up-arrow" class="calSeasonToggleBtn" press="onToggleSeasonBlock"/>
                                         </HBox>
+                                        <VBox class="calSeasonContent">
+                                            <List items="{cal>/partidos2526}" showSeparators="None" showNoData="false">
+                                                <CustomListItem>
 
-                                        <VBox class="calSeasonContent" id="seasonContent2526">
-                                            <VBox class="calMonthGroup">
-                                                <HBox class="calMonthSeparator">
-                                                    <Text text="Septiembre 2025" class="calMonthSepLabel"/>
-                                                </HBox>
-                                                <VBox class="calMatchCard">
-                                                    <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
-                                                        <Text text="Jornada 1 · Liga" class="calJornada"/>
-                                                        <Text text="VICTORIA" class="calBadge calVictoria"/>
+                                                    <HBox class="calMonthSeparator" visible="{cal>isHeader}">
+                                                        <Text text="{cal>mesLabel}" class="calMonthSepLabel"/>
                                                     </HBox>
-                                                    <HBox class="calTeamsRow" justifyContent="Center" alignItems="Center">
-                                                        <VBox class="calTeamBox" alignItems="Center">
-                                                            <Image src="images/logo.png" class="calTeamLogo" densityAware="false"/>
-                                                            <Text text="Chocolate Sexy" class="calTeamName"/>
-                                                        </VBox>
-                                                        <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
-                                                            <Text text="2 - 1" class="calScoreText"/>
-                                                        </VBox>
-                                                        <VBox class="calTeamBox" alignItems="Center">
-                                                            <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
-                                                                <Text text="RV" class="calTeamInitials"/>
+
+                                                    <VBox class="calMatchCard" visible="{= !${cal>isHeader} }">
+                                                        <HBox class="calMatchTop" justifyContent="SpaceBetween" alignItems="Center">
+                                                            <Text text="Jornada {cal>jornada} · Liga" class="calJornada"/>
+                                                            <Text text="VICTORIA"  class="calBadge calVictoria"  visible="{cal>esVictoria}"/>
+                                                            <Text text="EMPATE"    class="calBadge calEmpate"    visible="{cal>esEmpate}"/>
+                                                            <Text text="DERROTA"   class="calBadge calDerrota"   visible="{cal>esDerrota}"/>
+                                                            <Text text="PENDIENTE" class="calBadge calPendiente" visible="{cal>esPendiente}"/>
+                                                        </HBox>
+                                                        
+                                                        <HBox class="calTeamsRow" justifyContent="SpaceBetween" alignItems="Start" visible="{= !${cal>esLocal} }">
+                                                            <VBox class="calTeamBox" alignItems="Center">
+                                                                <Image src="images/escudo.png" class="calTeamLogo"/>
+                                                                <Text text="Chocolate Sexy" class="calTeamName"/>
                                                             </VBox>
-                                                            <Text text="Real Valencia" class="calTeamName"/>
+                                                            <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                                                <Text text="{cal>marcador}" class="calScoreText"/>
+                                                            </VBox>
+                                                            <VBox class="calTeamBox" alignItems="Center">
+                                                                <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                                                    <Text text="{cal>rivalIniciales}" class="calTeamInitials"/>
+                                                                </VBox>
+                                                                <Text text="{cal>rivalNombre}" class="calTeamName" wrapping="true"/>
+                                                            </VBox>
+                                                        </HBox>
+
+                                                        <HBox class="calTeamsRow" justifyContent="SpaceBetween" alignItems="Start" visible="{cal>esLocal}">
+                                                            <VBox class="calTeamBox" alignItems="Center">
+                                                                <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
+                                                                    <Text text="{cal>rivalIniciales}" class="calTeamInitials"/>
+                                                                </VBox>
+                                                                <Text text="{cal>rivalNombre}" class="calTeamName" wrapping="true"/>
+                                                            </VBox>
+                                                            <VBox class="calScoreBox" alignItems="Center" justifyContent="Center">
+                                                                <Text text="{cal>marcador}" class="calScoreText"/>
+                                                            </VBox>
+                                                            <VBox class="calTeamBox" alignItems="Center">
+                                                                <Image src="images/escudo.png" class="calTeamLogo"/>
+                                                                <Text text="Chocolate Sexy" class="calTeamName"/>
+                                                            </VBox>
+                                                        </HBox>
+                                                        <VBox class="calMatchInfo" alignItems="Center">
+                                                            <Text text="{cal>fechaTexto}" class="calInfoText"/>
+                                                            <Text text="📍 {cal>ubicTxt}" class="calInfoText"/>
                                                         </VBox>
-                                                    </HBox>
-                                                    <VBox class="calMatchInfo" alignItems="Center">
-                                                        <Text text="Dom, 14 Sep 2025 · 17:00" class="calInfoText"/>
-                                                        <Text text="📍 Campo Municipal" class="calInfoText"/>
                                                     </VBox>
-                                                </VBox>
-                                                </VBox>
+
+                                                </CustomListItem>
+                                            </List>
+                                            <VBox class="calNoDataBox" alignItems="Center" justifyContent="Center"
+                                                  visible="{= !${cal>/hayPartidos2526} }">
+                                                <Text text="No hay información disponible" class="calNoDataMsg"/>
+                                            </VBox>
                                         </VBox>
                                     </VBox>
                                 </VBox>
@@ -287,7 +280,8 @@
                             </HBox>
 
                         </VBox>
-                        </HBox>
+
+                    </HBox>
                 </VBox>
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>

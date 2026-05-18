@@ -6,7 +6,7 @@
 
         <HBox alignItems="Center" class="navBar">
 
-            <Image src="images/logo.png" class="navLogo" press=".onNavMain"/>
+            <Image src="images/escudo.png" class="navLogo" press=".onNavMain"/>
 
             <HBox justifyContent="Center" alignItems="Center" wrap="Wrap" class="navButtons">
                 <Button text="{i18n>header.nav.plantilla}"     class="navBtn" press=".onNavSquad"/>
