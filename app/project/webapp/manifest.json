@@ -100,81 +100,73 @@
         {
           "name": "RouteMain",
           "pattern": ":?query:",
-          "target": [
-            "TargetMain"
-          ]
+          "target": [ "TargetMain" ]
         },
         {
           "name": "RouteSquad",
           "pattern": "squad",
-          "target": [
-            "TargetSquad"
-          ]
+          "target": [ "TargetSquad" ]
         },
         {
           "name": "RouteCalendar",
           "pattern": "calendar",
-          "target": [
-            "TargetCalendar"
-          ]
+          "target": [ "TargetCalendar" ]
         },
         {
           "name": "RouteLeaderboard",
           "pattern": "leaderboard",
-          "target": [
-            "TargetLeaderboard"
-          ]
+          "target": [ "TargetLeaderboard" ]
         },
         {
           "name": "RouteStats",
           "pattern": "stats",
-          "target": [
-            "TargetStats"
-          ]
+          "target": [ "TargetStats" ]
         },
         {
           "name": "RouteSurveys",
           "pattern": "surveys",
-          "target": [
-            "TargetSurveys"
-          ]
+          "target": [ "TargetSurveys" ]
         },
         {
           "name": "RouteSettings",
           "pattern": "settings",
-          "target": [
-            "TargetSettings"
-          ]
+          "target": [ "TargetSettings" ]
         },
         {
           "name": "RouteProfile",
           "pattern": "profile",
-          "target": [
-            "TargetProfile"
-          ]
+          "target": [ "TargetProfile" ]
         },
         {
           "name": "RouteCookiePolicy",
           "pattern": "cookie-policy",
-          "target": [
-            "TargetCookiePolicy"
-          ]
+          "target": [ "TargetCookiePolicy" ]
         },
         {
           "name": "RoutePrivacyPolicy",
           "pattern": "privacy-policy",
-          "target": [
-            "TargetPrivacyPolicy"
-          ]
+          "target": [ "TargetPrivacyPolicy" ]
         },
         {
           "name": "RouteTermsOfUse",
           "pattern": "terms-of-use",
-          "target": [
-            "TargetTermsOfUse"
-          ]
+          "target": [ "TargetTermsOfUse" ]
+        },
+        {
+          "name": "RouteNews",
+          "pattern": "news",
+          "target": [ "TargetNews" ]
+        },
+        {
+          "name": "RouteNewsDetail",
+          "pattern": "news/{id}",
+          "target": [ "TargetNews" ]
+        },
+        {
+          "name": "RouteInfoSquadDetail",
+          "pattern": "infosquad/{jugadorId}",
+          "target": [ "TargetInfoSquad" ]
         }
-
       ],
       "targets": {
         "TargetMain": {
@@ -193,7 +185,7 @@
           "id": "Squad",
           "name": "pages.Squad"
         },
-        "TargetStats": {  
+        "TargetStats": {
           "id": "Stats",
           "name": "pages.Stats"
         },
@@ -220,9 +212,16 @@
         "TargetTermsOfUse": {
           "id": "TermsOfUse",
           "name": "pages.TermsOfUse"
-        }  
+        },
+        "TargetNews": {
+          "id": "News",
+          "name": "pages.News"
+        },
+        "TargetInfoSquad": {
+          "id": "InfoSquad",
+          "name": "pages.InfoSquad"
+        }
       }
-      
     },
     "rootView": {
       "viewName": "chocolatesexy.project.view.App",

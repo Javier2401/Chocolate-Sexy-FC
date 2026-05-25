@@ -38,39 +38,14 @@
                                     <core:Icon src="sap-icon://newspaper" class="newsWidgetIcon"/>
                                     <Text text="{i18n>main.news}" class="newsWidgetTitle2"/>
                                 </HBox>
+
                                 <VBox class="newsWidgetBody newsListBody">
-
-                                    <VBox class="newsDateGroup">
-                                        <HBox class="newsDateHeader" justifyContent="End" alignItems="Center">
-                                            <Text text="10 May 2026" class="newsDateLabel"/>
-                                        </HBox>
-                                        <HBox class="newsCard newsCardRed" alignItems="Stretch">
-                                            <VBox class="newsCardEmojiBox newsCardEmojiRed" justifyContent="Center" alignItems="Center">
-                                                <Text text="🏥" class="newsCardEmoji"/>
-                                            </VBox>
-                                            <VBox class="newsCardContent" justifyContent="Center">
-                                                <Text text="COMUNICADO LESIÓN" class="newsCardTitle" wrapping="false"/>
-                                                <Text text="Pato se perderá las próximas 3 jornadas" class="newsCardSubtitle" wrapping="true"/>
-                                            </VBox>
-                                        </HBox>
-                                    </VBox>
-
-                                    <VBox class="newsDateGroup">
-                                        <HBox class="newsDateHeader" justifyContent="End" alignItems="Center">
-                                            <Text text="9 May 2026" class="newsDateLabel"/>
-                                        </HBox>
-                                        <HBox class="newsCard newsCardBlue" alignItems="Stretch">
-                                            <VBox class="newsCardEmojiBox newsCardEmojiBlue" justifyContent="Center" alignItems="Center">
-                                                <Text text="👕" class="newsCardEmoji"/>
-                                            </VBox>
-                                            <VBox class="newsCardContent" justifyContent="Center">
-                                                <Text text="COMUNICADO JUGADOR" class="newsCardTitle" wrapping="false"/>
-                                                <Text text="Adiós sergi, gracias por nada" class="newsCardSubtitle" wrapping="true"/>
-                                            </VBox>
-                                        </HBox>
-                                    </VBox>
-
+                                    <core:HTML
+                                        id="mainNewsHtml"
+                                        sanitizeContent="false"
+                                        content="{mainModel>/newsHtml}"/>
                                 </VBox>
+
                             </VBox>
                         </VBox>
 
@@ -82,55 +57,10 @@
                                     <Text text="{i18n>main.leaderboard}" class="standingsHeaderTitle"/>
                                 </HBox>
                                 <VBox class="standingsTableWrapper">
-
-                                    <HBox class="standingsTHead">
-                                        <Text text="Pos"      width="36px"  class="sTH"/>
-                                        <Text text="Equipo"   width="125px" class="sTH"/>
-                                        <Text text="Pts"      width="48px"  class="sTH sTHCenter"/>
-                                        <Text text="PJ"       width="48px"  class="sTH sTHCenter"/>
-                                        <Text text="DG"       width="54px"  class="sTH sTHCenter"/>
-                                        <Text text="ÚLTIMOS 3"              class="sTH sTHCenter sTHFill"/>
-                                    </HBox>
-
-                                    <HBox class="standingsTRow">
-                                        <Text text="5º"        width="36px"  class="sTD"/>
-                                        <Text text="Yellow FC" width="125px" class="sTD sTDTeam"/>
-                                        <Text text="33"        width="48px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="48px"  class="sTD sTDCenter"/>
-                                        <Text text="+5"        width="54px"  class="sTD sTDCenter sTDDGPos"/>
-                                        <HBox class="standingsLastCol" alignItems="Center" justifyContent="Center">
-                                            <Image src="images/Victoria.png" class="sTDResultImg" densityAware="false"/>
-                                            <Image src="images/Victoria.png" class="sTDResultImg" densityAware="false"/>
-                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
-                                        </HBox>
-                                    </HBox>
-
-                                    <HBox class="standingsTRow standingsTRowOwn">
-                                        <Text text="6º"         width="36px"  class="sTD sTDOwn"/>
-                                        <Text text="Choc. Sexy" width="125px" class="sTD sTDTeam sTDOwn"/>
-                                        <Text text="30"         width="48px"  class="sTD sTDCenter sTDOwn"/>
-                                        <Text text="22"         width="48px"  class="sTD sTDCenter sTDOwn"/>
-                                        <Text text="-3"         width="54px"  class="sTD sTDCenter sTDDGNeg sTDOwn"/>
-                                        <HBox class="standingsLastCol" alignItems="Center" justifyContent="Center">
-                                            <Image src="images/Victoria.png" class="sTDResultImg" densityAware="false"/>
-                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
-                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
-                                        </HBox>
-                                    </HBox>
-
-                                    <HBox class="standingsTRow">
-                                        <Text text="7º"        width="36px"  class="sTD"/>
-                                        <Text text="Equipo F"  width="125px" class="sTD sTDTeam"/>
-                                        <Text text="28"        width="48px"  class="sTD sTDCenter"/>
-                                        <Text text="22"        width="48px"  class="sTD sTDCenter"/>
-                                        <Text text="-11"       width="54px"  class="sTD sTDCenter sTDDGNeg"/>
-                                        <HBox class="standingsLastCol" alignItems="Center" justifyContent="Center">
-                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
-                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
-                                            <Image src="images/Derrota.png"  class="sTDResultImg" densityAware="false"/>
-                                        </HBox>
-                                    </HBox>
-
+                                    <core:HTML
+                                        id="mainMiniStandings"
+                                        sanitizeContent="false"
+                                        content="{mainModel>/standingsHtml}"/>
                                 </VBox>
                             </VBox>
 
@@ -139,42 +69,63 @@
                                     <core:Icon src="sap-icon://history" class="matchWidgetIcon"/>
                                     <Text text="{i18n>main.lastMatch}" class="matchWidgetTitle"/>
                                 </HBox>
-                                <VBox class="matchWidgetBody" alignItems="Center">
-                                    <Text text="Jornada 21" class="matchJornada"/>
-                                    <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
 
+                                <VBox class="matchWidgetBody" alignItems="Center" visible="{mainModel>/hayUltimo}">
+
+                                    <Text text="Jornada {mainModel>/ultimoPartido/jornada}"
+                                          class="matchJornada"/>
+
+                                    <HBox class="matchTeamsRow" justifyContent="SpaceAround" width="100%"
+                                          visible="{= !${mainModel>/ultimoPartido/esLocal} }">
                                         <VBox alignItems="Center" class="matchTeamBox">
                                             <Image src="images/escudo.png" class="matchTeamLogo" densityAware="false"/>
                                             <Text text="Chocolate Sexy" class="matchTeamName"/>
                                         </VBox>
-
                                         <VBox alignItems="Center" class="matchCenterBox">
                                             <HBox alignItems="Center" justifyContent="Center" class="matchScoreBox">
-                                                <Text text="1" class="matchScoreNum"/>
+                                                <Text text="{mainModel>/ultimoPartido/golesNuestros}" class="matchScoreNum"/>
                                                 <Text text=" – " class="matchScoreDash"/>
-                                                <Text text="2" class="matchScoreNum"/>
+                                                <Text text="{mainModel>/ultimoPartido/golesRival}" class="matchScoreNum"/>
                                             </HBox>
                                         </VBox>
-
                                         <VBox alignItems="Center" class="matchTeamBox">
                                             <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
-                                                <Text text="VFC" class="matchTeamLogoInitials"/>
+                                                <Text text="{mainModel>/ultimoPartido/rivalIniciales}" class="matchTeamLogoInitials"/>
                                             </VBox>
-                                            <Text text="VFC United" class="matchTeamName"/>
+                                            <Text text="{mainModel>/ultimoPartido/rivalNombre}" class="matchTeamName"/>
                                         </VBox>
-
                                     </HBox>
+
+                                    <HBox class="matchTeamsRow" justifyContent="SpaceAround" width="100%"
+                                          visible="{mainModel>/ultimoPartido/esLocal}">
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
+                                                <Text text="{mainModel>/ultimoPartido/rivalIniciales}" class="matchTeamLogoInitials"/>
+                                            </VBox>
+                                            <Text text="{mainModel>/ultimoPartido/rivalNombre}" class="matchTeamName"/>
+                                        </VBox>
+                                        <VBox alignItems="Center" class="matchCenterBox">
+                                            <HBox alignItems="Center" justifyContent="Center" class="matchScoreBox">
+                                                <Text text="{mainModel>/ultimoPartido/golesRival}" class="matchScoreNum"/>
+                                                <Text text=" – " class="matchScoreDash"/>
+                                                <Text text="{mainModel>/ultimoPartido/golesNuestros}" class="matchScoreNum"/>
+                                            </HBox>
+                                        </VBox>
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <Image src="images/escudo.png" class="matchTeamLogo" densityAware="false"/>
+                                            <Text text="Chocolate Sexy" class="matchTeamName"/>
+                                        </VBox>
+                                    </HBox>
+
                                     <VBox alignItems="Center" class="matchInfoDetails" width="100%">
-                                        <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow">
-                                            <Text text="📅 Dom, 22 Feb" class="matchInfoText"/>
-                                            <Text text=" · " class="matchInfoDot"/>
-                                            <Text text="⏰ 18:00" class="matchInfoText"/>
-                                            <Text text=" · " class="matchInfoDot"/>
-                                            <Text text="📍Estadio Nuevo" class="matchInfoText"/>
-                                        </HBox>
-                                        
+                                        <Text text="{mainModel>/ultimoPartido/fechaTexto}" class="matchInfoText"/>
+                                        <Text text="📍 {mainModel>/ultimoPartido/ubicTxt}" class="matchInfoText"/>
                                     </VBox>
+
                                 </VBox>
+
+                                <Text text="{i18n>calendar.noLastMatch}" class="calNoData"
+                                      visible="{= !${mainModel>/hayUltimo} }"/>
                             </VBox>
 
                             <VBox class="matchWidget">
@@ -182,37 +133,55 @@
                                     <core:Icon src="sap-icon://future" class="matchWidgetIcon"/>
                                     <Text text="{i18n>main.nextMatch}" class="matchWidgetTitle"/>
                                 </HBox>
-                                <VBox class="matchWidgetBody" alignItems="Center">
-                                    <Text text="Jornada 22" class="matchJornada"/>
-                                    <HBox justifyContent="SpaceAround" width="100%" class="matchTeamsRow">
 
+                                <VBox class="matchWidgetBody" alignItems="Center" visible="{mainModel>/hayProximo}">
+
+                                    <Text text="Jornada {mainModel>/proximoPartido/jornada} · Temporada {mainModel>/proximoPartido/temporadaNombre}"
+                                          class="matchJornada"/>
+
+                                    <HBox class="matchTeamsRow" justifyContent="SpaceAround" width="100%"
+                                          visible="{= !${mainModel>/proximoPartido/esLocal} }">
                                         <VBox alignItems="Center" class="matchTeamBox">
                                             <Image src="images/escudo.png" class="matchTeamLogo" densityAware="false"/>
                                             <Text text="Chocolate Sexy" class="matchTeamName"/>
                                         </VBox>
-
                                         <VBox alignItems="Center" class="matchCenterBox">
                                             <Text text="VS" class="matchVsText"/>
                                         </VBox>
-
                                         <VBox alignItems="Center" class="matchTeamBox">
                                             <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
-                                                <Text text="AC" class="matchTeamLogoInitials"/>
+                                                <Text text="{mainModel>/proximoPartido/rivalIniciales}" class="matchTeamLogoInitials"/>
                                             </VBox>
-                                            <Text text="Águilas City" class="matchTeamName"/>
+                                            <Text text="{mainModel>/proximoPartido/rivalNombre}" class="matchTeamName"/>
                                         </VBox>
-
                                     </HBox>
+
+                                    <HBox class="matchTeamsRow" justifyContent="SpaceAround" width="100%"
+                                          visible="{mainModel>/proximoPartido/esLocal}">
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
+                                                <Text text="{mainModel>/proximoPartido/rivalIniciales}" class="matchTeamLogoInitials"/>
+                                            </VBox>
+                                            <Text text="{mainModel>/proximoPartido/rivalNombre}" class="matchTeamName"/>
+                                        </VBox>
+                                        <VBox alignItems="Center" class="matchCenterBox">
+                                            <Text text="VS" class="matchVsText"/>
+                                        </VBox>
+                                        <VBox alignItems="Center" class="matchTeamBox">
+                                            <Image src="images/escudo.png" class="matchTeamLogo" densityAware="false"/>
+                                            <Text text="Chocolate Sexy" class="matchTeamName"/>
+                                        </VBox>
+                                    </HBox>
+
                                     <VBox alignItems="Center" class="matchInfoDetails" width="100%">
-                                        <HBox justifyContent="Center" alignItems="Center" class="matchInfoRow">
-                                            <Text text="📅 Dom, 01 Mar" class="matchInfoText"/>
-                                            <Text text=" · " class="matchInfoDot"/>
-                                            <Text text="⏰ 17:00" class="matchInfoText"/>
-                                            <Text text=" · " class="matchInfoDot"/>
-                                            <Text text="📍 Campo Municipal" class="matchInfoText"/>
-                                        </HBox>
+                                        <Text text="{mainModel>/proximoPartido/fechaTexto}" class="matchInfoText"/>
+                                        <Text text="📍 {mainModel>/proximoPartido/ubicTxt}" class="matchInfoText"/>
                                     </VBox>
+
                                 </VBox>
+
+                                <Text text="{i18n>calendar.noNextMatch}" class="calNoData"
+                                      visible="{= !${mainModel>/hayProximo} }"/>
                             </VBox>
 
                         </VBox>

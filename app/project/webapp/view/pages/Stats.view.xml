@@ -11,13 +11,9 @@
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
 
-                <VBox class="lbPageContent pageContent" id="statsPageWrapper">
+                <VBox class="lbPageContent pageContent">
 
-                    <!-- ══════════════════════════════════════════
-                         ESTADÍSTICAS — TEMPORADA 2026/27
-                    ══════════════════════════════════════════ -->
-                    <VBox class="stCard" id="statsCard2627">
-
+                    <VBox class="stCard stSeasonBlock" id="statsCard2627">
                         <HBox class="stCardHeader" justifyContent="SpaceBetween" alignItems="Center">
                             <VBox class="stHeaderBalancer"/>
                             <HBox class="stHeaderCenter" alignItems="Center" renderType="Bare">
@@ -29,67 +25,57 @@
                                     class="navIconBtn stCollapseBtn"
                                     press="onToggleStats2627"/>
                         </HBox>
-
-                        <VBox class="stSeasonContent" id="statsContent2627">
-
-                            <!-- ── Selector de jornada ── -->
-                            <HBox class="stJornadaRow" alignItems="Center">
-                                <Button id="statsJornadaBtn2627"
-                                        text="JORNADA"
-                                        icon="sap-icon://slim-arrow-down"
-                                        iconFirst="false"
-                                        class="stJornadaDropBtn"
-                                        press="onJornadaMenuOpen2627"/>
-                                <VBox class="stJornadaSeparator"/>
-                                <Text id="statsJornadaSelected2627"
-                                      text="Todas las jornadas"
-                                      class="stJornadaSelectedLabel"/>
-                            </HBox>
-
-                            <!-- Tabla completa (cabecera + filas) generada por el controller -->
-                            <VBox id="statsRows2627"/>
-
+                        <VBox class="stSeasonContent" id="statsContent2627" width="100%">
+                            <VBox class="calNoDataBox lbNoDataHidden">
+                                <Text text="{i18n>stats.noData}" class="calNoDataMsg"/>
+                            </VBox>
                         </VBox>
                     </VBox>
 
-                    <!-- ══════════════════════════════════════════
-                         ESTADÍSTICAS — TEMPORADA 2025/26
-                    ══════════════════════════════════════════ -->
-                    <VBox class="stCard" id="statsCard2526">
+                    <HBox class="stBottomRow" alignItems="Start" renderType="Bare">
 
-                        <HBox class="stCardHeader" justifyContent="SpaceBetween" alignItems="Center">
-                            <VBox class="stHeaderBalancer"/>
-                            <HBox class="stHeaderCenter" alignItems="Center" renderType="Bare">
-                                <core:Icon src="sap-icon://activity-2" class="stHeaderIcon"/>
-                                <Text text="{i18n>stats.season.2025-26}" class="stTitle"/>
+                        <HBox class="stSidePanel stSidePanelRight" renderType="Bare"/>
+
+                        <VBox class="stCard stSeasonBlock" id="statsCard2526">
+                            <HBox class="stCardHeader" justifyContent="SpaceBetween" alignItems="Center">
+                                <VBox class="stHeaderBalancer"/>
+                                <HBox class="stHeaderCenter" alignItems="Center" renderType="Bare">
+                                    <core:Icon src="sap-icon://activity-2" class="stHeaderIcon"/>
+                                    <Text text="{i18n>stats.season.2025-26}" class="stTitle"/>
+                                </HBox>
+                                <Button id="statsToggle2526"
+                                        icon="sap-icon://slim-arrow-up"
+                                        class="navIconBtn stCollapseBtn"
+                                        press="onToggleStats2526"/>
                             </HBox>
-                            <Button id="statsToggle2526"
-                                    icon="sap-icon://slim-arrow-up"
-                                    class="navIconBtn stCollapseBtn"
-                                    press="onToggleStats2526"/>
-                        </HBox>
+                            <VBox class="stSeasonContent" id="statsContent2526" width="100%">
+                                <VBox class="calNoDataBox lbNoDataHidden">
+                                    <Text text="{i18n>stats.noData}" class="calNoDataMsg"/>
+                                </VBox>
+                            </VBox>
+                        </VBox>
 
-                        <VBox class="stSeasonContent" id="statsContent2526">
+                        <VBox class="stSidePanel stSidePanelLeft" renderType="Bare">
 
-                            <!-- ── Selector de jornada ── -->
-                            <HBox class="stJornadaRow" alignItems="Center">
-                                <Button id="statsJornadaBtn2526"
-                                        text="JORNADA"
-                                        icon="sap-icon://slim-arrow-down"
-                                        iconFirst="false"
-                                        class="stJornadaDropBtn"
-                                        press="onJornadaMenuOpen2526"/>
-                                <VBox class="stJornadaSeparator"/>
-                                <Text id="statsJornadaSelected2526"
-                                      text="Todas las jornadas"
-                                      class="stJornadaSelectedLabel"/>
-                            </HBox>
+                            <VBox class="stAwardCard" id="awardGoleador">
+                                <HBox class="stAwardHeader" alignItems="Center" justifyContent="Center">
+                                    <core:Icon src="sap-icon://competitor" class="stAwardIcon"/>
+                                    <Text id="awardGoleadorTitle" text="Máximo Goleador" class="stAwardTitle"/>
+                                </HBox>
+                                <VBox class="stAwardContent" id="awardGoleadorContent"/>
+                            </VBox>
 
-                            <!-- Tabla completa (cabecera + filas) generada por el controller -->
-                            <VBox id="statsRows2526"/>
+                            <VBox class="stAwardCard" id="awardAsistente">
+                                <HBox class="stAwardHeader" alignItems="Center" justifyContent="Center">
+                                    <core:Icon src="sap-icon://add-product" class="stAwardIcon"/>
+                                    <Text id="awardAsistenteTitle" text="Máximo Asistente" class="stAwardTitle"/>
+                                </HBox>
+                                <VBox class="stAwardContent" id="awardAsistenteContent"/>
+                            </VBox>
 
                         </VBox>
-                    </VBox>
+
+                    </HBox>
 
                 </VBox>
 

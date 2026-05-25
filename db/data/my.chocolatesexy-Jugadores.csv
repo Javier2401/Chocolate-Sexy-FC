@@ -1,20 +1,21 @@
-id,nombreCamiseta,dorsal,nombre,apellidos,fechaNacimiento,piernaHabil,posicion,foto 
-1,Cordesinho,1,,,,,Portero,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779048981/Corde_nmfnpq.png
-2,Pato,4,Javier Alexander,Paltan Lombeida,2004-09-27,Diestro,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-3,Sergi,7,Sergio,,,,Centrocampista,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-4,Marco,8,Marco,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-5,Dragos,9,Valentín,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-6,Asi,10,Asier,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-7,Pingu,11,Cristhian,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779049293/Cristhian_nh9tkm.png
-8,Raúl,12,Raúl,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-9,Alex,13,,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-10,Gabi,16,Gabriel,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-11,Sergio,17,Sergio,Tortosa Municio,,Zurdo,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779047966/Sergio_cfpbnz.png
-12,Lucotaz,19,Lucas,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-13,Diego,22,,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-14,Sánchez-Beato,39,Fians,,,,Centrocampista,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-15,Macoco,47,Marcos,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-16,Pancho,69,,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779049366/Prueba_afokw5.png
-17,David,83,David,,,,Centrocampista,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-18,Padi,88,Gabriel,,,,Centrocampista,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
-19,Joseda,99,,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+id,nombreCamiseta,dorsal,nombre,apellidos,fechaNacimiento,piernaHabil,posicion,foto
+1,Javier,0,Javier,,,,Entrenador,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+2,Cordesinho,1,,,,,Portero,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779048981/Corde_nmfnpq.png
+3,Pato,4,Javier Alexander,Paltan Lombeida,2004-09-27,Diestro,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+4,Sergi,7,Sergio,,,,Centrocampista,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+5,Marco,8,Marco,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779124579/Marco_a0k0su.png
+6,Dragos,9,Valentín,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+7,Asi,10,Asier,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+8,Pingu,11,Cristhian,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779049293/Cristhian_nh9tkm.png
+9,Raúl,12,Raúl,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+10,Alex,13,,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+11,Gabi,16,Gabriel,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+12,Sergio,17,Sergio,Tortosa Municio,,Zurdo,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779047966/Sergio_cfpbnz.png
+13,Lucotaz,19,Lucas,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+14,Diego,22,,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779100776/Diego_vhravi.png
+15,Sánchez-Beato,39,Fians,,,,Centrocampista,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+16,Macoco,47,Marcos,,,,Defensa,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+17,Pancho,69,,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779049366/Prueba_afokw5.png
+18,David,83,David,,,,Centrocampista,https://res.cloudinary.com/dj3zqp3c9/image/upload/q_auto/f_auto/v1779100549/David_jengat.png
+19,Padi,88,Gabriel,,,,Centrocampista,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png
+20,Joseda,99,,,,,Delantero,https://res.cloudinary.com/dj3zqp3c9/image/upload/NoImage_edcrr8.png

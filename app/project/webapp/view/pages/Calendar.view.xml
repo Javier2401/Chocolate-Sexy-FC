@@ -23,7 +23,7 @@
                                 </HBox>
                                 <VBox class="matchWidgetBody" alignItems="Center" visible="{cal>/hayUltimo}">
                                     <Text text="Jornada {cal>/ultimoPartido/jornada}" class="matchJornada"/>
-                                    <HBox class="matchTeamsRow" justifyContent="SpaceAround" width="100%">
+                                    <HBox class="matchTeamsRow" justifyContent="SpaceAround" width="100%" visible="{= !${cal>/ultimoPartido/esLocal} }">
                                         <VBox class="matchTeamBox" alignItems="Center">
                                             <Image src="images/escudo.png" class="matchTeamLogo"/>
                                             <Text text="Chocolate Sexy" class="matchTeamName"/>
@@ -42,10 +42,28 @@
                                             <Text text="{cal>/ultimoPartido/rivalNombre}" class="matchTeamName"/>
                                         </VBox>
                                     </HBox>
-                                    <VBox class="matchInfoDetails" alignItems="Center" width="100%">
+                                    <HBox class="matchTeamsRow" justifyContent="SpaceAround" width="100%" visible="{cal>/ultimoPartido/esLocal}">
+                                        <VBox class="matchTeamBox" alignItems="Center">
+                                            <VBox class="matchTeamLogoPlaceholder" alignItems="Center" justifyContent="Center">
+                                                <Text text="{cal>/ultimoPartido/rivalIniciales}" class="matchTeamLogoInitials"/>
+                                            </VBox>
+                                            <Text text="{cal>/ultimoPartido/rivalNombre}" class="matchTeamName"/>
+                                        </VBox>
+                                        <VBox class="matchCenterBox" alignItems="Center" justifyContent="Center">
+                                            <HBox class="matchScoreBox" alignItems="Center" justifyContent="Center">
+                                                <Text text="{cal>/ultimoPartido/golesRival}" class="matchScoreNum"/>
+                                                <Text text=" – " class="matchScoreDash"/>
+                                                <Text text="{cal>/ultimoPartido/golesNuestros}" class="matchScoreNum"/>
+                                            </HBox>
+                                        </VBox>
+                                        <VBox class="matchTeamBox" alignItems="Center">
+                                            <Image src="images/escudo.png" class="matchTeamLogo"/>
+                                            <Text text="Chocolate Sexy" class="matchTeamName"/>
+                                        </VBox>
+                                    </HBox>
+                                    <VBox class="calGolesZone calUltimoGolesZone" width="100%"/>
                                         <Text text="{cal>/ultimoPartido/fechaTexto}" class="matchInfoText"/>
                                         <Text text="📍 {cal>/ultimoPartido/ubicTxt}" class="matchInfoText"/>
-                                    </VBox>
                                     <HBox class="mvpBox" alignItems="Center" width="100%" visible="{cal>/ultimoPartido/hayMvp}">
                                         <Text text="🏆" class="mvpEmoji"/>
                                         <VBox class="mvpInfo">
@@ -75,7 +93,7 @@
                                         </VBox>
                                     </HBox>
                                 </VBox>
-                                <Text text="No hay partidos jugados aún." class="calNoData"
+                                <Text text="{i18n>calendar.noLastMatch}" class="calNoData"
                                       visible="{= !${cal>/hayUltimo} }"/>
                             </VBox>
 
@@ -113,7 +131,7 @@
                                 </VBox>
                                 <VBox class="calNoDataBox" alignItems="Center" justifyContent="Center"
                                       visible="{= !${cal>/hayProximo} }">
-                                    <Text text="No hay próximos partidos" class="calNoDataMsg"/>
+                                    <Text text="{i18n>calendar.noNextGames}" class="calNoDataMsg"/>
                                 </VBox>
                             </VBox>
 
@@ -132,7 +150,7 @@
                                             <Button icon="sap-icon://navigation-up-arrow" class="calSeasonToggleBtn" press="onToggleSeasonBlock"/>
                                         </HBox>
                                         <VBox class="calSeasonContent">
-                                            <List items="{cal>/partidos2627}" showSeparators="None" showNoData="false">
+                                            <List items="{cal>/partidos2627}" showSeparators="None" showNoData="false" growing="false">
                                                 <CustomListItem>
 
                                                     <HBox class="calMonthSeparator" visible="{cal>isHeader}">
@@ -148,7 +166,6 @@
                                                             <Text text="DERROTA"   class="calBadge calDerrota"   visible="{cal>esDerrota}"/>
                                                             <Text text="PENDIENTE" class="calBadge calPendiente" visible="{cal>esPendiente}"/>
                                                         </HBox>
-                                                        <!-- VISITANTE: Chocolate Sexy izquierda, Rival derecha -->
                                                         <HBox class="calTeamsRow" justifyContent="SpaceBetween" alignItems="Start" visible="{= !${cal>esLocal} }">
                                                             <VBox class="calTeamBox" alignItems="Center">
                                                                 <Image src="images/escudo.png" class="calTeamLogo"/>
@@ -164,7 +181,6 @@
                                                                 <Text text="{cal>rivalNombre}" class="calTeamName" wrapping="true"/>
                                                             </VBox>
                                                         </HBox>
-                                                        <!-- LOCAL: Rival izquierda, Chocolate Sexy derecha -->
                                                         <HBox class="calTeamsRow" justifyContent="SpaceBetween" alignItems="Start" visible="{cal>esLocal}">
                                                             <VBox class="calTeamBox" alignItems="Center">
                                                                 <VBox class="calTeamCircle" alignItems="Center" justifyContent="Center">
@@ -180,6 +196,8 @@
                                                                 <Text text="Chocolate Sexy" class="calTeamName"/>
                                                             </VBox>
                                                         </HBox>
+                                                        <VBox class="calGolesZone"/>
+                                                        <VBox class="calTarjetasZone"/>
                                                         <VBox class="calMatchInfo" alignItems="Center">
                                                             <Text text="{cal>fechaTexto}" class="calInfoText"/>
                                                             <Text text="📍 {cal>ubicTxt}" class="calInfoText"/>
@@ -190,7 +208,7 @@
                                             </List>
                                             <VBox class="calNoDataBox" alignItems="Center" justifyContent="Center"
                                                   visible="{= !${cal>/hayPartidos2627} }">
-                                                <Text text="No hay información disponible" class="calNoDataMsg"/>
+                                                <Text text="{i18n>calendar.noData}" class="calNoDataMsg"/>
                                             </VBox>
                                         </VBox>
                                     </VBox>
@@ -200,7 +218,6 @@
                                 </VBox>
                             </HBox>
 
-                            <!-- TEMPORADA 2025-26 -->
                             <HBox class="calSeasonRow">
                                 <VBox class="calMidCol">
                                     <VBox class="calSeasonBlock">
@@ -212,7 +229,7 @@
                                             <Button icon="sap-icon://navigation-up-arrow" class="calSeasonToggleBtn" press="onToggleSeasonBlock"/>
                                         </HBox>
                                         <VBox class="calSeasonContent">
-                                            <List items="{cal>/partidos2526}" showSeparators="None" showNoData="false">
+                                            <List items="{cal>/partidos2526}" showSeparators="None" showNoData="false" growing="false">
                                                 <CustomListItem>
 
                                                     <HBox class="calMonthSeparator" visible="{cal>isHeader}">
@@ -259,6 +276,8 @@
                                                                 <Text text="Chocolate Sexy" class="calTeamName"/>
                                                             </VBox>
                                                         </HBox>
+                                                        <VBox class="calGolesZone"/>
+                                                        <VBox class="calTarjetasZone"/>
                                                         <VBox class="calMatchInfo" alignItems="Center">
                                                             <Text text="{cal>fechaTexto}" class="calInfoText"/>
                                                             <Text text="📍 {cal>ubicTxt}" class="calInfoText"/>
@@ -269,7 +288,7 @@
                                             </List>
                                             <VBox class="calNoDataBox" alignItems="Center" justifyContent="Center"
                                                   visible="{= !${cal>/hayPartidos2526} }">
-                                                <Text text="No hay información disponible" class="calNoDataMsg"/>
+                                                <Text text="{i18n>calendar.noData}" class="calNoDataMsg"/>
                                             </VBox>
                                         </VBox>
                                     </VBox>

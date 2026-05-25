@@ -10,6 +10,9 @@ sap.ui.define([
                         "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
     var _aCalState = [];
+    var _a2526Enr  = [];
+    var _a2627Enr  = [];
+    var _oUltimoPartidoEnr = null;
 
     return BaseController.extend("chocolatesexy.project.controller.pages.Calendar", {
 
@@ -25,25 +28,68 @@ sap.ui.define([
                 hayProximo:     false
             }), "cal");
 
-            fetch("/odata/v4/football/Jornadas?$expand=temporada,equipo,campo&$orderby=temporadaId%20desc,jornada%20asc")
-                .then(function (r) { return r.json(); })
-                .then(function (data) { that._procesarDatos(data.value); })
+            Promise.all([
+                fetch("/odata/v4/football/Jornadas?$expand=temporada,equipo,campo&$orderby=temporadaId%20desc,jornada%20asc").then(function (r) { return r.json(); }),
+                fetch("/odata/v4/football/Goles?$expand=jugador").then(function (r) { return r.json(); }),
+                fetch("/odata/v4/football/GolesRival").then(function (r) { return r.json(); }),
+                fetch("/odata/v4/football/Tarjetas?$expand=jugador").then(function (r) { return r.json(); })
+            ])
+                .then(function (aResults) {
+                    that._procesarDatos(
+                        aResults[0].value || [],
+                        aResults[1].value || [],
+                        aResults[2].value || [],
+                        aResults[3].value || []
+                    );
+                })
                 .catch(function (e) { console.error("Error cargando Jornadas:", e); });
 
             this.getView().addEventDelegate({
-                onAfterRendering: this._renderAllMiniCalendars.bind(this)
+                onAfterRendering: function () {
+                    this._renderAllMiniCalendars();
+                    this._renderEventosEnCards();
+                }.bind(this)
             });
         },
 
-        _procesarDatos: function (aPartidos) {
+        _procesarDatos: function (aPartidos, aGoles, aGolesRival, aTarjetas) {
             var that = this;
-            var aEnr = aPartidos.map(function (p) { return that._enriquecer(p); });
+
+            var oGolesMap      = {};
+            var oGolesRivalMap = {};
+            var oTarjetasMap   = {};
+            (aGoles || []).forEach(function (g) {
+                if (!oGolesMap[g.jornadaId]) { oGolesMap[g.jornadaId] = []; }
+                oGolesMap[g.jornadaId].push(g);
+            });
+            (aGolesRival || []).forEach(function (g) {
+                if (!oGolesRivalMap[g.jornadaId]) { oGolesRivalMap[g.jornadaId] = []; }
+                oGolesRivalMap[g.jornadaId].push(g);
+            });
+            (aTarjetas || []).forEach(function (t) {
+                if (!oTarjetasMap[t.jornadaId]) { oTarjetasMap[t.jornadaId] = []; }
+                oTarjetasMap[t.jornadaId].push(t);
+            });
+
+            var aEnr = aPartidos.map(function (p) {
+                var pConDatos = Object.assign({}, p, {
+                    _golesArr:      oGolesMap[p.id]      || [],
+                    _golesRivalArr: oGolesRivalMap[p.id] || [],
+                    _tarjetasArr:   oTarjetasMap[p.id]   || []
+                });
+                return that._enriquecer(pConDatos);
+            });
 
             var aJugados    = aEnr.filter(function (p) { return !p.esPendiente; });
             var aPendientes = aEnr.filter(function (p) { return  p.esPendiente; });
 
+            _oUltimoPartidoEnr = aJugados.length ? aJugados[aJugados.length - 1] : null;
+
             var a2526 = aEnr.filter(function (p) { return p.temporadaId === 1; });
             var a2627 = aEnr.filter(function (p) { return p.temporadaId === 2; });
+
+            _a2526Enr = a2526;
+            _a2627Enr = a2627;
 
             this.getView().getModel("cal").setData({
                 ultimoPartido:   aJugados.length   ? aJugados[aJugados.length - 1] : null,
@@ -56,7 +102,10 @@ sap.ui.define([
                 hayPartidos2627: a2627.length > 0
             });
 
-            setTimeout(function () { that._renderAllMiniCalendars(); }, 200);
+            setTimeout(function () {
+                that._renderAllMiniCalendars();
+                that._renderEventosEnCards();
+            }, 200);
         },
 
         _flatList: function (aPartidos) {
@@ -85,6 +134,9 @@ sap.ui.define([
             var sRes       = (p.resultado || "PENDIENTE").trim().toUpperCase();
             var bPendiente = sRes === "PENDIENTE";
 
+            var bEsLocal = p.esLocal === true || p.esLocal === 1 ||
+                           (p.esLocal != null && String(p.esLocal).toLowerCase() === "true");
+
             var sFechaText  = "Por confirmar";
             var sFechaCorta = "Por confirmar";
             var sHora       = "--:--";
@@ -96,9 +148,46 @@ sap.ui.define([
                 sFechaText  = sFechaCorta + " " + d.getFullYear() + " · " + sHora;
             }
 
+            var sMarcador = bPendiente ? "- : -"
+                          : bEsLocal  ? (p.golesRival + " - " + p.golesNuestros)
+                                      : (p.golesNuestros + " - " + p.golesRival);
+
+            var aGolesNuestros = (p._golesArr || [])
+                .slice()
+                .sort(function (a, b) { return (a.minuto || 999) - (b.minuto || 999); })
+                .map(function (g) {
+                    return {
+                        nombre:    g.jugador ? g.jugador.nombreCamiseta : "?",
+                        minuto:    g.minuto  || 0,
+                        esPenalti: !!g.esPenalti,
+                        esPropio:  !!g.esPropio
+                    };
+                });
+
+            var aGolesRival = (p._golesRivalArr || [])
+                .slice()
+                .sort(function (a, b) { return (a.minuto || 999) - (b.minuto || 999); })
+                .map(function (g) {
+                    return {
+                        minuto:   g.minuto || 0,
+                        esPropio: !!g.esPropio
+                    };
+                });
+
+            var aTarjetas = (p._tarjetasArr || [])
+                .slice()
+                .sort(function (a, b) { return (a.minuto || 999) - (b.minuto || 999); })
+                .map(function (t) {
+                    return {
+                        nombre: t.jugador ? t.jugador.nombreCamiseta : "?",
+                        minuto: t.minuto  || 0,
+                        tipo:   (t.tipo   || "AMARILLA").toUpperCase()
+                    };
+                });
+
             return Object.assign({}, p, {
                 resultado:      sRes,
-                marcador:       bPendiente ? "- : -" : (p.golesNuestros + " - " + p.golesRival),
+                marcador:       sMarcador,
                 fechaTexto:     sFechaText,
                 fechaCorta:     sFechaCorta,
                 hora:           sHora,
@@ -113,9 +202,11 @@ sap.ui.define([
                 esDerrota:      sRes === "DERROTA",
                 hayMvp:         !!p.mvpNombre,
                 hayStats:       p.posesion != null,
-                posesionTxt:    (p.posesion || 0) + "%",
-                esLocal:        !!p.esLocal,
-                teamsRowClass:  p.esLocal ? "calTeamsLocal" : ""
+                posesionTexto:  (p.posesion || 0) + "%",
+                esLocal:        bEsLocal,
+                _golesNuestros: aGolesNuestros,
+                _golesRival:    aGolesRival,
+                _tarjetas:      aTarjetas
             });
         },
 
@@ -264,6 +355,117 @@ sap.ui.define([
         _parseJornada: function (s) {
             var m = s.match(/\d+/);
             return m ? parseInt(m[0], 10) : 0;
+        },
+
+        _renderEventosEnCards: function () {
+            var oViewDom = this.getView().getDomRef();
+            if (!oViewDom) { return; }
+
+            var oDomUltimo = oViewDom.querySelector(".calUltimoGolesZone");
+            if (oDomUltimo && _oUltimoPartidoEnr) {
+                this._injectEventosHTML(oDomUltimo, _oUltimoPartidoEnr);
+            }
+
+            var aSeasonBlocks = Array.from(oViewDom.querySelectorAll(".calMidCol .calSeasonBlock"));
+            var aSeasonData   = [_a2627Enr, _a2526Enr];
+
+            aSeasonBlocks.forEach(function (oDomBlock, iSeasonIdx) {
+                var aCards    = Array.from(oDomBlock.querySelectorAll(".calMatchCard"));
+                var aPartidos = aSeasonData[iSeasonIdx] || [];
+                aCards.forEach(function (oDomCard, iCardIdx) {
+                    var oPartido = aPartidos[iCardIdx];
+                    if (!oPartido) { return; }
+
+                    var oDomTarjZone = oDomCard.querySelector(".calTarjetasZone");
+                    if (oDomTarjZone) { oDomTarjZone.style.display = "none"; }
+
+                    var oDomZone = oDomCard.querySelector(".calGolesZone");
+                    if (!oDomZone) { return; }
+                    this._injectEventosHTML(oDomZone, oPartido);
+                }.bind(this));
+            }.bind(this));
+        },
+
+        _injectEventosHTML: function (oDomZone, oPartido) {
+            var aGN    = oPartido._golesNuestros || [];
+            var aGR    = oPartido._golesRival    || [];
+            var aT     = oPartido._tarjetas      || [];
+            var bLocal = !!oPartido.esLocal;
+
+            var sOurSide   = bLocal ? "right" : "left";
+            var sRivalSide = bLocal ? "left"  : "right";
+
+            var aEvents = [];
+
+            aGN.filter(function (g) { return !g.esPropio; }).forEach(function (g) {
+                aEvents.push({ minuto: g.minuto, side: sOurSide,
+                    label: g.nombre + (g.esPenalti ? " (P)" : ""), isOurs: true, type: "gol" });
+            });
+
+            aGN.filter(function (g) { return g.esPropio; }).forEach(function (g) {
+                aEvents.push({ minuto: g.minuto, side: sRivalSide,
+                    label: "PP (" + g.nombre + ")", isOurs: false, type: "gol" });
+            });
+
+            aGR.filter(function (g) { return !g.esPropio; }).forEach(function (g) {
+                aEvents.push({ minuto: g.minuto, side: sRivalSide,
+                    label: "Gol rival", isOurs: false, type: "gol" });
+            });
+
+            aGR.filter(function (g) { return g.esPropio; }).forEach(function (g) {
+                aEvents.push({ minuto: g.minuto, side: sOurSide,
+                    label: "PP rival", isOurs: true, type: "gol" });
+            });
+
+            aT.forEach(function (t) {
+                var sTipo = (t.tipo || "AMARILLA").toUpperCase();
+                aEvents.push({ minuto: t.minuto, side: sOurSide,
+                    label: t.nombre, isOurs: true, type: "tarjeta", tipo: sTipo });
+            });
+
+            if (!aEvents.length) { oDomZone.style.display = "none"; return; }
+            oDomZone.style.display = "";
+            aEvents.sort(function (a, b) { return a.minuto - b.minuto; });
+
+            var sRows = aEvents.map(function (ev) {
+                var sLabelClass = ev.isOurs ? "calGoalOursLabel" : "calGoalRivalLabel";
+                var sLabel  = "<span class='calGoalLabel " + sLabelClass + "'>" + ev.label + "</span>";
+                var sMin    = "<span class='calGoalMin'>" + ev.minuto + "&#8242;</span>";
+                var sIcon;
+
+                if (ev.type === "tarjeta") {
+                    var sIconInner;
+                    if (ev.tipo === "ROJA") {
+                        sIconInner = "<span class='calCardIcon calCardRoja'></span>";
+                    } else if (ev.tipo === "DOBLE_AMARILLA" || ev.tipo === "AMARILLA_ROJA") {
+                        sIconInner = "<span class='calCardIcon calCardAmarilla'></span>" +
+                                     "<span class='calCardIcon calCardRoja calCardSecond'></span>";
+                    } else {
+                        sIconInner = "<span class='calCardIcon calCardAmarilla'></span>";
+                    }
+                    sIcon = "<span class='calCardSlot'>" + sIconInner + "</span>";
+                } else {
+                    sIcon = "<span class='calGoalBall " + (ev.isOurs ? "" : "calGoalBallRival") + "'>&#x26BD;</span>";
+                }
+
+                var sCellContent;
+                if (ev.side === "left") {
+                    sCellContent = sLabel + sMin + sIcon;
+                } else {
+                    sCellContent = sIcon + sMin + sLabel;
+                }
+
+                var sLeft  = ev.side === "left"
+                    ? "<div class='calEvtCell calEvtLeft'>"  + sCellContent + "</div>"
+                    : "<div class='calEvtCell calEvtLeft'></div>";
+                var sRight = ev.side === "right"
+                    ? "<div class='calEvtCell calEvtRight'>" + sCellContent + "</div>"
+                    : "<div class='calEvtCell calEvtRight'></div>";
+
+                return "<div class='calEvtRow'>" + sLeft + "<div class='calEvtDivider'></div>" + sRight + "</div>";
+            }).join("");
+
+            oDomZone.innerHTML = "<div class='calEvtZone'>" + sRows + "</div>";
         },
 
         _parseMatchDate: function (sText) {

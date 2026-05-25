@@ -1,0 +1,97 @@
+<mvc:View
+    controllerName="chocolatesexy.project.controller.pages.News"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page showHeader="false" enableScrolling="true" class="csPage">
+        <content>
+            <VBox class="pageWrapper" width="100%">
+
+                <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
+
+                <VBox class="pageContent">
+                    <VBox class="newsPageWrapper">
+
+                        <VBox class="newsWidget newsPageWidget"
+                              visible="{= !${newsModel>/esDetalle} }">
+
+                            <HBox class="newsWidgetHeader2" justifyContent="Center" alignItems="Center">
+                                <core:Icon src="sap-icon://newspaper" class="newsHeaderIcon"/>
+                                <Text text="NOTICIAS" class="newsWidgetTitle2"/>
+                            </HBox>
+
+                            <VBox class="newsWidgetBody newsListBody">
+                                <core:HTML
+                                    id="newsListHtml"
+                                    sanitizeContent="false"
+                                    content="{newsModel>/newsHtml}"/>
+                            </VBox>
+
+                        </VBox>
+
+                        <VBox class="ndPageWrapper"
+                              visible="{newsModel>/esDetalle}">
+
+                            <HBox class="ndTitleBar" alignItems="Center" justifyContent="SpaceBetween">
+                                <Button
+                                    icon="sap-icon://nav-back"
+                                    press="onNavBack"
+                                    class="isBackBtn"/>
+                                <HBox alignItems="Center" justifyContent="Center" class="ndTitleCenter">
+                                    <Text text="{newsModel>/titulo}" class="ndTitleText"/>
+                                </HBox>
+                                <VBox class="isWidgetHeaderSpacer"/>
+                            </HBox>
+
+                            <HBox class="ndBody" wrap="NoWrap">
+
+                                <VBox class="ndImageBox" alignItems="Center" justifyContent="Center">
+                                    <Image src="{newsModel>/imagenUrl}" class="ndImage" densityAware="false"/>
+                                </VBox>
+
+                                <VBox class="ndDivider"/>
+
+                                <VBox class="ndContentBox">
+
+                                    <HBox class="ndMetaRow" alignItems="Center">
+                                        <core:HTML sanitizeContent="false" content="{newsModel>/tipoHtml}"/>
+                                    </HBox>
+
+                                    <HBox class="ndSubtituloRow" alignItems="Center">
+                                        <Text text="{newsModel>/subtitulo}" class="ndSubtitulo"/>
+                                        <Text text="{newsModel>/fechaLabel}" class="ndFechaDetalle"/>
+                                    </HBox>
+
+                                    <VBox class="ndContentDivider"/>
+
+                                    <core:HTML
+                                        id="ndContenidoHtml"
+                                        sanitizeContent="false"
+                                        content="{newsModel>/contenidoHtml}"/>
+
+                                    <HBox class="ndLinkRow" visible="{newsModel>/hasLink}" alignItems="Center">
+                                        <core:Icon src="sap-icon://world" class="ndLinkIcon"/>
+                                        <Link text="Ver publicación en Instagram"
+                                              href="{newsModel>/link}"
+                                              target="_blank"
+                                              class="ndInstagramLink"/>
+                                    </HBox>
+
+                                </VBox>
+
+                            </HBox>
+
+                        </VBox>
+
+                    </VBox>
+                </VBox>
+
+                <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
+
+            </VBox>
+        </content>
+    </Page>
+
+</mvc:View>

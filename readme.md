@@ -19,19 +19,18 @@ Actualmente el proyecto se encuentra en desarrollo y seguirá evolucionando prog
 ## 🎯 Objetivos del proyecto
 
 ### Corto plazo
-- Acabar todas las vistas y controladores (los datos ahora mismo estan escritos directamente en el view)
-- Que sea responsive
+- Acabar las vistas que faltan.
+- Poner los MVP's que faltan en la db.
 
 ### Medio plazo
-- Registro e inicio de sesión de usuarios (exclusivo jugadores)
-- Sistema de cuentas en la nube
-- Que todos los datos que se vean se vean en la pagina sea llamados desde el db
-- Parsear todos los datos de la última tempora
+- Registro e inicio de sesión de usuarios (necesario para poder votar en 'Encuestas').
+- Sistema de cuentas en la nube.
 
 ### Largo plazo
-- Usar la API oficial de instagram para mostrar los post en directo en el Main.view
-- Mejorar el estilo de la página
-- Publicar el proyecto 
+- Usar la API oficial de instagram para mostrar los post en directo en el Main view.
+- Mejorar el estilo de la página.
+- Que sea responsive.
+- Publicar el proyecto.
 
 ---
 
@@ -51,6 +50,13 @@ Actualmente el proyecto se encuentra en desarrollo y seguirá evolucionando prog
 ### Base de datos
 - **SQLite** (desarrollo)
 - **SAP HANA Cloud** *(previsto para producción)*
+
+---
+
+## 🐛 Errores por corregir
+
+- **InfoSquad + Squad:** A la hora de ver la info de un jugadores que estan mas abajo y se necesita scrollear, cuando volvemos de InfoSquad nos lleva arriba de la  vista de Squad en vez de volver a la altura en la que antes estabamos. 
+- **CSS:** Cuando la vista es muy alta y se necesita scrollear para ver toda la informacion, el header y el footer no estan bin centrados
 
 ---
 

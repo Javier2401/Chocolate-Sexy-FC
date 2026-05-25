@@ -1,0 +1,154 @@
+<mvc:View
+    controllerName="chocolatesexy.project.controller.pages.InfoSquad"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page showHeader="false" enableScrolling="true" class="csPage">
+        <content>
+            <VBox class="pageWrapper" width="100%">
+
+                <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
+
+                <VBox class="pageContent">
+                    <VBox class="isWidget">
+
+                        
+                        <HBox class="isWidgetHeader" alignItems="Center" justifyContent="SpaceBetween">
+                            <Button
+                                icon="sap-icon://nav-back"
+                                press="onNavBack"
+                                class="isBackBtn"/>
+                            <HBox class="isWidgetTitleGroup" alignItems="Center">
+                                <core:Icon src="sap-icon://person-placeholder" class="isWidgetIcon"/>
+                                <Text text="{i18n>infosquad.title}" class="isWidgetTitle"/>
+                            </HBox>
+                            <VBox class="isWidgetHeaderSpacer"/>
+                        </HBox>
+
+                        
+                        <HBox class="isBody" wrap="Wrap">
+
+                            
+                            <VBox class="isPlayerCard">
+                                <VBox class="isPlayerImgWrapper">
+                                    <Image src="{info>/foto}" class="isPlayerImg"/>
+                                    <VBox class="isDorsalBadge">
+                                        <Image src="{info>/camisetaImg}" class="isDorsalCamiseta"/>
+                                        <Text text="{info>/dorsal}" class="isDorsalNum"/>
+                                    </VBox>
+                                </VBox>
+
+                                
+                                <VBox class="isPlayerMeta">
+                                    <VBox class="isMetaItem">
+                                        <Text text="{i18n>infosquad.name}" class="isMetaLabel"/>
+                                        <Text text="{parts:[{path:'info>/nombre'},{path:'info>/apellidos'}], formatter:'.formatFullName'}" class="isMetaValue"/>
+                                    </VBox>
+                                    <VBox class="isMetaItem">
+                                        <Text text="{i18n>infosquad.shirtName}" class="isMetaLabel"/>
+                                        <Text text="{info>/nombreCamiseta}" class="isMetaValue"/>
+                                    </VBox>
+                                    <VBox class="isMetaItem">
+                                        <Text text="{i18n>infosquad.birthdate}" class="isMetaLabel"/>
+                                        <Text text="{info>/fechaNacimiento}" class="isMetaValue"/>
+                                    </VBox>
+                                    <VBox class="isMetaItem">
+                                        <Text text="{i18n>infosquad.position}" class="isMetaLabel"/>
+                                        <Text text="{info>/posicion}" class="isMetaValue isPosBadge"/>
+                                    </VBox>
+                                    <VBox class="isMetaItem">
+                                        <Text text="{i18n>infosquad.foot}" class="isMetaLabel"/>
+                                        <Text text="{info>/piernaHabil}" class="isMetaValue"/>
+                                    </VBox>
+                                </VBox>
+                            </VBox>
+
+                            
+                            <VBox class="isVerticalDivider"/>
+
+                            
+                            <VBox class="isStatsPanel">
+
+                                
+                                <VBox class="isSection">
+                                    <Text text="{i18n>infosquad.matches}" class="isSectionTitle"/>
+                                    <HBox class="isStatsRow" wrap="Wrap">
+                                        <VBox class="isStatCard isStatCardMatches">
+                                            <Text text="{stats>/partidosJugados}" class="isStatNum"/>
+                                            <Text text="{i18n>infosquad.convoke}" class="isStatLabel"/>
+                                        </VBox>
+                                        <VBox class="isStatCard isStatCardStarter">
+                                            <Text text="{stats>/titularidades}" class="isStatNum"/>
+                                            <Text text="{i18n>infosquad.starters}" class="isStatLabel"/>
+                                        </VBox>
+                                        <VBox class="isStatCard isStatCardMvp">
+                                            <Text text="{stats>/mvps}" class="isStatNum"/>
+                                            <Text text="{i18n>infosquad.mvps}" class="isStatLabel"/>
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+
+                                
+                                <VBox class="isSection">
+                                    <Text text="{i18n>infosquad.participation}" class="isSectionTitle"/>
+                                    <HBox class="isStatsRow" wrap="Wrap">
+                                        <VBox class="isStatCard isStatCardGoals">
+                                            <Text text="{stats>/goles}" class="isStatNum"/>
+                                            <Text text="{i18n>infosquad.goals}" class="isStatLabel"/>
+                                        </VBox>
+                                        <VBox class="isStatCard isStatCardAssists">
+                                            <Text text="{stats>/asistencias}" class="isStatNum"/>
+                                            <Text text="{i18n>infosquad.assists}" class="isStatLabel"/>
+                                        </VBox>
+                                        <VBox class="isStatCard isStatCardOwnGoals">
+                                            <Text text="{stats>/golesPropio}" class="isStatNum"/>
+                                            <Text text="{i18n>infosquad.ownGoals}" class="isStatLabel"/>
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+
+                                
+                                <VBox class="isSection">
+                                    <Text text="{i18n>infosquad.cards}" class="isSectionTitle"/>
+                                    <HBox class="isStatsRow" wrap="Wrap">
+                                        <VBox class="isStatCard isStatCardYellow">
+                                            <Text text="{stats>/tarjetasAmarillas}" class="isStatNum"/>
+                                            <Text text="{i18n>infosquad.yellowCards}" class="isStatLabel"/>
+                                        </VBox>
+                                        <VBox class="isStatCard isStatCardRed">
+                                            <Text text="{stats>/tarjetasRojas}" class="isStatNum"/>
+                                            <Text text="{i18n>infosquad.redCards}" class="isStatLabel"/>
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+
+                                
+                                <VBox class="isSection">
+                                    <Text text="{i18n>infosquad.leaderboard}" class="isSectionTitle"/>
+                                    <HBox class="isStatsRow" wrap="Wrap">
+                                        <VBox class="isStatCard isStatCardRankGoals">
+                                            <Text text="{stats>/rankGoles}" class="isStatNum isStatNumRank"/>
+                                            <Text text="{stats>/rankGolesTotalLabel}" class="isStatLabelSub"/>
+                                        </VBox>
+                                        <VBox class="isStatCard isStatCardRankAssists">
+                                            <Text text="{stats>/rankAsistencias}" class="isStatNum isStatNumRank"/>
+                                            <Text text="{stats>/rankAsistTotalLabel}" class="isStatLabelSub"/>
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+
+                            </VBox>
+
+                        </HBox>
+                    </VBox>
+                </VBox>
+
+                <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
+
+            </VBox>
+        </content>
+    </Page>
+
+</mvc:View>

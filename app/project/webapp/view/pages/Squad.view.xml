@@ -5,7 +5,7 @@
     xmlns="sap.m"
     displayBlock="true">
 
-    <Page showHeader="false" enableScrolling="true" class="csPage">
+    <Page id="squadPage" showHeader="false" enableScrolling="true" class="csPage">
         <content>
             <VBox class="pageWrapper" width="100%">
 
@@ -23,7 +23,7 @@
 
                             <VBox class="sqPositionGroup" visible="{= ${squad>/entrenadores/length} > 0 }">
                                 <HBox class="sqPositionLabelRow">
-                                    <Text text="Entrenador" class="sqPositionLabel"/>
+                                    <Text text="{i18n>squad.misters}" class="sqPositionLabel"/>
                                 </HBox>
                                 <HBox class="sqPlayerGrid" items="{squad>/entrenadores}">
                                     <VBox class="sqPlayerCard">
@@ -41,7 +41,7 @@
 
                             <VBox class="sqPositionGroup" visible="{= ${squad>/porteros/length} > 0 }">
                                 <HBox class="sqPositionLabelRow">
-                                    <Text text="Portero" class="sqPositionLabel"/>
+                                    <Text text="{i18n>squad.goalkeepers}" class="sqPositionLabel"/>
                                 </HBox>
                                 <HBox class="sqPlayerGrid" items="{squad>/porteros}">
                                     <VBox class="sqPlayerCard">
@@ -59,7 +59,7 @@
 
                             <VBox class="sqPositionGroup" visible="{= ${squad>/defensas/length} > 0 }">
                                 <HBox class="sqPositionLabelRow">
-                                    <Text text="Defensas" class="sqPositionLabel"/>
+                                    <Text text="{i18n>squad.defenders}" class="sqPositionLabel"/>
                                 </HBox>
                                 <HBox class="sqPlayerGrid" items="{squad>/defensas}">
                                     <VBox class="sqPlayerCard">
@@ -77,7 +77,7 @@
 
                             <VBox class="sqPositionGroup" visible="{= ${squad>/centrocampistas/length} > 0 }">
                                 <HBox class="sqPositionLabelRow">
-                                    <Text text="Centrocampistas" class="sqPositionLabel"/>
+                                    <Text text="{i18n>squad.midfielders}" class="sqPositionLabel"/>
                                 </HBox>
                                 <HBox class="sqPlayerGrid" items="{squad>/centrocampistas}">
                                     <VBox class="sqPlayerCard">
@@ -95,7 +95,7 @@
 
                             <VBox class="sqPositionGroup" visible="{= ${squad>/delanteros/length} > 0 }">
                                 <HBox class="sqPositionLabelRow">
-                                    <Text text="Delanteros" class="sqPositionLabel"/>
+                                    <Text text="{i18n>squad.forwards}" class="sqPositionLabel"/>
                                 </HBox>
                                 <HBox class="sqPlayerGrid" items="{squad>/delanteros}">
                                     <VBox class="sqPlayerCard">

@@ -6,25 +6,31 @@ sap.ui.define([
     return Controller.extend("chocolatesexy.project.controller.shared.BaseController", {
 
         onInit: function () {
+            this.getOwnerComponent().getRouter();
+        },
 
+        getRouter: function () {
+            return this.getOwnerComponent().getRouter();
         },
 
         // Enlaces externos
-        onOpenEmail: function () { window.open("mailto:chocolatesexyoficial@gmail.com", "_self"); },
+        onOpenEmail:     function () { window.open("mailto:chocolatesexyoficial@gmail.com", "_self"); },
         onOpenInstagram: function () { window.open("https://www.instagram.com/chocolatesexyoficial/", "_blank"); },
-        onOpenGitHub: function () { window.open("https://github.com/Javier2401", "_blank"); },
+        onOpenGitHub:    function () { window.open("https://github.com/Javier2401", "_blank"); },
 
         // Navegaciones globales
-        onNavMain: function () { this.getOwnerComponent().getRouter().navTo("RouteMain"); },
-        onNavSquad: function () { this.getOwnerComponent().getRouter().navTo("RouteSquad"); },
-        onNavCalendar: function () { this.getOwnerComponent().getRouter().navTo("RouteCalendar"); },
-        onNavLeaderboard: function () { this.getOwnerComponent().getRouter().navTo("RouteLeaderboard"); },
-        onNavStats: function () { this.getOwnerComponent().getRouter().navTo("RouteStats"); },
-        onNavSurveys: function () { this.getOwnerComponent().getRouter().navTo("RouteSurveys"); },
-        onNavSettings: function () { this.getOwnerComponent().getRouter().navTo("RouteSettings"); },
-        onNavProfile: function () { this.getOwnerComponent().getRouter().navTo("RouteProfile"); },
+        onNavMain:          function () { this.getOwnerComponent().getRouter().navTo("RouteMain"); },
+        onNavSquad:         function () { this.getOwnerComponent().getRouter().navTo("RouteSquad"); },
+        onNavCalendar:      function () { this.getOwnerComponent().getRouter().navTo("RouteCalendar"); },
+        onNavLeaderboard:   function () { this.getOwnerComponent().getRouter().navTo("RouteLeaderboard"); },
+        onNavStats:         function () { this.getOwnerComponent().getRouter().navTo("RouteStats"); },
+        onNavSurveys:       function () { this.getOwnerComponent().getRouter().navTo("RouteSurveys"); },
+        onNavSettings:      function () { this.getOwnerComponent().getRouter().navTo("RouteSettings"); },
+        onNavNews:          function () { this.getOwnerComponent().getRouter().navTo("RouteNews"); },
+        onNavInfoSquad:     function () { this.getOwnerComponent().getRouter().navTo("RouteInfoSquadDetail"); },
+        onNavProfile:       function () { this.getOwnerComponent().getRouter().navTo("RouteProfile"); },
         onNavPrivacyPolicy: function () { this.getOwnerComponent().getRouter().navTo("RoutePrivacyPolicy"); },
-        onNavCookiePolicy: function () { this.getOwnerComponent().getRouter().navTo("RouteCookiePolicy"); },
-        onNavTermsOfUse: function () { this.getOwnerComponent().getRouter().navTo("RouteTermsOfUse"); },
+        onNavCookiePolicy:  function () { this.getOwnerComponent().getRouter().navTo("RouteCookiePolicy"); },
+        onNavTermsOfUse:    function () { this.getOwnerComponent().getRouter().navTo("RouteTermsOfUse"); },
     });
 });
