@@ -11,7 +11,8 @@
   "author": "Javier Alexander Paltan Lombeida",
   "license": "ISC",
   "dependencies": {
-    "@sap/cds": "^9.9.1"
+    "@sap/cds": "^9.9.1",
+    "firebase": "^12.13.0"
   },
   "workspaces": [
     "app/*"
@@ -25,7 +26,7 @@
       "db": {
         "kind": "sqlite",
         "credentials": {
-          "database": "db.sqlite"
+          "url": "db.sqlite"
         }
       }
     }

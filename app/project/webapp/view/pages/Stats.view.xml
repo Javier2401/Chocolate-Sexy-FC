@@ -22,7 +22,7 @@
                             </HBox>
                             <Button id="statsToggle2627"
                                     icon="sap-icon://slim-arrow-up"
-                                    class="navIconBtn stCollapseBtn"
+                                    class="stCollapseBtn"
                                     press="onToggleStats2627"/>
                         </HBox>
                         <VBox class="stSeasonContent" id="statsContent2627" width="100%">
@@ -45,7 +45,7 @@
                                 </HBox>
                                 <Button id="statsToggle2526"
                                         icon="sap-icon://slim-arrow-up"
-                                        class="navIconBtn stCollapseBtn"
+                                        class="stCollapseBtn"
                                         press="onToggleStats2526"/>
                             </HBox>
                             <VBox class="stSeasonContent" id="statsContent2526" width="100%">

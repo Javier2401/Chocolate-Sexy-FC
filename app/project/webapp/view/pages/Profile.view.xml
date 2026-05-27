@@ -12,13 +12,101 @@
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
 
                 <VBox class="pageContent">
-                    
-                    <Text text="VISTA PROFILE" class="surveyText"/>
-                    
+
+                    <VBox id="panelAuth" class="loginPageWrapper">
+
+                        <VBox id="cardLogin" class="loginWidget" visible="true">
+                            <HBox class="isWidgetHeader loginWidgetHeader" alignItems="Center" justifyContent="Center">
+                                <core:Icon src="sap-icon://person-placeholder" class="isWidgetIcon"/>
+                                <Text text="{i18n>profile.login}" class="isWidgetTitle loginWidgetTitle"/>
+                            </HBox>
+                            <VBox class="loginForm">
+                                <VBox class="loginField">
+                                    <Text text="{i18n>profile.email}" class="loginLabel"/>
+                                    <Input id="loginEmail" type="Email" class="loginInput"/>
+                                </VBox>
+                                <VBox class="loginField">
+                                    <Text text="{i18n>profile.password}" class="loginLabel"/>
+                                    <HBox class="loginPasswordWrapper" alignItems="Center">
+                                        <Input id="loginPassword" type="Password" class="loginInput loginInputPass"/>
+                                        <Button icon="sap-icon://hide" press="onToggleLoginPassword" class="loginEyeBtn" id="btnEyeLogin"/>
+                                    </HBox>
+                                </VBox>
+
+                                <HBox class="loginRememberRow" alignItems="Center">
+                                    <Button id="btnRemember" press="onRememberToggle" class="loginRememberTickBtn"/>
+                                    <Text text="{i18n>profile.manteinlogin}" class="loginRememberLabel"/>
+                                </HBox>
+
+                                <Text id="loginError" text="" class="loginError" visible="false"/>
+                                
+                                <Button text="{i18n>profile.bottonlogin}" press="onLogin" class="loginSubmitBtn loginSubmitBtnSpacer"/>
+                                <Button text="{i18n>profile.forgotpassword}" press="onForgotPassword" class="loginForgotBtn"/>
+                                
+                                <HBox justifyContent="Center" alignItems="Center" class="loginSwitchRow">
+                                    <Text text="{i18n>profile.donthaveaccount}" class="loginSwitchText"/>
+                                    <Button text="{i18n>profile.singupnav}" press="onNavToRegister" class="loginForgotBtn loginLinkInlineBtn"/>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+
+                        <VBox id="cardRegister" class="loginWidget" visible="false">
+                            <HBox class="isWidgetHeader loginWidgetHeader" alignItems="Center" justifyContent="Center">
+                                <core:Icon src="sap-icon://add-contact" class="isWidgetIcon"/>
+                                <Text text="{i18n>profile.signup}" class="isWidgetTitle loginWidgetTitle"/>
+                            </HBox>
+                            <VBox class="loginForm loginFormRegister">
+                                <VBox class="loginField">
+                                    <Text text="{i18n>profile.email}" class="loginLabel"/>
+                                    <Input id="registerEmail" type="Email" class="loginInput"/>
+                                </VBox>
+                                <VBox class="loginField">
+                                    <Text text="{i18n>profile.password}" class="loginLabel"/>
+                                    <HBox class="loginPasswordWrapper" alignItems="Center">
+                                        <Input id="registerPassword" type="Password" class="loginInput loginInputPass"/>
+                                        <Button icon="sap-icon://hide" press="onToggleRegisterPassword" class="loginEyeBtn" id="btnEyeRegister"/>
+                                    </HBox>
+                                </VBox>
+                                <VBox class="loginField">
+                                    <Text text="{i18n>profile.repeatpassword}" class="loginLabel"/>
+                                    <HBox class="loginPasswordWrapper" alignItems="Center">
+                                        <Input id="registerPassword2" type="Password" class="loginInput loginInputPass"/>
+                                        <Button icon="sap-icon://hide" press="onToggleRegisterPassword2" class="loginEyeBtn" id="btnEyeRegister2"/>
+                                    </HBox>
+                                </VBox>
+                                <Text id="registerError"   text="" class="loginError"   visible="false"/>
+                                <Text id="registerSuccess" text="" class="loginSuccess" visible="false"/>
+                                
+                                <Button text="{i18n>profile.bottonsignup}" press="onRegister" class="loginSubmitBtn loginSubmitBtnSpacer"/>
+                                
+                                <HBox justifyContent="Center" alignItems="Center" class="loginSwitchRow">
+                                    <Text text="{i18n>profile.alreadyhaveaccount}" class="loginSwitchText"/>
+                                    <Button text="{i18n>profile.loginnav}" press="onNavToLogin" class="loginForgotBtn loginLinkInlineBtn"/>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+
+                    </VBox>
+
+                    <VBox id="panelProfile" class="loginPageWrapper" visible="false">
+                        <VBox class="loginWidget">
+                            <HBox class="isWidgetHeader loginWidgetHeader" alignItems="Center" justifyContent="Center">
+                                <core:Icon src="sap-icon://person-placeholder" class="isWidgetIcon"/>
+                                <Text text="{i18n>profile.myprofile}" class="isWidgetTitle loginWidgetTitle"/>
+                            </HBox>
+                            <VBox class="loginForm">
+                                <core:Icon src="sap-icon://person-placeholder" class="profileAvatar"/>
+                                <Text id="profileEmail"    text="" class="profileEmailText"/>
+                                <Text id="profileVerified" text="" class="profileVerifiedText"/>
+                                <Button text="{i18n>profile.logout}" press="onLogout" class="loginSubmitBtn loginSubmitBtnSpacer"/>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+
                 </VBox>
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
-            
+
             </VBox>
         </content>
     </Page>

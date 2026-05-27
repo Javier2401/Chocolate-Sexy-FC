@@ -17,7 +17,22 @@
             </HBox>
 
             <HBox alignItems="Center" class="navIcons">
-                <Button icon="sap-icon://person-placeholder" class="navIconBtn" press=".onNavProfile"/>
+
+                <Button
+                    visible="{app>/loggedOut}"
+                    icon="sap-icon://person-placeholder"
+                    text="Registrarse"
+                    class="navIconBtn"
+                    press=".onNavProfile" />
+                <Button
+                    visible="{app>/loggedIn}"
+                    icon="sap-icon://person-placeholder"
+                    text="Conectado"
+                    class="navIconBtn userLoggedGreen"
+                    press=".onNavProfile" />
+
+                 <!--
+
                 <Button icon="sap-icon://action-settings"    class="navIconBtn" press=".onNavSettings"/>
                 <MenuButton icon="sap-icon://world" class="navBtn navLangBtn">
                     <Menu>
@@ -25,6 +40,8 @@
                         <MenuItem text="🇪🇸  Español" press=""/>
                     </Menu>
                 </MenuButton>
+                
+                 -->
             </HBox>
 
         </HBox>

@@ -29,6 +29,7 @@ entity Jugadores {
     piernaHabil         : String(20);
     posicion            : String(50);
     foto                : String(500);
+    email               : String(100);
 }
 
 entity Jornadas {

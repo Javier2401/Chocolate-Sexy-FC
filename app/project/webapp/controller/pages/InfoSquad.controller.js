@@ -63,7 +63,6 @@ sap.ui.define([
             oODataModel.bindContext("/Jugadores(" + iId + ")")
                 .requestObject()
                 .then(function (oJugador) {
-
                     var sModulePath = sap.ui.require.toUrl("chocolatesexy/project");
                     oJugador.camisetaImg = sModulePath + "/images/camiseta.png";
                     oInfoModel.setData(oJugador);
@@ -118,7 +117,9 @@ sap.ui.define([
             var oODataModel = this.getOwnerComponent().getModel();
             var oStatsModel = this.getView().getModel("stats");
 
-            var pJugadores = oODataModel.bindList("/Jugadores")
+            var oFilterNoEntrenador = new Filter("posicion", FilterOperator.NE, "Entrenador");
+
+            var pJugadores = oODataModel.bindList("/Jugadores", null, null, [oFilterNoEntrenador])
                 .requestContexts(0, 10000).then(function (aCtx) {
                     return aCtx.map(function (c) { return c.getObject(); });
                 });
@@ -201,7 +202,6 @@ sap.ui.define([
         },
 
         onNavBack: function () {
-
             this.getOwnerComponent().getRouter().navTo("RouteSquad");
         },
 
