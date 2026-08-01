@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch-project": "cds watch --open chocolatesexy.project/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-project": "cds watch --open chocolatesexy.project/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "start": "npx cds serve"
   },
   "keywords": [],
   "author": "Javier Alexander Paltan Lombeida",
