@@ -36,3 +36,7 @@ server:
       configuration:
         flp:
           theme: sap_horizon
+
+customConfiguration:
+  cds-plugin-ui5:
+    mountPath: /
