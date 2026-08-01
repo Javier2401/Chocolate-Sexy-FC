@@ -31,7 +31,7 @@
                     class="navIconBtn userLoggedGreen"
                     press=".onNavProfile" />
 
-                 <!--
+                <!-- BOTON DE AJUSTE
 
                 <Button icon="sap-icon://action-settings"    class="navIconBtn" press=".onNavSettings"/>
                 <MenuButton icon="sap-icon://world" class="navBtn navLangBtn">
@@ -41,7 +41,8 @@
                     </Menu>
                 </MenuButton>
                 
-                 -->
+                -->
+
             </HBox>
 
         </HBox>

@@ -12,13 +12,144 @@
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
 
                 <VBox class="pageContent">
-                    
-                    <Text text="VISTA SURVEYS" class="surveyText"/>
-                    
+
+                    <VBox items="{survey>/list}" class="svyListWrapper" width="100%">
+
+                        <VBox class="svyWidget">
+
+                            <HBox class="svyWidgetHeader">
+                                <core:Icon src="sap-icon://survey" class="svyWidgetIcon"/>
+                                <Text text="{survey>title}" class="svyWidgetTitle"/>
+                            </HBox>
+
+                            <VBox class="svyWidgetBody">
+
+                                <HBox class="svyCountdownRow" justifyContent="Center" alignItems="Center"
+                                      visible="{= !${survey>votingClosed} &amp;&amp; !!${survey>countdownText} }">
+                                    <core:Icon src="sap-icon://history" class="svyCountdownIcon"/>
+                                    <Text text="{= ${i18n>surveys.voting.open} + ': ' + ${survey>countdownText} }"
+                                          class="svyCountdownText"/>
+                                </HBox>
+
+                                <HBox class="svyClosedRow" justifyContent="Center" alignItems="Center"
+                                      visible="{survey>votingClosed}">
+                                    <core:Icon src="sap-icon://locked" class="svyClosedIcon"/>
+                                    <Text text="{= ${i18n>surveys.voting.closed} + ': ' + ${survey>closedAtText} }"
+                                          class="svyClosedText"/>
+                                </HBox>
+
+                                <HBox class="svyOptionsRow" wrap="Wrap" justifyContent="Center">
+
+                                    <VBox class="{= ${survey>selectedOption} === 'opcion1' ? 'svyOptionCard svyOptionCardSelected' : 'svyOptionCard'}"
+                                          alignItems="Center">
+                                        <HBox class="svyCrownRow" justifyContent="Center" alignItems="Center">
+                                            <Text text="👑"
+                                                  visible="{= ${survey>votingClosed} &amp;&amp; ${survey>options/opcion1/isWinner} }"
+                                                  class="svyWinnerStar"/>
+                                        </HBox>
+                                        <VBox class="svyImgWrapper">
+                                            <Image src="{survey>options/opcion1/image}" press="onSelectOption" class="svyOptionImg">
+                                                <customData>
+                                                    <core:CustomData key="option" value="opcion1"/>
+                                                </customData>
+                                            </Image>
+                                            <VBox class="svyLoserOverlay"
+                                                  visible="{= ${survey>votingClosed} &amp;&amp; !${survey>options/opcion1/isWinner} }"/>
+                                        </VBox>
+                                        <HBox class="svyNameRow" justifyContent="Center" alignItems="Center">
+                                            <core:Icon src="sap-icon://favorite"
+                                                       visible="{= ${survey>selectedOption} === 'opcion1'}"
+                                                       class="svyVotedStar"/>
+                                            <Text text="{survey>options/opcion1/name}" class="svyOptionLabel"/>
+                                        </HBox>
+                                        <Text text="{= ${survey>options/opcion1/votes} + ' ' + ${i18n>surveys.votes} }"
+                                              visible="{survey>votingClosed}"
+                                              class="svyOptionVotes"/>
+                                    </VBox>
+
+                                    <VBox class="{= ${survey>selectedOption} === 'opcion2' ? 'svyOptionCard svyOptionCardSelected' : 'svyOptionCard'}"
+                                          alignItems="Center">
+                                        <HBox class="svyCrownRow" justifyContent="Center" alignItems="Center">
+                                            <Text text="👑"
+                                                  visible="{= ${survey>votingClosed} &amp;&amp; ${survey>options/opcion2/isWinner} }"
+                                                  class="svyWinnerStar"/>
+                                        </HBox>
+                                        <VBox class="svyImgWrapper">
+                                            <Image src="{survey>options/opcion2/image}" press="onSelectOption" class="svyOptionImg">
+                                                <customData>
+                                                    <core:CustomData key="option" value="opcion2"/>
+                                                </customData>
+                                            </Image>
+                                            <VBox class="svyLoserOverlay"
+                                                  visible="{= ${survey>votingClosed} &amp;&amp; !${survey>options/opcion2/isWinner} }"/>
+                                        </VBox>
+                                        <HBox class="svyNameRow" justifyContent="Center" alignItems="Center">
+                                            <core:Icon src="sap-icon://favorite"
+                                                       visible="{= ${survey>selectedOption} === 'opcion2'}"
+                                                       class="svyVotedStar"/>
+                                            <Text text="{survey>options/opcion2/name}" class="svyOptionLabel"/>
+                                        </HBox>
+                                        <Text text="{= ${survey>options/opcion2/votes} + ' ' + ${i18n>surveys.votes} }"
+                                              visible="{survey>votingClosed}"
+                                              class="svyOptionVotes"/>
+                                    </VBox>
+
+                                    <VBox class="{= ${survey>selectedOption} === 'opcion3' ? 'svyOptionCard svyOptionCardSelected' : 'svyOptionCard'}"
+                                          alignItems="Center">
+                                        <HBox class="svyCrownRow" justifyContent="Center" alignItems="Center">
+                                            <Text text="👑"
+                                                  visible="{= ${survey>votingClosed} &amp;&amp; ${survey>options/opcion3/isWinner} }"
+                                                  class="svyWinnerStar"/>
+                                        </HBox>
+                                        <VBox class="svyImgWrapper">
+                                            <Image src="{survey>options/opcion3/image}" press="onSelectOption" class="svyOptionImg">
+                                                <customData>
+                                                    <core:CustomData key="option" value="opcion3"/>
+                                                </customData>
+                                            </Image>
+                                            <VBox class="svyLoserOverlay"
+                                                  visible="{= ${survey>votingClosed} &amp;&amp; !${survey>options/opcion3/isWinner} }"/>
+                                        </VBox>
+                                        <HBox class="svyNameRow" justifyContent="Center" alignItems="Center">
+                                            <core:Icon src="sap-icon://favorite"
+                                                       visible="{= ${survey>selectedOption} === 'opcion3'}"
+                                                       class="svyVotedStar"/>
+                                            <Text text="{survey>options/opcion3/name}" class="svyOptionLabel"/>
+                                        </HBox>
+                                        <Text text="{= ${survey>options/opcion3/votes} + ' ' + ${i18n>surveys.votes} }"
+                                              visible="{survey>votingClosed}"
+                                              class="svyOptionVotes"/>
+                                    </VBox>
+
+                                </HBox>
+
+                                <HBox class="svyFooterRow" alignItems="Center" width="100%">
+                                    <HBox class="svyFooterLeft" width="80%" justifyContent="Start" alignItems="Center">
+                                        <Text text="{survey>errorMsg}"
+                                              visible="{survey>showError}"
+                                              class="svyLoginWarning"/>
+                                        <Text text="{survey>successMsg}"
+                                              visible="{survey>showSuccess}"
+                                              class="svySuccessMessage"/>
+                                    </HBox>
+                                    <HBox class="svyFooterRight" width="20%" justifyContent="End" alignItems="Center">
+                                        <Button text="{= ${survey>hasVoted} ? ${i18n>surveys.vote.registered} : ${i18n>surveys.vote.button} }"
+                                                press="onConfirmVote"
+                                                visible="{= !${survey>votingClosed} }"
+                                                enabled="{= !!${survey>selectedOption} &amp;&amp; !${survey>hasVoted} }"
+                                                class="svyVoteBtn"/>
+                                    </HBox>
+                                </HBox>
+
+                            </VBox>
+                        </VBox>
+
+                    </VBox>
+
                 </VBox>
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>
-            
+
             </VBox>
         </content>
     </Page>

@@ -12,4 +12,5 @@ service FootballService {
     entity GolesRival       as projection on my.GolesRival;
     entity Tarjetas         as projection on my.Tarjetas;
     entity Noticias         as projection on my.Noticias;
+    entity Encuestas        as projection on my.Encuestas;
 }

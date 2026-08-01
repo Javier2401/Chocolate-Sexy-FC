@@ -4,7 +4,6 @@ sap.ui.define([
 ], function (BaseController, JSONModel) {
     "use strict";
 
-    var DAYS_SHORT   = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
     var MONTHS_SHORT = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
     var MONTHS_FULL  = ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
                         "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -109,12 +108,12 @@ sap.ui.define([
         },
 
         _flatList: function (aPartidos) {
-            var aResult = [];
+            var aResult  = [];
             var sLastKey = null;
             aPartidos.forEach(function (p) {
                 var sKey, sLabel;
                 if (p.fecha) {
-                    var d = new Date(p.fecha);
+                    var d  = new Date(p.fecha);
                     sKey   = d.getFullYear() + "-" + d.getMonth();
                     sLabel = MONTHS_FULL[d.getMonth()] + " " + d.getFullYear();
                 } else {
@@ -128,86 +127,6 @@ sap.ui.define([
                 aResult.push(Object.assign({}, p, { isHeader: false }));
             });
             return aResult;
-        },
-
-        _enriquecer: function (p) {
-            var sRes       = (p.resultado || "PENDIENTE").trim().toUpperCase();
-            var bPendiente = sRes === "PENDIENTE";
-
-            var bEsLocal = p.esLocal === true || p.esLocal === 1 ||
-                           (p.esLocal != null && String(p.esLocal).toLowerCase() === "true");
-
-            var sFechaText  = "Por confirmar";
-            var sFechaCorta = "Por confirmar";
-            var sHora       = "--:--";
-
-            if (p.fecha) {
-                var d    = new Date(p.fecha);
-                sHora    = String(d.getHours()).padStart(2,"0") + ":" + String(d.getMinutes()).padStart(2,"0");
-                sFechaCorta = DAYS_SHORT[d.getDay()] + ", " + d.getDate() + " " + MONTHS_SHORT[d.getMonth()];
-                sFechaText  = sFechaCorta + " " + d.getFullYear() + " · " + sHora;
-            }
-
-            var sMarcador = bPendiente ? "- : -"
-                          : bEsLocal  ? (p.golesRival + " - " + p.golesNuestros)
-                                      : (p.golesNuestros + " - " + p.golesRival);
-
-            var aGolesNuestros = (p._golesArr || [])
-                .slice()
-                .sort(function (a, b) { return (a.minuto || 999) - (b.minuto || 999); })
-                .map(function (g) {
-                    return {
-                        nombre:    g.jugador ? g.jugador.nombreCamiseta : "?",
-                        minuto:    g.minuto  || 0,
-                        esPenalti: !!g.esPenalti,
-                        esPropio:  !!g.esPropio
-                    };
-                });
-
-            var aGolesRival = (p._golesRivalArr || [])
-                .slice()
-                .sort(function (a, b) { return (a.minuto || 999) - (b.minuto || 999); })
-                .map(function (g) {
-                    return {
-                        minuto:   g.minuto || 0,
-                        esPropio: !!g.esPropio
-                    };
-                });
-
-            var aTarjetas = (p._tarjetasArr || [])
-                .slice()
-                .sort(function (a, b) { return (a.minuto || 999) - (b.minuto || 999); })
-                .map(function (t) {
-                    return {
-                        nombre: t.jugador ? t.jugador.nombreCamiseta : "?",
-                        minuto: t.minuto  || 0,
-                        tipo:   (t.tipo   || "AMARILLA").toUpperCase()
-                    };
-                });
-
-            return Object.assign({}, p, {
-                resultado:      sRes,
-                marcador:       sMarcador,
-                fechaTexto:     sFechaText,
-                fechaCorta:     sFechaCorta,
-                hora:           sHora,
-                rivalNombre:    p.equipo  ? p.equipo.nombre    : "",
-                rivalIniciales: p.equipo  ? p.equipo.iniciales : "",
-                ubicTxt:        p.campo   ? p.campo.nombreCampo : "",
-                campoEnlace:    p.campo   ? p.campo.enlaceCampo : "",
-                temporadaNombre:p.temporada ? p.temporada.temporada : "",
-                esPendiente:    bPendiente,
-                esVictoria:     sRes === "VICTORIA",
-                esEmpate:       sRes === "EMPATE",
-                esDerrota:      sRes === "DERROTA",
-                hayMvp:         !!p.mvpNombre,
-                hayStats:       p.posesion != null,
-                posesionTexto:  (p.posesion || 0) + "%",
-                esLocal:        bEsLocal,
-                _golesNuestros: aGolesNuestros,
-                _golesRival:    aGolesRival,
-                _tarjetas:      aTarjetas
-            });
         },
 
         onToggleSeasonBlock: function (oEvent) {
@@ -418,9 +337,8 @@ sap.ui.define([
             });
 
             aT.forEach(function (t) {
-                var sTipo = (t.tipo || "AMARILLA").toUpperCase();
                 aEvents.push({ minuto: t.minuto, side: sOurSide,
-                    label: t.nombre, isOurs: true, type: "tarjeta", tipo: sTipo });
+                    label: t.nombre, isOurs: true, type: "tarjeta", tipo: t.tipo });
             });
 
             if (!aEvents.length) { oDomZone.style.display = "none"; return; }

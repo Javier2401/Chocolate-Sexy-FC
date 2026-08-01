@@ -108,7 +108,7 @@ sap.ui.define([
 
             this._oRaw.goles.forEach(function (g) {
                 if (!g.jornada || g.jornada.temporadaId !== iLastTemporada) { return; }
-                if (g.esEnContra || g.esPropio) { return; }
+                if (g.esPropio) { return; }
 
                 if (g.jugadorId) {
                     if (!oStats[g.jugadorId]) {

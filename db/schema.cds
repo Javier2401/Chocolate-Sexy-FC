@@ -114,3 +114,14 @@ entity Noticias {
     contenido     : LargeString;     
     foto          : String(500);    
 }
+
+entity Encuestas {
+    key id          : String(50);
+    titulo          : String(100);
+    jugador1Id      : Integer;
+    jugador1        : Association to Jugadores on jugador1.id = jugador1Id;
+    jugador2Id      : Integer;
+    jugador2        : Association to Jugadores on jugador2.id = jugador2Id;
+    jugador3Id      : Integer;
+    jugador3        : Association to Jugadores on jugador3.id = jugador3Id;
+}

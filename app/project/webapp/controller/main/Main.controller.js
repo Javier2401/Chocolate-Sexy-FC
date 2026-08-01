@@ -7,9 +7,6 @@ sap.ui.define([
     var OWN_TEAM_NAME = "Chocolate Sexy";
     var sImgBase      = sap.ui.require.toUrl("chocolatesexy/project/images/");
 
-    var DAYS_SHORT   = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
-    var MONTHS_SHORT = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
-
     return BaseController.extend("chocolatesexy.project.controller.main.Main", {
 
         onInit: function () {
@@ -20,7 +17,7 @@ sap.ui.define([
             var oModel = new JSONModel({
                 igPostHtml:    igPost,
                 standingsHtml: "",
-                newsHtml:      "",         
+                newsHtml:      "",
                 ultimoPartido:  null,
                 proximoPartido: null,
                 hayUltimo:      false,
@@ -87,23 +84,19 @@ sap.ui.define([
             var sHtml = this._buildNewsHtml(aNoticias, 0);
             this.getView().getModel("mainModel").setProperty("/newsHtml", sHtml);
         },
-       
+
         _getTipoConfig: function (sTipo) {
-            var sImgBase = sap.ui.require.toUrl("chocolatesexy/project/images/");
             var mCfg = {
-                lesion:       { emoji: "\uD83C\uDFE5", label: "JUGADOR", emojiBg: "#ffd5d5", bg: "#fecaca", color: "#991b1b" },
-                jugador:      { emoji: "\uD83D\uDC55", label: "JUGADOR", emojiBg: "#c8f5d8", bg: "#bbf7d0", color: "#166534" },
-                fichaje:      { emoji: "\u270D\uFE0F", label: "JUGADOR", emojiBg: "#fde68a", bg: "#fde68a", color: "#92400e" },
-                baja:         { emoji: "\uD83D\uDC4B", label: "JUGADOR", emojiBg: "#fed7aa", bg: "#fed7aa", color: "#9a3412" },
-                sancion:      { emoji: "\uD83D\uDFE8", label: "JUGADOR", emojiBg: "#fecaca", bg: "#fca5a5", color: "#7f1d1d" },
-
-                convocatoria: { emoji: "\uD83D\uDCCB", label: "PARTIDOS", emojiBg: "#e9d5ff", bg: "#e9d5ff", color: "#6b21a8" },
-                resultado:    { emoji: "\u26BD",        label: "PARTIDOS", emojiBg: "#bfdbfe", bg: "#bfdbfe", color: "#1e40af" },
-                lineacion:    { emoji: "\uD83D\uDCCB",  label: "PARTIDOS", emojiBg: "#bfdbfe", bg: "#bfdbfe", color: "#1e40af" },
-
+                lesion:       { emoji: "\uD83C\uDFE5", label: "JUGADOR",    emojiBg: "#ffd5d5", bg: "#fecaca", color: "#991b1b" },
+                jugador:      { emoji: "\uD83D\uDC55", label: "JUGADOR",    emojiBg: "#c8f5d8", bg: "#bbf7d0", color: "#166534" },
+                fichaje:      { emoji: "\u270D\uFE0F", label: "JUGADOR",    emojiBg: "#fde68a", bg: "#fde68a", color: "#92400e" },
+                baja:         { emoji: "\uD83D\uDC4B", label: "JUGADOR",    emojiBg: "#fed7aa", bg: "#fed7aa", color: "#9a3412" },
+                sancion:      { emoji: "\uD83D\uDFE8", label: "JUGADOR",    emojiBg: "#fecaca", bg: "#fca5a5", color: "#7f1d1d" },
+                convocatoria: { emoji: "\uD83D\uDCCB", label: "PARTIDOS",   emojiBg: "#e9d5ff", bg: "#e9d5ff", color: "#6b21a8" },
+                resultado:    { emoji: "\u26BD",        label: "PARTIDOS",   emojiBg: "#bfdbfe", bg: "#bfdbfe", color: "#1e40af" },
+                lineacion:    { emoji: "\uD83D\uDCCB",  label: "PARTIDOS",   emojiBg: "#bfdbfe", bg: "#bfdbfe", color: "#1e40af" },
                 comunicado:   { emoji: "\uD83D\uDCE2", label: "COMUNICADO", emojiBg: "#782c47", bg: "#611a32", color: "#ffffff", imgSrc: sImgBase + "escudo.png" },
-                
-                app:          { emoji: "\u2699\uFE0F", label: "APP", emojiBg: "#e5e7eb", bg: "#e5e7eb", color: "#374151" }
+                app:          { emoji: "\u2699\uFE0F", label: "APP",        emojiBg: "#e5e7eb", bg: "#e5e7eb", color: "#374151" }
             };
             var sKey = (sTipo || "").toLowerCase().trim();
             return mCfg[sKey] || { emoji: "\uD83D\uDCE2", label: "COMUNICADO", emojiBg: "#e5e7eb", bg: "#e5e7eb", color: "#374151" };
@@ -169,33 +162,27 @@ sap.ui.define([
                     sLastFecha = item.fechaLabel;
                 }
 
-                var n        = item.n;
-                var oCfg     = that._getTipoConfig(n.tipo);
-                var bHasLink = false;
-                var sOC      = " onclick=\"window._csOpenNews(" + n.id + ")\"";
+                var n    = item.n;
+                var oCfg = that._getTipoConfig(n.tipo);
+                var sOC  = " onclick=\"window._csOpenNews(" + n.id + ")\"";
 
                 var sCard =
                     "display:flex;align-items:stretch;border-radius:14px;overflow:hidden;" +
                     "background:#ffffff;box-shadow:0 2px 10px rgba(0,0,0,0.07);" +
                     "border:1px solid #f3f4f6;min-height:80px;margin:0 1.2rem 0;" +
-                    "transition:transform 0.22s ease,box-shadow 0.22s ease;" +
-                    "cursor:pointer;";
+                    "transition:transform 0.22s ease,box-shadow 0.22s ease;cursor:pointer;";
 
                 var sEB = "display:flex;align-items:center;justify-content:center;" +
                           "flex-shrink:0;width:72px;min-width:72px;background:" + oCfg.emojiBg + ";";
 
                 var sIcon = oCfg.imgSrc
-                    ? "<img src='" + oCfg.imgSrc + "' " +
-                      "style='width:44px;height:44px;object-fit:contain;border-radius:50%;'>"
-                    : "<span style='font-size:2.2rem;line-height:1;text-align:center;'>" +
-                      oCfg.emoji + "</span>";
+                    ? "<img src='" + oCfg.imgSrc + "' style='width:44px;height:44px;object-fit:contain;border-radius:50%;'>"
+                    : "<span style='font-size:2.2rem;line-height:1;text-align:center;'>" + oCfg.emoji + "</span>";
 
                 sCardsHtml +=
                     "<div style='" + sCard + "'" + sOC +
-                    " onmouseover=\"this.style.transform='scale(1.025)';" +
-                        "this.style.boxShadow='0 6px 22px rgba(97,26,50,0.18)';\"" +
-                    " onmouseout=\"this.style.transform='scale(1)';" +
-                        "this.style.boxShadow='0 2px 10px rgba(0,0,0,0.07)';\">" +
+                    " onmouseover=\"this.style.transform='scale(1.025)';this.style.boxShadow='0 6px 22px rgba(97,26,50,0.18)';\"" +
+                    " onmouseout=\"this.style.transform='scale(1)';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.07)';\">" +
                         "<div style='" + sEB + "'>" + sIcon + "</div>" +
                         "<div style='" + sCTS + "'>" +
                             "<span style='" + sTIS + "'>" + n.titulo + "</span>" +
@@ -212,7 +199,6 @@ sap.ui.define([
                     "display:flex;justify-content:center;align-items:center;" +
                     "gap:6px;padding:0.9rem 1.2rem 0.6rem;flex-wrap:wrap;";
                 sPagination = "<div style='" + sPagWrap + "'>";
-
                 for (var i = 0; i < nPages; i++) {
                     var bA = i === nPage;
                     var sBtnStyle =
@@ -220,8 +206,7 @@ sap.ui.define([
                         "font-weight:700;cursor:pointer;min-width:36px;" +
                         "border:1.5px solid #611a32;" +
                         "transition:background 0.15s ease,color 0.15s ease;" +
-                        (bA ? "background:#611a32;color:#ffffff;"
-                            : "background:#ffffff;color:#611a32;");
+                        (bA ? "background:#611a32;color:#ffffff;" : "background:#ffffff;color:#611a32;");
                     sPagination +=
                         "<button style='" + sBtnStyle + "' " +
                         "onclick='window._csSetNewsPage(" + i + ")'>" + (i + 1) + "</button>";
@@ -233,36 +218,6 @@ sap.ui.define([
                        "<div style='padding-top:0.5rem;" + (nPages > 1 ? "min-height:580px;" : "") + "'>" + sCardsHtml + "</div>" +
                        sPagination +
                    "</div>";
-        },
-
-        _enriquecer: function (p) {
-            var sRes       = (p.resultado || "PENDIENTE").trim().toUpperCase();
-            var bPendiente = sRes === "PENDIENTE";
-
-            var bEsLocal = p.esLocal === true || p.esLocal === 1 ||
-                           (p.esLocal != null && String(p.esLocal).toLowerCase() === "true");
-
-            var sFechaText = "Por confirmar";
-            var sHora      = "--:--";
-
-            if (p.fecha) {
-                var d       = new Date(p.fecha);
-                sHora       = String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
-                var sFechaC = DAYS_SHORT[d.getDay()] + ", " + String(d.getDate()).padStart(2, "0") + " " +
-                              MONTHS_SHORT[d.getMonth()] + " " + d.getFullYear();
-                sFechaText  = sFechaC + " · " + sHora;
-            }
-
-            return Object.assign({}, p, {
-                resultado:       sRes,
-                fechaTexto:      sFechaText,
-                rivalNombre:     p.equipo    ? p.equipo.nombre       : "",
-                rivalIniciales:  p.equipo    ? p.equipo.iniciales    : "",
-                ubicTxt:         p.campo     ? p.campo.nombreCampo   : "",
-                temporadaNombre: p.temporada ? p.temporada.temporada : "",
-                esPendiente:     bPendiente,
-                esLocal:         bEsLocal
-            });
         },
 
         _procesarJornadas: function (aPartidos) {

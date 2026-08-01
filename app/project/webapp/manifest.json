@@ -166,11 +166,6 @@
           "name": "RouteInfoSquadDetail",
           "pattern": "infosquad/{jugadorId}",
           "target": [ "TargetInfoSquad" ]
-        },
-        {
-          "name": "RouteLogin",
-          "pattern": "login",
-          "target": [ "TargetLogin" ]
         }
       ],
       "targets": {
@@ -225,10 +220,6 @@
         "TargetInfoSquad": {
           "id": "InfoSquad",
           "name": "pages.InfoSquad"
-        },
-        "TargetLogin": {
-          "id": "Login",
-          "name": "pages.Login"
         }
       }
     },

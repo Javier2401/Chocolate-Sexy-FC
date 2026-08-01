@@ -36,330 +36,6 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   GLOBAL
-   ═══════════════════════════════════════════════════════════════ */
-
-.csPage {
-    background-color: #f0bfd0 !important;
-    height: 100% !important;
-}
-
-.csPage .sapMPageSection {
-    padding: 0 !important;
-    height: 100% !important;
-}
-
-.csPage .sapMScrollContScroll {
-    background-color: #e8e8e8 !important;
-    scroll-behavior: smooth;
-}
-
-.pageWrapper,
-.pageWrapper.sapMVBox {
-    min-height: 100vh !important;
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-}
-
-.pageContent,
-.pageContent.sapMVBox {
-    flex: 1 1 auto !important;
-    margin: 2rem 0 !important;
-    padding: 0 5.5rem;
-    width: 100%;
-    box-sizing: border-box;
-    gap: 1.5rem;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   HEADER
-   ═══════════════════════════════════════════════════════════════ */
-
-.csHeader,
-.csHeader.sapMVBox {
-    background-color: #611a32 !important;
-    width: 100% !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    flex-shrink: 0 !important;
-}
-
-.navBar,
-.navBar.sapMHBox {
-    width: 100% !important;
-    padding: 0.5rem 1rem !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
-}
-
-.navLogo,
-.navLogo.sapMImg {
-    flex-shrink: 0 !important;
-    height: 95px !important;
-    object-fit: contain !important;
-    cursor: pointer !important;
-}
-
-.navButtons,
-.navButtons.sapMHBox {
-    flex: 1 1 auto !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-    gap: 6px !important;
-    padding: 4px 0 !important;
-}
-
-.navIcons,
-.navIcons.sapMHBox {
-    flex-shrink: 0 !important;
-    width: auto !important; 
-    display: flex !important;
-    justify-content: flex-end !important;
-    align-items: center !important;
-    gap: 6px !important;
-}
-
-.navBtn.sapMBtn {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    margin: 0 3px !important;
-    padding: 0 !important;
-    height: 38px !important;
-    min-height: 38px !important;
-    border-radius: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    vertical-align: middle !important;
-}
-.navBtn.sapMBtn .sapMBtnInner {
-    background-color: rgba(255,255,255,0.12) !important;
-    border: 1px solid rgba(255,255,255,0.35) !important;
-    border-radius: 20px !important;
-    height: 38px !important;
-    min-height: 38px !important;
-    line-height: 38px !important;
-    padding: 0 18px !important;
-    box-shadow: none !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transition: background-color 0.15s ease !important;
-}
-.navBtn.sapMBtn .sapMBtnContent,
-.navBtn.sapMBtn .sapMBtnText,
-.navBtn.sapMBtn bdi {
-    color: #ffffff !important;
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.5px !important;
-    line-height: 1 !important;
-}
-.navBtn.sapMBtn:hover .sapMBtnInner {
-    background-color: rgba(255,255,255,0.22) !important;
-    border-color: rgba(255,255,255,0.5) !important;
-}
-
-.navBtn.sapMMenuBtn {
-    background-color: rgba(255,255,255,0.12) !important;
-    border-radius: 20px !important;
-    border: 1px solid rgba(255,255,255,0.35) !important;
-    height: 36px !important;
-    min-height: 36px !important;
-    padding: 0 !important;
-    margin: 0 3px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    vertical-align: middle !important;
-    transition: background-color 0.15s ease !important;
-}
-.navBtn.sapMMenuBtn .sapMBtnInner {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-.navBtn.sapMMenuBtn .sapMMenuBtnRegular .sapMBtnInner {
-    background-color: transparent !important;
-    border: none !important;
-    border-radius: 20px 0 0 20px !important;
-    height: 36px !important;
-    min-height: 36px !important;
-    padding: 0 16px !important;
-}
-.navBtn.sapMMenuBtn .sapMMenuBtnRegular .sapMBtnContent,
-.navBtn.sapMMenuBtn .sapMMenuBtnRegular bdi {
-    color: #ffffff !important;
-    font-size: 0.82rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.5px !important;
-}
-.navBtn.sapMMenuBtn .sapMMenuBtnSplit .sapMBtnInner {
-    background-color: transparent !important;
-    border: none !important;
-    border-left: 1px solid rgba(255,255,255,0.2) !important;
-    border-radius: 0 20px 20px 0 !important;
-    height: 36px !important;
-    min-height: 36px !important;
-    padding: 0 10px !important;
-}
-.navBtn.sapMMenuBtn .sapMMenuBtnSplit .sapMBtnIcon,
-.navBtn.sapMMenuBtn .sapMMenuBtnSplit .sapUiIcon,
-.navBtn.sapMMenuBtn * { color: #ffffff !important; }
-.navBtn.sapMMenuBtn .sapMBtnContent { font-size: 13px !important; margin: 0 7.5px !important; }
-.navBtn.sapMMenuBtn:hover { background-color: rgba(255,255,255,0.22) !important; }
-
-.sapMMenu,
-.sapMMenu .sapMMenu {
-    background-color: #3a3a3a !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
-    border-radius: 8px !important;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.6) !important;
-    padding: 4px 0 !important;
-}
-.sapMMenu > ul,
-.sapMMenu .sapMMenuList {
-    background-color: #3a3a3a !important;
-    border-radius: 8px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-.sapMMenu li,
-.sapMMenu .sapMMenuItem {
-    background-color: #3a3a3a !important;
-    border: none !important;
-    padding: 6px 14px !important;
-}
-.sapMMenu .sapMMenuItemText {
-    color: #ffffff !important;
-    font-size: 0.9rem !important;
-    font-weight: 500 !important;
-}
-.sapMMenu li:hover,
-.sapMMenu .sapMMenuItem:hover {
-    background-color: #555555 !important;
-    cursor: pointer;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════════════════════════ */
-
-.csFooter,
-.csFooter.sapMVBox {
-    flex-shrink: 0 !important;
-    background-color: #611a32 !important;
-    width: 100% !important;
-}
-
-.footerContent,
-.footerContent.sapMHBox {
-    width: 100% !important;
-    padding: 1.2rem 2rem !important;
-    box-sizing: border-box !important;
-    flex-wrap: nowrap !important;
-    gap: 0 !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-}
-
-.footerLeft,
-.footerLeft.sapMHBox {
-    align-items: center !important;
-    gap: 12px !important;
-    flex-shrink: 0 !important;
-}
-
-.footerSocialIcon,
-.footerSocialIcon.sapMImg {
-    width: 34px !important;
-    height: 34px !important;
-    object-fit: contain !important;
-    cursor: pointer !important;
-    transition: opacity 0.15s ease !important;
-    display: block !important;
-}
-.footerSocialIcon.sapMImg:hover {
-    opacity: 0.75 !important;
-}
-
-.footerCenter,
-.footerCenter.sapMVBox {
-    flex: 1 1 auto !important;
-    align-items: center !important;
-    gap: 6px !important;
-    margin-top: 6px !important;
-}
-
-.footerLinks,
-.footerLinks.sapMHBox {
-    gap: 4px !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
-
-.footerSep,
-.footerSep.sapMText {
-    color: rgba(255,255,255,0.25) !important;
-    font-size: 0.8rem !important;
-    padding: 0 2px !important;
-}
-
-.footerCopy,
-.footerCopy.sapMText {
-    font-size: 0.8rem !important;
-    color: rgba(255,255,255,0.6) !important;
-    font-weight: 500 !important;
-    text-align: center !important;
-}
-
-.footerRight,
-.footerRight.sapMVBox {
-    align-items: center !important;
-    gap: 6px !important;
-    flex-shrink: 0 !important;
-}
-
-.footerAutor,
-.footerAutor.sapMText {
-    font-size: 0.8rem !important;
-    color: rgba(255,255,255,0.6) !important;
-    font-weight: 500 !important;
-    text-align: center !important;
-}
-
-.footerLinkBtn.sapMBtn {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    margin: 2px !important;
-    padding: 0 !important;
-    height: auto !important;
-    min-height: auto !important;
-}
-.footerLinkBtn.sapMBtn .sapMBtnInner {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid rgba(255,255,255,0.3) !important;
-    border-radius: 0 !important;
-    padding: 2px 4px !important;
-    height: auto !important;
-    box-shadow: none !important;
-    transition: border-bottom-color 0.15s ease !important;
-}
-.footerLinkBtn.sapMBtn bdi {
-    color: rgba(255,255,255,0.7) !important;
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-}
-.footerLinkBtn.sapMBtn:hover .sapMBtnInner { border-bottom-color: #ffffff !important; }
-.footerLinkBtn.sapMBtn:hover bdi            { color: #ffffff !important; }
-
-/* ═══════════════════════════════════════════════════════════════
    HEADER
    ═══════════════════════════════════════════════════════════════ */
 
@@ -728,7 +404,7 @@
     align-items: flex-start !important;
     flex-wrap: wrap !important;
     width: 100% !important;
-    gap: 15rem !important;
+    gap: 5rem !important;
     justify-content: center !important;
 }
 
@@ -1575,10 +1251,6 @@
     justify-content: center !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   MINI-CLASIFICACIÓN (Main)
-   ═══════════════════════════════════════════════════════════════ */
-
 .standingsTableWrapper .lbTHead,
 .standingsTableWrapper .lbTRow,
 .standingsTableWrapper .lbTRowDyn {
@@ -2326,10 +1998,6 @@
 }
 .calMatchHighlight { animation: calCardPulse 1.6s ease forwards; }
 
-/* ═══════════════════════════════════════════════════════════════
-   GOLES EN TARJETAS DE PARTIDO
-   ═══════════════════════════════════════════════════════════════ */
-
 .calGolesZone {
     width: 100% !important;
     box-sizing: border-box !important;
@@ -2414,10 +2082,6 @@
     font-size:  0.92rem;
     opacity:    0.65;
 }
-
-/* ═══════════════════════════════════════════════════════════════
-   EVENTOS (GOLES + TARJETAS) EN TARJETAS DE PARTIDO
-   ═══════════════════════════════════════════════════════════════ */
 
 .calSeasonContent,
 .calSeasonContent .sapMList,
@@ -3749,7 +3413,7 @@
 }
 
 /* ══════════════════════════════════════════════════════════════
-   NEWS DETAIL
+   NEWS
    ══════════════════════════════════════════════════════════════ */
 
 .ndPageWrapper {
@@ -3946,7 +3610,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   INFO SQUAD 
+   SQUAD 
    ═══════════════════════════════════════════════════════════════ */
 
 .isWidget,
@@ -4389,7 +4053,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   PROFILE (ESTILOS GLOBALES DE LAS TARJETAS)
+   PROFILE
    ═══════════════════════════════════════════════════════════════ */
 
 .loginPageWrapper,
@@ -4626,10 +4290,6 @@
     user-select: none !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   CONTROL DE SEPARACIONES TOTALMENTE SIMÉTRICO (SÓLO CSS)
-   ═══════════════════════════════════════════════════════════════ */
-
 .loginForm:not(.loginFormRegister) .loginSubmitBtn.sapMBtn {
     margin-top: 2rem !important; 
     margin-bottom: 0rem !important;
@@ -4788,10 +4448,298 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   SURVEYS 
+   ═══════════════════════════════════════════════════════════════ */
+
+.svyListWrapper.sapMVBox {
+    gap: 2rem !important;
+}
+
+.svyWidget {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(97,26,50,0.13);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.svyWidgetHeader.sapMHBox {
+    background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
+    padding: 0.7rem 1rem !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    height: 45px !important;
+}
+
+.svyWidgetIcon {
+    color: rgba(255,255,255,0.75) !important;
+    font-size: 1rem !important;
+}
+
+.svyWidgetTitle.sapMText {
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+}
+
+.svyWidgetBody.sapMVBox {
+    padding: 1.8rem 1.5rem !important;
+    gap: 1.2rem !important;
+    align-items: stretch !important;
+}
+
+.svyLoginWarning.sapMText {
+    margin-top: 17.5px !important; 
+    color: #b91c1c !important;
+    background: #fef2f2 !important;
+    border: 1px solid #fca5a5 !important;
+    border-radius: 10px !important;
+    padding: 0.6rem 0.9rem !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    text-align: left !important;
+}
+
+.svySuccessMessage.sapMText {
+    margin-top: 17.5px !important; 
+    color: #15803d !important;
+    background: #f0fdf4 !important;
+    border: 1px solid #86efac !important;
+    border-radius: 10px !important;
+    padding: 0.6rem 0.9rem !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    text-align: left !important;
+}
+
+.svyCountdownRow.sapMHBox {
+    background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%) !important;
+    border-radius: 30px !important;
+    padding: 0.55rem 1.3rem !important;
+    gap: 0.5rem !important;
+    box-shadow: 0 4px 12px rgba(217,119,6,0.32) !important;
+    align-self: center !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+}
+
+.svyCountdownIcon {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+}
+
+.svyCountdownText.sapMText {
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.2px !important;
+    text-align: center !important;
+}
+
+.svyClosedRow.sapMHBox {
+    background: #eae6ec !important;
+    border-radius: 30px !important;
+    padding: 0.55rem 1.3rem !important;
+    gap: 0.5rem !important;
+    align-self: center !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+}
+
+.svyClosedIcon {
+    color: #7c7480 !important;
+    font-size: 1.1rem !important;
+}
+
+.svyClosedText.sapMText {
+    color: #7c7480 !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.2px !important;
+    text-align: center !important;
+}
+
+.svyOptionsRow.sapMHBox {
+    gap: 2.8rem !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+}
+
+.svyOptionCard.sapMVBox {
+    position: relative !important;
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    border: 3px solid transparent !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+    padding: 0.6rem 0.5rem 0.9rem !important;
+    gap: 0.6rem !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+    transition: background-color 0.22s ease, border-color 0.22s ease !important;
+}
+
+.svyWidget .svyOptionsRow .svyOptionCard.svyOptionCardSelected.sapMVBox {
+    border-color: #6b7280 !important;
+    background-color: #f3f4f6 !important;
+}
+
+.svyImgWrapper.sapMVBox {
+    position: relative !important;
+    isolation: isolate !important;
+    width: 185px !important;
+    min-height: 185px !important;
+    background: linear-gradient(to bottom, #7b2244 0%, #c45085 60%, #e8a0c0 100%) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 18px rgba(97,26,50,0.3) !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    overflow: hidden !important;
+}
+
+.svyLoserOverlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: #94a3b8 !important;
+    mix-blend-mode: saturation !important;
+    border-radius: 20px !important;
+    pointer-events: none !important;
+}
+
+.svyOptionImg.sapMImg {
+    display: block !important;
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    cursor: pointer !important;
+    transition: transform 0.18s ease !important;
+    transform-origin: center center !important;
+}
+
+.svyOptionImg.sapMImg:hover {
+    transform: scale(1.08) !important;
+}
+
+.svyOptionImg.sapMImg:focus,
+.svyOptionImg.sapMImg:focus-visible {
+    outline: none !important;
+}
+
+.svyNameRow.sapMHBox {
+    margin-top: 0.6rem !important;
+    gap: 0.35rem !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.svyCrownRow.sapMHBox {
+    min-height: 2.4rem !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.svyWinnerStar.sapMText {
+    font-size: 2.2rem !important;
+    line-height: 1 !important;
+}
+
+.svyVotedStar {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 50% !important;
+    background: #fef3c7 !important;
+    color: #eab308 !important;
+    font-size: 0.85rem !important;
+}
+
+.svyOptionLabel.sapMText {
+    font-size: 1.0rem !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+    letter-spacing: 0.3px !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+}
+
+.svyOptionVotes.sapMText {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: #6b7280 !important;
+    text-align: center !important;
+}
+
+.svyFooterRow.sapMHBox {
+    margin-top: 0.3rem !important;
+}
+
+.svyFooterLeft.sapMHBox,
+.svyFooterRight.sapMHBox {
+    align-items: flex-start !important;
+}
+.svyVoteBtn.sapMBtn .sapMBtnInner {
+    background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 28px !important;
+    box-shadow: 0 3px 10px rgba(97,26,50,0.3) !important;
+    transition: opacity 0.15s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.svyVoteBtn.sapMBtn .sapMBtnContent {
+    width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.svyVoteBtn.sapMBtn bdi {
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+}
+
+.svyVoteBtn.sapMBtn:hover .sapMBtnInner {
+    opacity: 0.9 !important;
+}
+
+.svyVoteBtn.sapMBtn.Sapm-Disabled .sapMBtnInner,
+.svyVoteBtn.sapMBtn[disabled] .sapMBtnInner {
+    opacity: 0.4 !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 700px) {
+    .svyOptionsRow.sapMHBox { flex-direction: column !important; align-items: center !important; }
+    .svyImgWrapper.sapMVBox { width: 160px !important; height: 182px !important; min-height: 182px !important; }
+    .svyOptionImg.sapMImg { height: 158px !important; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
 
-/* ── Squad / Jugador individual ── */
 @media (max-width: 860px) {
     .isWidget,
     .isWidget.sapMVBox {

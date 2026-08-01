@@ -64,34 +64,6 @@
                                     <VBox class="calGolesZone calUltimoGolesZone" width="100%"/>
                                         <Text text="{cal>/ultimoPartido/fechaTexto}" class="matchInfoText"/>
                                         <Text text="📍 {cal>/ultimoPartido/ubicTxt}" class="matchInfoText"/>
-                                    <HBox class="mvpBox" alignItems="Center" width="100%" visible="{cal>/ultimoPartido/hayMvp}">
-                                        <Text text="🏆" class="mvpEmoji"/>
-                                        <VBox class="mvpInfo">
-                                            <Text text="Chocolate MVP" class="mvpLabel"/>
-                                            <Text text="{cal>/ultimoPartido/mvpNombre} · {cal>/ultimoPartido/mvpPosicion}" class="mvpName"/>
-                                        </VBox>
-                                        <VBox class="mvpRatingBadge" alignItems="Center" justifyContent="Center">
-                                            <Text text="{cal>/ultimoPartido/mvpRating}" class="mvpRatingText"/>
-                                        </VBox>
-                                    </HBox>
-                                    <HBox class="matchStatsRow" width="100%" visible="{cal>/ultimoPartido/hayStats}">
-                                        <VBox class="matchStatItem" alignItems="Center">
-                                            <Text text="{cal>/ultimoPartido/posesionTexto}" class="matchStatVal"/>
-                                            <Text text="Posesión" class="matchStatLbl"/>
-                                        </VBox>
-                                        <VBox class="matchStatItem" alignItems="Center">
-                                            <Text text="{cal>/ultimoPartido/tiros}" class="matchStatVal"/>
-                                            <Text text="Tiros" class="matchStatLbl"/>
-                                        </VBox>
-                                        <VBox class="matchStatItem" alignItems="Center">
-                                            <Text text="{cal>/ultimoPartido/corners}" class="matchStatVal"/>
-                                            <Text text="Corners" class="matchStatLbl"/>
-                                        </VBox>
-                                        <VBox class="matchStatItem" alignItems="Center">
-                                            <Text text="{cal>/ultimoPartido/amarillas}" class="matchStatVal"/>
-                                            <Text text="Amarillas" class="matchStatLbl"/>
-                                        </VBox>
-                                    </HBox>
                                 </VBox>
                                 <Text text="{i18n>calendar.noLastMatch}" class="calNoData"
                                       visible="{= !${cal>/hayUltimo} }"/>
