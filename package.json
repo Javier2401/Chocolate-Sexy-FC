@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-project": "cds watch --open chocolatesexy.project/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "start": "./node_modules/.bin/cds serve"
+    "start": "npx cds serve"
   },
   "keywords": [],
   "author": "Javier Alexander Paltan Lombeida",
@@ -20,6 +20,7 @@
   ],
   "devDependencies": {
     "@cap-js/sqlite": "^2.4.0",
+    "@sap/cds-dk": "^9.9.0",
     "cds-plugin-ui5": "^0.17.0"
   },
   "cds": {
