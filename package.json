@@ -31,6 +31,9 @@
         "credentials": {
           "url": "db.sqlite"
         }
+      },
+      "auth": {
+        "kind": "mocked"
       }
     }
   }
