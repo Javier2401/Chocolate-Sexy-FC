@@ -35,6 +35,20 @@
     gap: 1.5rem;
 }
 
+.csPage *:focus {
+    outline: none !important;
+}
+
+.csPage *:focus-visible {
+    outline: 2px transparent #901e4400 !important;
+}
+
+:root {
+    --sapContent_FocusColor: transparent !important;
+    --sapContent_FocusWidth: 0px !important;
+    --sapContent_FocusStyle: none !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    HEADER
    ═══════════════════════════════════════════════════════════════ */
@@ -49,9 +63,10 @@
 
 .navBar,
 .navBar.sapMHBox {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
     width: 100% !important;
     padding: 0.5rem 1rem !important;
-    flex-wrap: nowrap !important;
     align-items: center !important;
     box-sizing: border-box !important;
 }
@@ -62,17 +77,18 @@
     height: 95px !important;
     object-fit: contain !important;
     cursor: pointer !important;
+    justify-self: start !important;
 }
 
 .navButtons,
 .navButtons.sapMHBox {
-    flex: 1 1 auto !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     flex-wrap: wrap !important;
     gap: 6px !important;
     padding: 4px 0 !important;
+    justify-self: center !important;
 }
 
 .navIcons,
@@ -82,6 +98,7 @@
     display: flex !important;
     justify-content: flex-end !important;
     align-items: center !important;
+    justify-self: end !important;
     gap: 6px !important;
 }
 
@@ -294,12 +311,11 @@
 
 .footerContent,
 .footerContent.sapMHBox {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
     width: 100% !important;
     padding: 1.2rem 2rem !important;
     box-sizing: border-box !important;
-    flex-wrap: nowrap !important;
-    gap: 0 !important;
-    justify-content: space-between !important;
     align-items: center !important;
 }
 
@@ -308,6 +324,7 @@
     align-items: center !important;
     gap: 12px !important;
     flex-shrink: 0 !important;
+    justify-self: start !important;
 }
 
 .footerSocialIcon,
@@ -325,10 +342,10 @@
 
 .footerCenter,
 .footerCenter.sapMVBox {
-    flex: 1 1 auto !important;
     align-items: center !important;
     gap: 6px !important;
     margin-top: 6px !important;
+    justify-self: center !important;
 }
 
 .footerLinks,
@@ -359,6 +376,7 @@
     align-items: center !important;
     gap: 6px !important;
     flex-shrink: 0 !important;
+    justify-self: end !important;
 }
 
 .footerAutor,
@@ -395,6 +413,82 @@
 }
 .footerLinkBtn.sapMBtn:hover .sapMBtnInner { border-bottom-color: #ffffff !important; }
 .footerLinkBtn.sapMBtn:hover bdi            { color: #ffffff !important; }
+
+/* ═══════════════════════════════════════════════════════════════
+   PRIVACY POLICY -- COOKIE POLICY -- TERMS OF USE
+   ═══════════════════════════════════════════════════════════════ */
+
+.legalPageCard {
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    background: #ffffff;
+}
+
+/* Cabecera: reutiliza tu clase existente, solo se añade aquí por referencia */
+.newsWidgetHeader2.sapMHBox {
+    background: linear-gradient(135deg, #611a32 0%, #a3295f 100%) !important;
+    padding: 0.7rem 1rem !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    height: 70px !important;
+}
+
+.legalPageTitle.sapMText {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 1.40rem !important;
+    letter-spacing: 0.02em;
+}
+
+.legalPageBody {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.legalPageUpdated.sapMText {
+    color: #999999 !important;
+    font-size: 0.8rem !important;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.legalPageBody h2 {
+    color: #611a32;
+    font-size: 1.1rem;
+    margin: 1.4rem 0 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #eee;
+}
+
+.legalPageBody h2:first-child {
+    margin-top: 0;
+}
+
+.legalPageBody p {
+    color: #000000;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.legalPageBody ul {
+    margin: 0.5rem 0 0.8rem 1.2rem;
+    padding: 0;
+}
+
+.legalPageBody li {
+    color: #000000;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 0.3rem;
+}
+
+.legalPageBody strong {
+    color: #611a32;
+}
 
 /* ═══════════════════════════════════════════════════════════════
    MAIN
@@ -2727,24 +2821,6 @@
     font-weight: 900 !important;
 }
 
-@media (max-width: 1700px) {
-    .lbSeasonRow,
-    .lbSeasonRow.sapMHBox {
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-    }
-    .lbEvoSpacer,
-    .lbEvoSpacer.sapMVBox { display: none !important; }
-    .lbEvoCard,
-    .lbEvoCard.sapMVBox {
-        flex: 1 1 auto !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        min-width: 0 !important;
-    }
-}
-
 .lbEvoHidden {
     display: none !important;
     visibility: hidden !important;
@@ -3403,13 +3479,6 @@
     font-style: italic !important;
     font-size: 0.78rem !important;
     text-align: center !important;
-}
-
-@media (max-width: 1400px) {
-    .stSidePanelLeft,
-    .stSidePanelLeft.sapMVBox {
-        display: none !important;
-    }
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -4473,17 +4542,17 @@
     align-items: center !important;
     gap: 0.5rem !important;
     justify-content: center !important;
-    height: 45px !important;
+    height: 70px !important;
 }
 
 .svyWidgetIcon {
     color: rgba(255,255,255,0.75) !important;
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
 }
 
 .svyWidgetTitle.sapMText {
     color: #ffffff !important;
-    font-size: 1rem !important;
+    font-size: 1.32rem !important;
     font-weight: 800 !important;
     letter-spacing: 0.8px !important;
     text-transform: uppercase !important;
@@ -4730,15 +4799,34 @@
     box-shadow: none !important;
 }
 
-@media (max-width: 700px) {
-    .svyOptionsRow.sapMHBox { flex-direction: column !important; align-items: center !important; }
-    .svyImgWrapper.sapMVBox { width: 160px !important; height: 182px !important; min-height: 182px !important; }
-    .svyOptionImg.sapMImg { height: 158px !important; }
-}
-
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1700px) {
+    .lbSeasonRow,
+    .lbSeasonRow.sapMHBox {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    .lbEvoSpacer,
+    .lbEvoSpacer.sapMVBox { display: none !important; }
+    .lbEvoCard,
+    .lbEvoCard.sapMVBox {
+        flex: 1 1 auto !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+
+@media (max-width: 1400px) {
+    .stSidePanelLeft,
+    .stSidePanelLeft.sapMVBox {
+        display: none !important;
+    }
+}
 
 @media (max-width: 860px) {
     .isWidget,
@@ -4812,6 +4900,9 @@
     .ndContentBox { padding: 1.2rem; }
     .ndTitleText { font-size: 1rem !important; }
     .ndPageWrapper { margin: 1rem auto; }
+    .svyOptionsRow.sapMHBox { flex-direction: column !important; align-items: center !important; }
+    .svyImgWrapper.sapMVBox { width: 160px !important; height: 182px !important; min-height: 182px !important; }
+    .svyOptionImg.sapMImg { height: 158px !important; }
 }
 
 .sqPlayerGrid .sapMListItems {
@@ -4875,6 +4966,7 @@
 
 @media (max-width: 1050px) {
     .navBar, .navBar.sapMHBox {
+        display: flex !important;
         flex-wrap: wrap !important;
         padding: 0.4rem 0.8rem !important;
     }
@@ -4909,7 +5001,8 @@
     .leftCol.sapMVBox   { flex: 1 1 100% !important; min-width: 0 !important; order: 3 !important; }
 
     .navLogo, .navLogo.sapMImg { height: 65px !important; width: auto !important; }
-    .footerContent { padding: 1rem 1.2rem !important; }
+    .footerContent,
+    .footerContent.sapMHBox { padding: 1rem 1.2rem !important; }
 
     .lbCard, .lbCard.sapMVBox { border-radius: 16px !important; }
     .calGrid.sapMHBox         { flex-wrap: wrap !important; gap: 1.2rem !important; }
@@ -4943,9 +5036,40 @@
 
 @media (max-width: 600px) {
     .navLogo, .navLogo.sapMImg { width: 100px !important; height: 59px !important; }
-    .footerContent { flex-wrap: wrap !important; justify-content: center !important; gap: 1rem !important; padding: 1rem 0.8rem !important; }
-    .footerLeft  { justify-content: center !important; }
-    .footerRight { align-items: center !important; }
+    .footerContent,
+    .footerContent.sapMHBox {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0.9rem 1.6rem !important;
+        padding: 1.2rem 1rem !important;
+        text-align: center !important;
+    }
+    .footerLeft,
+    .footerLeft.sapMHBox {
+        order: 1 !important;
+        justify-content: center !important;
+    }
+    .footerRight,
+    .footerRight.sapMVBox {
+        order: 2 !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+    .footerCenter,
+    .footerCenter.sapMVBox {
+        order: 3 !important;
+        flex-basis: 100% !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+    .footerLinks,
+    .footerLinks.sapMHBox {
+        row-gap: 6px !important;
+    }
     .pageContent, .pageContent.sapMVBox { padding: 0 0.6rem; margin: 0.8rem 0 !important; }
     .calSeasonBlockTitle.sapMText { font-size: 0.95rem !important; }
     .sTDResultImg.sapMImg { width: 20px !important; height: 20px !important; }
@@ -4958,6 +5082,9 @@
     .lbTHDG, .lbTDDGPos, .lbTDDGNeg { width: 60px !important; flex: 0 0 60px !important; }
     .lbTHLast, .lbLastCol { width: 110px !important; flex: 0 0 110px !important; }
     .lbResultImg, .lbResultImg.sapMImg { width: 22px !important; height: 22px !important; }
+
+    .legalPageCard { margin: 1rem; }
+    .legalPageBody { padding: 1rem 1.2rem 1.5rem; }
 }
 
 @media (max-width: 420px) {

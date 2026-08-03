@@ -12,9 +12,20 @@
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Header" type="XML"/>
 
                 <VBox class="pageContent">
-                    
-                    <Text text="VISTA TERMS OF USE" class="cookiePolicyText"/>
-                    
+
+                    <VBox class="legalPageCard">
+
+                        <HBox class="newsWidgetHeader2">
+                            <Text text="{i18n>legal.terms.title}" class="legalPageTitle"/>
+                        </HBox>
+
+                        <VBox class="legalPageBody">
+                            <Text text="{i18n>legal.terms.updated}" class="legalPageUpdated"/>
+                            <FormattedText htmlText="{i18n>legal.terms.content}"/>
+                        </VBox>
+
+                    </VBox>
+
                 </VBox>
 
                 <core:Fragment fragmentName="chocolatesexy.project.view.shared.Footer" type="XML"/>

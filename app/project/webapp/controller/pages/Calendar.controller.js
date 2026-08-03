@@ -201,7 +201,7 @@ sap.ui.define([
                 "<div class='calMiniLegendItem'><span class='cmcDot cmcVictoria'></span>Victoria</div>" +
                 "<div class='calMiniLegendItem'><span class='cmcDot cmcEmpate'></span>Empate</div>" +
                 "<div class='calMiniLegendItem'><span class='cmcDot cmcDerrota'></span>Derrota</div>" +
-                "<div class='calMiniLegendItem'><span class='cmcDot cmcPendiente'></span>Pendiente</div>" +
+                "<div class='calMiniLegendItem'><span class='cmcDot cmcPendiente'></span>Por jugar</div>" +
                 "</div></div></div>";
 
             oDomMiniPanel.querySelectorAll(".calMiniNavBtn").forEach(function (oBtn) {
